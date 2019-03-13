@@ -32,7 +32,7 @@
   <div>
 
     <!-- Cards -->
-    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts" >
+    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index" >
 
       <ion-row>
         <ion-col col-10>
@@ -56,15 +56,15 @@
         <ion-slides>
 
         <ion-slide   *ngFor="let p of post.images; let i = index">
-            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike($event)"/>
+            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post.postid,x)"/>
             <p>{{ i + 1 }}/{{ post.images.length }}</p>
         </ion-slide>
 
     </ion-slides>
       <p no-margin no-padding>
-        <button clear ion-button icon-only (click)="likeButton()" class="like-btn">
-          <ion-icon no-padding [name]="like_btn.icon_name" color="{{ like_btn.color }}" class="icon-space"></ion-icon>
-        </button>
+        <button clear ion-button icon-only (click)="likeButton(post.postid,x)" class="like-btn">
+          <ion-icon no-padding [name]="post.heart" color="{{ post.color }}" class="icon-space"></ion-icon>
+        </button>{{postheart(x)}}
         <button clear ion-button icon-only>
           <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>
         </button>
@@ -88,6 +88,11 @@
       </ion-card-content>
 
     </ion-card>
-
+    <button ion-button block outline  style="width: 100%;" (click)="seemore()">See More</button>
   </div>
+
+
+     <ion-fab style="right: 3px !important;bottom: 3px !important">
+        <button ion-fab item-right style="right: 0;" (click) = "reset()"><ion-icon name="md-refresh"></ion-icon></button>
+     </ion-fab>
 </ion-content>
