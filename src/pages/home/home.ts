@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { App, NavController, Content, PopoverController } from 'ionic-angular';
+import { App, NavController, Content, PopoverController, ToastController } from 'ionic-angular';
 import { PostPopover } from './post-popover';
+import { PostOwner } from './post-owner';
 import { Messages } from '../messages/messages';
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 import {Http } from '@angular/http';
@@ -27,11 +28,12 @@ export class Home {
 
 
   loading: Loading;
-  limit = 1;
+  limit = 0;
   posts:any;
+  addlike:any;
   email;
 
-  constructor(private alertCtrl: AlertController,public loadingCtrl: LoadingController,private http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
+  constructor( public toastCtrl: ToastController,private alertCtrl: AlertController,public loadingCtrl: LoadingController,private http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
    //http://localhost/pansit/api.php?action=get_app_list
     this.loading = this.loadingCtrl.create({
       });
@@ -68,34 +70,46 @@ export class Home {
 
           },error => {
             console.log(error)
-            this.presentAlert("Something went wrong!");
+            this.presentAlert("Connection Error!");
             this.loading.dismissAll();
            } 
            );
   }
   postheart(x,like){
     if (like!=null) {
-    console.log(like)
-    for (var index = 0; index < this.posts[x].like.length; index++) {
-                 var element = this.posts[x].like[index];
-                 if (element.email==this.email) {
-                     this.posts[x].heart='heart';
-                 }
-            }
-    }
-     return this.posts[x].heart
+        for (var index = 0; index < like.length; index++) {
+                     var element = like[index];
+                     if (element.email==this.email) {
+                        this.posts[x].heart = 'heart';
+                     }
+                }
+      }
+      return this.posts[x].heart
   }
 
   likeButton(post,x) {
-    console.log(post)
-    if(this.posts[x].heart === 'heart-outline') {
-      this.posts[x].heart = 'heart';
-      this.posts[x].color = 'danger';
-      // Do some API job in here for real!
-    }
-    else {
-      this.posts[x].heart = 'heart-outline';
-      this.posts[x].color = 'black';
+    if (post.heart === 'heart-outline') {
+        this.http.get(this.global.site + 'api.php?action=like&email=' +this.email+ '&id='+post.postid)
+              .map(response => response.json())
+              .subscribe(res => {
+                    if (res.status == "success") {
+                      this.posts[x].heart = 'heart';
+                      this.posts[x].color = 'danger';
+                      this.addlike = [{ likeid:"0",postid:post.postid, email:this.email }];
+                      if ( this.posts[x].like != null) {
+                        this.posts[x].like = this.posts[x].like.concat(this.addlike);
+                      }else
+                        this.posts[x].like =this.addlike;
+
+                    }else
+                    {
+                        this.presentToast("Oops! Something went wrong.");
+                      }
+                 },error => {
+                        this.presentToast("Oops! Something went wrong.");
+                        this.loading.dismissAll();
+               } 
+               );
     }
   }
 
@@ -109,6 +123,10 @@ export class Home {
 
   presentPostPopover() {
     let popover = this.popoverCtrl.create(PostPopover);
+    popover.present();
+  }
+  presentPostOwner() {
+    let popover = this.popoverCtrl.create(PostOwner);
     popover.present();
   }
 
@@ -180,4 +198,14 @@ export class Home {
               return date1.toDateString()
             }
           }
+
+
+
+    presentToast(x) {
+    let toast = this.toastCtrl.create({
+      message: x,
+      duration: 2000
+    });
+    toast.present();
+  }
 }

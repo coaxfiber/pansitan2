@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { Home } from '../pages/home/home';
 import { PostPopover } from '../pages/home/post-popover';
+import { PostOwner } from '../pages/home/post-owner';
 import { Search } from '../pages/search/search';
 import { ModalPost } from '../pages/modal-post/modal-post';
 import { Messages } from '../pages/messages/messages';
@@ -34,6 +35,7 @@ import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
     MyApp,
     Home,
     PostPopover,
+    PostOwner,
     Search,
     ModalPost,
     Messages,
@@ -62,6 +64,7 @@ import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
     MyApp,
     Home,
     PostPopover,
+    PostOwner,
     Search,
     ModalPost,
     Messages,
