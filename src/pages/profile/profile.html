@@ -58,16 +58,13 @@
   <div>
     <ion-segment [(ngModel)]="profile_segment">
       <ion-segment-button value="grid">
-        <ion-icon name="apps"></ion-icon>
+        <ion-icon name="star"></ion-icon> Favorites
       </ion-segment-button>
-      <ion-segment-button value="list">
-        <ion-icon name="list"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="tagged" (click)="goTaggedProfile()">
-        <ion-icon name="photos"></ion-icon>
+      <ion-segment-button value="list"> 
+        <ion-icon name="list"></ion-icon> Posts
       </ion-segment-button>
       <ion-segment-button value="saved" (click)="goSavedProfile()">
-        <ion-icon name="bookmark"></ion-icon>
+        <ion-icon name="bookmark"></ion-icon> Saved
       </ion-segment-button>
     </ion-segment>
   </div>
@@ -82,11 +79,12 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      111
     </ion-list>
 
     <ion-list *ngSwitchCase="'list'">
       
-
+2222
     </ion-list>
   </div>
   

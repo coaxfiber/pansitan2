@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {LoadingController, Loading } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -33,13 +34,18 @@ export class Home {
   addlike:any;
   email;
 
-  constructor( public toastCtrl: ToastController,private alertCtrl: AlertController,public loadingCtrl: LoadingController,private http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
+  constructor( 
+    private storage: Storage,
+    public toastCtrl: ToastController,private alertCtrl: AlertController,public loadingCtrl: LoadingController,private http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
    //http://localhost/pansit/api.php?action=get_app_list
     this.loading = this.loadingCtrl.create({
       });
-
       this.loading.present();
-      this.email = "elton@gmail.com";
+         
+          storage.get('email').then((val) => {
+            this.email = val;
+          });
+          
          this.http.get(this.global.site + 'api.php?action=postings&limit='+this.limit)
           .map(response => response.json())
           .subscribe(res => {

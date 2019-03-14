@@ -58,7 +58,7 @@
 
         <ion-slides>
 
-        <ion-slide   *ngFor="let p of post.images; let i = index">
+        <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>
             <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"/>
             <p>{{ i + 1 }}/{{ post.images.length }}</p>
         </ion-slide>
@@ -94,7 +94,7 @@
       </ion-card-content>
 
     </ion-card>
-    <button ion-button block outline  style="width: 100%;margin: 10px" (click)="seemore()">See More</button>
+    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>
   </div>
 
 

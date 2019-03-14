@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 import { Events } from 'ionic-angular';
 import {LoadingController, Loading } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { PansitanLocationPage } from '../pansitan-location/pansitan-location';
  
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 @Component({
@@ -86,7 +87,9 @@ export class PropertyDetailPage {
          });
         //this.showBanner();
     }
-
+ seelocation(pass){
+   this.navCtrl.push(PansitanLocationPage, pass);
+ }
 
 presentAlert(val:any) {
             let alert = this.alertCtrl.create({

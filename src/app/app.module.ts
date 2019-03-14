@@ -27,8 +27,12 @@ import { UploadImagePage } from '../pages/upload-image/upload-image';
 import { PropertyListPage } from '../pages/property-list/property-list';
 import { PropertyDetailPage } from '../pages/property-detail/property-detail';
 
+import { PansitanLocationPage } from '../pages/pansitan-location/pansitan-location';
 import { StarRatingModule } from 'ionic3-star-rating';
 import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
+import { Geolocation } from '@ionic-native/geolocation';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -51,13 +55,15 @@ import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
     TabsPage,
     PropertyListPage,
     PropertyDetailPage,
-    UploadImagePage
+    UploadImagePage,
+    PansitanLocationPage
   ],
   imports: [
   StarRatingModule,
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,10 +86,13 @@ import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
     TabsPage,
     PropertyListPage,
     PropertyDetailPage,
-    UploadImagePage
+    UploadImagePage,
+    PansitanLocationPage
   ],
   providers: [
     StatusBar,
+      Geolocation,
+      GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PropertyService,
     GlobalvarsProvider

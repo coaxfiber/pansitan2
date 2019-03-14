@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage,  LoadingController, NavController, NavParams, App } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
+import { GooglePlus } from '@ionic-native/google-plus';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,22 +20,45 @@ export class LoginPage {
   public loginForm: any;
 
   constructor(
+    private storage: Storage,
+    public global:GlobalvarsProvider,
+     private googlePlus: GooglePlus,
     public loadingCtrl: LoadingController,
     public app: App,
     public navCtrl: NavController,
     public navParams: NavParams
-  ) { }
+  ) {
+
+    storage.get('email').then((val) => {
+      if (val != null)
+        this.navCtrl.setRoot(TabsPage);
+    });
+  }
+
 
   login() {
+    const loading = this.loadingCtrl.create({
+      content:"Connecting to Google"
+    });
+    loading.present();
+    this.googlePlus.login({})
+      .then(res => {
+        loading.dismissAll();
+        this.global.loginsave(res.email,res.displayName,res.imageUrl);
+        this.navCtrl.setRoot(TabsPage);
+      })
+      .catch(err => alert(JSON.stringify(err)));
+  }
+
+  login2() {
     const loading = this.loadingCtrl.create({
       duration: 500
     });
 
     loading.onDidDismiss(() => {
-      this.navCtrl.setRoot(TabsPage);
+      
     });
 
-    loading.present();
 
   }
 
