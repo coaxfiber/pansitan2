@@ -47,20 +47,15 @@ export class LoginPage {
         this.global.loginsave(res.email,res.displayName,res.imageUrl);
         this.navCtrl.setRoot(TabsPage);
       })
-      .catch(err => alert(JSON.stringify(err)));
+      .catch(err => {
+        alert(JSON.stringify(err))
+        loading.dismissAll();
+        
+        this.navCtrl.setRoot(TabsPage);
+        this.global.loginsave("guest",'Guest',"https://scontent.xx.fbcdn.net/v/t1.0-1/p32x32/51654914_2387811831237277_2326175307083546624_n.jpg?_nc_cat=104&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=076d4c78d4ff4a26e047af97aa9f54a6&oe=5D197ABA");
+      });
   }
 
-  login2() {
-    const loading = this.loadingCtrl.create({
-      duration: 500
-    });
-
-    loading.onDidDismiss(() => {
-      
-    });
-
-
-  }
 
   goToSignup() {
     // this.navCtrl.push(SignupPage);

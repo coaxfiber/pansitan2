@@ -94,25 +94,32 @@ export class Home {
   }
 
   likeButton(post,x) {
+
     if (post.heart === 'heart-outline') {
-        this.http.get(this.global.site + 'api.php?action=like&email=' +this.email+ '&id='+post.postid)
-              .map(response => response.json())
-              .subscribe(res => {
-                    if (res.status == "success") {
                       this.posts[x].heart = 'heart';
                       this.posts[x].color = 'danger';
+                      
                       this.addlike = [{ likeid:"0",postid:post.postid, email:this.email }];
                       if ( this.posts[x].like != null) {
                         this.posts[x].like = this.posts[x].like.concat(this.addlike);
                       }else
                         this.posts[x].like =this.addlike;
 
+        this.http.get(this.global.site + 'api.php?action=like&email=' +this.email+ '&id='+post.postid)
+              .map(response => response.json())
+              .subscribe(res => {
+                    if (res.status == "success") {
+                       
                     }else
-                    {
+                    {  
+                      this.posts[x].heart = 'heart-outline';
+                      this.posts[x].color = 'black';
                         this.presentToast("Oops! Something went wrong.");
                       }
                  },error => {
-                        this.presentToast("Oops! Something went wrong.");
+                      this.posts[x].heart = 'heart-outline';
+                      this.posts[x].color = 'black';
+                        this.presentToast("Connection Error.");
                         this.loading.dismissAll();
                } 
                );
