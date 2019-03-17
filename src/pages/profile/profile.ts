@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController,ToastController } from 'ionic-angular';
 
+import { AlertController } from 'ionic-angular';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 import { ModalPost } from '../modal-post/modal-post';
 import { EditProfile } from '../edit-profile/edit-profile';
 import { Options } from '../options/options';
 import { TaggedProfile } from '../tagged-profile/tagged-profile';
 import { SavedProfile } from '../saved-profile/saved-profile';
+import { Storage } from '@ionic/storage';
+import {Http } from '@angular/http';
+import {LoadingController, Loading } from 'ionic-angular';
+import {PropertyDetailPage} from '../property-detail/property-detail';
 
 @IonicPage()
 @Component({
@@ -14,6 +20,7 @@ import { SavedProfile } from '../saved-profile/saved-profile';
 })
 export class Profile {
 
+  loading: Loading;
   public profile_segment:string;
 
   // You can get this data from your API. This is a dumb data for being an example.
@@ -22,42 +29,79 @@ export class Profile {
       id: 1,
       username: 'candelibas',
       profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      post_img: 'https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e35/13473123_1544898359150795_654626889_n.jpg'
+      post_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120'
     },
     {
       id: 2,
       username: 'candelibas',
       profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      post_img: 'https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e35/12940826_1673029922963013_921771297_n.jpg'
+      post_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120'
     },
     {
       id: 3,
       username: 'candelibas',
       profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      post_img: 'https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/10852865_738738146215825_1258215298_n.jpg'
+      post_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120'
     },
     {
       id: 4,
       username: 'candelibas',
       profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      post_img: 'https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/891528_841068522581102_1591061904_n.jpg'
+      post_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120'
     },
     {
       id: 5,
       username: 'candelibas',
       profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      post_img: 'https://scontent-frx5-1.cdninstagram.com/t51.2885-15/e35/10809765_1474804169496730_887570428_n.jpg'
+      post_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120'
     },
     {
       id: 6,
       username: 'candelibas',
       profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      post_img: 'https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e15/891515_1524153351163603_439436363_n.jpg'
+      post_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120'
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {  
+  acct = {"accountid":"0","email":" ","name":" ","descript":"","contact":"","gender":"","image":"0","status":"0"};
+  email;name;image;properties=[{'name':"","address":''}]
+  constructor(
+    private alertCtrl: AlertController,public loadingCtrl: LoadingController, 
+    private http:Http, public global:GlobalvarsProvider,
+    private storage: Storage,public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public toastCtrl: ToastController) {  
+      
+            storage.get('name').then((val) => {
+              this.name = val;
+              storage.get('email').then((val) => {
+                this.email = val;
+                storage.get('image').then((val) => {
+                  this.image = val;
+                        //start this
+                        console.log(this.name);
+                        this.loading = this.loadingCtrl.create({
+                          });
+                          this.loading.present();
+                          this.http.get(this.global.site + 'api.php?action=getaccount&email='+this.email+'&name='+this.name+'&image='+this.image)
+                            .map(response => response.json())
+                            .subscribe(res => {
+                              this.properties = res.pansitanfav;
+                              console.log(this.properties)
+                              this.acct = res;
+                              this.loading.dismissAll();
+                            },error => {
+                              this.presentAlert("Something went wrong!");
+                              this.loading.dismissAll();
+                             } );
+                        //end this
+                });
+              });
+            });
+            
+            
   }
+    openPropertyDetail(property: any) {
+        this.navCtrl.push(PropertyDetailPage, property);
+    }
 
   // Define segment for everytime when profile page is active
   ionViewWillEnter() {
@@ -99,5 +143,15 @@ export class Profile {
     { showBackdrop: true, enableBackdropDismiss: true });
     modal.present();
   }
+
+   
+      presentAlert(val:any) {
+            let alert = this.alertCtrl.create({
+              title: 'Alert',
+              subTitle: val,
+              buttons: ['Dismiss']
+            });
+            alert.present();
+          }
 
 }

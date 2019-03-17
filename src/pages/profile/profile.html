@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="white">
-    <ion-title>candelibas</ion-title>
+    <ion-title>{{acct.name}}</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only>
@@ -21,7 +21,7 @@
   <ion-row padding>
     <!-- Avatar -->
     <ion-col col-3>
-      <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=120" class="avatar" alt="">
+      <img src="{{acct.image}}" class="avatar" alt="">
     </ion-col>
     <!-- Information about user -->
     <ion-col col-3 text-center >
@@ -49,9 +49,8 @@
 
   <!-- Profile info -->
   <div padding>
-    <p no-margin no-padding><b>Can Delibas</b></p>
-    <p no-padding no-margin class="info">Software developer, open-source lover, invoker spammer & heavy metal guitarist</p>
-    <p no-padding no-margin class="info"><a href="#">github.com/candelibas</a></p>
+    <p no-margin no-padding><b>{{acct.name}}</b></p>
+    <p no-padding no-margin class="info">{{acct.descript}}</p>
   </div>
 
   <!-- Segments -->
@@ -63,15 +62,31 @@
       <ion-segment-button value="list"> 
         <ion-icon name="list"></ion-icon> Posts
       </ion-segment-button>
-      <ion-segment-button value="saved" (click)="goSavedProfile()">
+      <!--<ion-segment-button value="saved" (click)="goSavedProfile()">
         <ion-icon name="bookmark"></ion-icon> Saved
-      </ion-segment-button>
+      </ion-segment-button>-->
     </ion-segment>
   </div>
 
   <!-- Segment content -->
   <div [ngSwitch]="profile_segment">
+
     <ion-list *ngSwitchCase="'grid'">
+      <ion-list>
+        <ion-item-sliding *ngFor="let property of properties">
+            <button ion-item (click)="openPropertyDetail(property)">
+                <ion-thumbnail item-left>
+                    <img src="{{ global.site }}/uploads/s1.jpg"/>
+                </ion-thumbnail>
+                <h2>{{property.name}}</h2>
+                <p>{{property.address}}</p>
+            </button>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'list'">
+
       <ion-grid>
         <ion-row >
           <ion-col col-4 class="grid_img" *ngFor="let i of images" (press)="pressPhoto(i.id, i.username, i.profile_img, i.post_img)">
@@ -79,12 +94,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      111
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'list'">
-      
-2222
     </ion-list>
   </div>
   

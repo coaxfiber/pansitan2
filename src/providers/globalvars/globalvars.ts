@@ -11,13 +11,15 @@ import { Storage } from '@ionic/storage';
 */
 @Injectable()
 export class GlobalvarsProvider {
-  site = 'http://eltonbagne.info/api/pansitan/';
-  //site = 'http://localhost/pansit/';
+  //site = 'http://eltonbagne.info/api/pansitan/';
+  site = 'http://localhost/pansit/';
+  name;
+  image;
   constructor(public http: Http,private storage: Storage) {
   }
   loginsave(email,name,image){
   	this.storage.set('email', email);
-  	this.storage.set('name', name);
-  	this.storage.set('image', image);
+    this.storage.set('name', email);
+    this.storage.set('image', image);
   }
 }

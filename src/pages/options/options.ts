@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the Options page.
@@ -14,11 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Options {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private storage: Storage,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Options');
   }
 
+  logout(){
+  	this.storage.remove('email')
+  	this.storage.remove('name')
+  	this.storage.remove('image')
+  }
 }
