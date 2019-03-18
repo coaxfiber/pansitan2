@@ -19,7 +19,7 @@ export class GlobalvarsProvider {
   }
   loginsave(email,name,image){
   	this.storage.set('email', email);
-    this.storage.set('name', email);
+    this.storage.set('name', name);
     this.storage.set('image', image);
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
+import { LoginPage } from "../login/login";
 /**
  * Generated class for the Options page.
  *
@@ -27,5 +28,6 @@ export class Options {
   	this.storage.remove('email')
   	this.storage.remove('name')
   	this.storage.remove('image')
+    window.location.reload()
   }
 }

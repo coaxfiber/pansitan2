@@ -9,6 +9,7 @@ import {LoadingController, Loading } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { PansitanLocationPage } from '../pansitan-location/pansitan-location';
  
+import { Storage } from '@ionic/storage';
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 @Component({
     selector: 'page-property-detail',
@@ -32,15 +33,17 @@ export class PropertyDetailPage {
     yourrate = 0;
     yourrateid=0;
     finalrate=0;
-    constructor(public global:GlobalvarsProvider,private alertCtrl: AlertController,public loadingCtrl: LoadingController, public events: Events,public actionSheetCtrl: ActionSheetController,private http:Http, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
+    constructor(
+    private storage: Storage,public global:GlobalvarsProvider,private alertCtrl: AlertController,public loadingCtrl: LoadingController, public events: Events,public actionSheetCtrl: ActionSheetController,private http:Http, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
       this.property = this.navParams.data;
       this.ctrrate = false;
       this.loading = this.loadingCtrl.create({
       });
 
       this.loading.present();
-      this.email = "elton@gmail.com";
-
+     
+       storage.get('email').then((val) => {
+         this.email = val;
          this.http.get(this.global.site + 'api.php?action=getimage&g=1&id='+this.property.pansitanid+'&email='+this.email)
           .map(response => response.json())
           .subscribe(res => {
@@ -85,6 +88,8 @@ export class PropertyDetailPage {
              this.rating(starRating); 
            }
          });
+
+          });
         //this.showBanner();
     }
  seelocation(pass){

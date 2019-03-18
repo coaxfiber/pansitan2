@@ -19,7 +19,8 @@ import {PropertyDetailPage} from '../property-detail/property-detail';
   templateUrl: 'profile.html',
 })
 export class Profile {
-
+  limit=0;
+  posts;
   loading: Loading;
   public profile_segment:string;
 
@@ -77,18 +78,26 @@ export class Profile {
                 storage.get('image').then((val) => {
                   this.image = val;
                         //start this
-                        console.log(this.name);
                         this.loading = this.loadingCtrl.create({
                           });
                           this.loading.present();
+
                           this.http.get(this.global.site + 'api.php?action=getaccount&email='+this.email+'&name='+this.name+'&image='+this.image)
                             .map(response => response.json())
                             .subscribe(res => {
                               this.properties = res.pansitanfav;
                               console.log(this.properties)
-                              this.acct = res;
-                              this.loading.dismissAll();
+                              this.acct = res;  
+                                      console.log(this.global.site + 'api.php?action=userpostings&email='+this.email+'&limit='+this.limit)
+                                      this.http.get(this.global.site + 'api.php?action=userpostings&email='+this.email+'&limit='+this.limit)
+                                        .map(response => response.json())
+                                        .subscribe(res => {
+                                          this.posts = res;
+                                          console.log(res)
+                                        });
+                                          this.loading.dismissAll();
                             },error => {
+                              console.log(error);
                               this.presentAlert("Something went wrong!");
                               this.loading.dismissAll();
                              } );
