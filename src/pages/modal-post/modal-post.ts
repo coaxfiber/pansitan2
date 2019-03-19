@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { ModalController, ViewController, NavParams } from 'ionic-angular';
 
+import { ToastController } from 'ionic-angular';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
+import { Storage } from '@ionic/storage';
+import {Http } from '@angular/http';
 @Component({
   selector: 'page-modalpost',
   templateUrl: 'modal-post.html',
@@ -11,16 +15,16 @@ export class ModalPost {
     color: 'black',
     icon_name: 'heart-outline'
   };
-
-  public modal_data = {};
-
-  constructor(public viewCtrl: ViewController, public navParams: NavParams, public modalCtrl: ModalController) {
-    this.modal_data = { // Getting data from previous page
-      id: this.navParams.get('user_id'),
-      username: this.navParams.get('username'),
-      profile_img: this.navParams.get('profile_img'),
-      post_img: this.navParams.get('post_img')
-    };
+  addlike
+  modal_data;
+  email
+  constructor(
+    private storage: Storage,
+    public toastCtrl: ToastController,private http:Http,public viewCtrl: ViewController,public global:GlobalvarsProvider, public navParams: NavParams, public modalCtrl: ModalController) {
+    this.modal_data = this.navParams.data.user_id;
+     storage.get('email').then((val) => {
+            this.email = val;
+          });
   }
 
   ionViewDidLoad() {}
@@ -29,19 +33,77 @@ export class ModalPost {
     this.viewCtrl.dismiss();
   }
 
+  postheart(like){
+    if (like!=null) {
+        for (var index = 0; index < like.length; index++) {
+                     var element = like[index];
+                     if (element.email==this.email) {
+                        return 'heart'
+                     }
+                }
+      }
+                        return 'heart-outline'
+  }
+
   likeButton() {
-    if(this.like_btn.icon_name === 'heart-outline') {
-      this.like_btn.icon_name = 'heart';
-      this.like_btn.color = 'danger';
+    if (this.modal_data.heart === 'heart-outline') {
+      this.modal_data.heart = 'heart';
+
+                     this.addlike = [{ likeid:"0",postid:this.modal_data.postid, email:this.email }];
+                      if ( this.modal_data.like != null) {
+                        this.modal_data.like = this.modal_data.like.concat(this.addlike);
+                      }else
+                        this.modal_data.like =this.addlike;
+
+        this.http.get(this.global.site + 'api.php?action=like&email=' +this.email+ '&id='+this.modal_data.postid)
+              .map(response => response.json())
+              .subscribe(res => {
+                    if (res.status == "success") {
+                       
+                    }else
+                    {  
+                        this.modal_data.heart = 'heart-outline';
+                        this.presentToast("Oops! Something went wrong.");
+                      }
+                 },error => {
+                        this.modal_data.heart = 'heart-outline';
+                        this.presentToast("Connection Error.");
+               } 
+               );
     }
-    else {
-      this.like_btn.icon_name = 'heart-outline';
-      this.like_btn.color = 'black';
-    }
+
+
   }
 
   goUserProfile(userId: number) {
     console.log("User id: " + userId);
   }
+
+  process(time){
+            var date1 = new Date(time*1000);
+            var date2 = new Date();
+
+            var diff = Math.abs(date2.getTime() - date1.getTime());
+
+            var diffmin = Math.ceil((diff / 1000)/60); 
+
+            if (diffmin < 1440) {
+              if (diffmin < 60 ) {
+                return diffmin + " minutes ago"
+              }else{
+                return Math.floor( diffmin/60 ) + " hours and " + (diffmin%60) + " minutes"
+              }
+            }else
+            {
+              return date1.toDateString()
+            }
+          }
   
+    presentToast(x) {
+    let toast = this.toastCtrl.create({
+      message: x,
+      duration: 2000
+    });
+    toast.present();
+  }
 }

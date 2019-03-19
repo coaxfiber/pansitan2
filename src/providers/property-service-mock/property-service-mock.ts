@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http } from '@angular/http';
 
+import { GlobalvarsProvider } from '../globalvars/globalvars';
 @Injectable()
 export class PropertyService {
 
@@ -8,9 +9,9 @@ export class PropertyService {
   favorites: Array<any> = [];
   properties: Array<any>;
 
-  constructor(private http:Http) {
+  constructor(private http:Http,public global:GlobalvarsProvider) {
 
-       this.http.get('http://localhost/pansit/api.php?action=get_app_list')
+       this.http.get(this.global.site+'api.php?action=get_app_list')
       .map(response => response.json())
       .subscribe(res => this.properties = res);
       

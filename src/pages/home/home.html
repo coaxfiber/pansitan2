@@ -8,11 +8,15 @@
     
     <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">Pansitan</ion-title>
 
-    <!--<ion-buttons end right>
-      <button color="black" ion-button icon-only (click)="goMessages()">
+    <ion-buttons end right>
+      <!--<button color="black" ion-button icon-only (click)="goMessages()">
         <ion-icon name="paper-plane"></ion-icon>
       </button>
-    </ion-buttons>-->
+      <button color="black" ion-button icon-only (click)="goMessages()">
+      <ion-icon name="person"></ion-icon>
+      <ion-icon name="search"></ion-icon>
+      </button>-->
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -55,15 +59,17 @@
         </ion-col>
       </ion-row>
       
-
-        <ion-slides>
+        <div *ngIf="post.images.length===1" >
+        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)"/>
+        </div>
+        <ion-slides  *ngIf="post.images.length>1">
 
         <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>
             <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"/>
             <p>{{ i + 1 }}/{{ post.images.length }}</p>
         </ion-slide>
 
-    </ion-slides>
+        </ion-slides>
       <p no-margin no-padding>
         <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!='heart' || post.heart!='heart'">
           <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>

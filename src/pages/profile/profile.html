@@ -4,11 +4,11 @@
     <ion-title>{{acct.name}}</ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only>
+      <!--<button ion-button icon-only>
         <ion-icon name="person-add" class="badge-container">
           <span class="custom-badge">3</span>
         </ion-icon>
-      </button>
+      </button>-->
       <button ion-button icon-only (click)="goOptions()">
         <ion-icon name="more"></ion-icon>
       </button>
@@ -24,19 +24,18 @@
       <img src="{{image}}" class="avatar" alt="">
     </ion-col>
     <!-- Information about user -->
-    <ion-col col-3 text-center >
-      <h6>21</h6>
-      <p no-padding no-margin>posts</p>
-    </ion-col>
     <ion-col col-3 text-center>
-      <h6>114</h6>
-      <p no-paddin no-margin>rated</p>
-    </ion-col>
-    <ion-col col-3 text-center>
-      <h6>119</h6>
+      <h6 *ngIf="properties!=null">{{properties.length}}</h6>
+      <h6  *ngIf="properties===null">0</h6>
       <p no-paddin no-margin>favorites</p>
     </ion-col>
-  </ion-row>
+
+    <ion-col col-3 text-center>
+      <h6 *ngIf="posts!=null">{{posts.length}}</h6>
+      <h6  *ngIf="posts===null">0</h6>
+      <p no-paddin no-margin>posts</p>
+    </ion-col>
+    </ion-row>
 
   <!-- Edit/follow button -->
   <ion-row no-padding no-margin>
@@ -89,8 +88,8 @@
 
       <ion-grid>
         <ion-row >
-          <ion-col col-4 class="grid_img" *ngFor="let i of images" (press)="pressPhoto(i.id, i.username, i.profile_img, i.post_img)">
-            <img [src]="i.post_img" alt="">
+          <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">
+            <img src="{{ global.site }}/uploads/{{i.images[0].imageid}}.jpg" alt="">
           </ion-col>
         </ion-row>
       </ion-grid>

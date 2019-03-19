@@ -53,7 +53,7 @@ export class Home {
             this.loading.dismissAll();
 
           },error => {
-            this.presentAlert("Something went wrong!");
+            this.presentAlert("Connection Error!");
             this.loading.dismissAll();
            } 
            );
@@ -119,7 +119,7 @@ export class Home {
                  },error => {
                       this.posts[x].heart = 'heart-outline';
                       this.posts[x].color = 'black';
-                        this.presentToast("Connection Error.");
+                        this.presentToast("Connection Error!");
                         this.loading.dismissAll();
                } 
                );
@@ -172,7 +172,7 @@ export class Home {
             this.loading.dismissAll();
 
           },error => {
-            this.presentAlert("Something went wrong!");
+            this.presentAlert("Connection Error!");
             this.loading.dismissAll();
            } 
            );
@@ -202,9 +202,9 @@ export class Home {
 
             if (diffmin < 1440) {
               if (diffmin < 60 ) {
-                return diffmin + " minutes ago"
+                return diffmin + "m ago"
               }else{
-                return Math.floor( diffmin/60 ) + " hours and " + (diffmin%60) + " minutes"
+                return Math.floor( diffmin/60 ) + "h and " + (diffmin%60) + "m ago"
               }
             }else
             {

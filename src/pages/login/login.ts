@@ -50,7 +50,7 @@ export class LoginPage {
       .catch(err => {
         alert(JSON.stringify(err))
         loading.dismissAll();
-        this.global.loginsave("elton@gmail.com",'Guest',"https://scontent.xx.fbcdn.net/v/t1.0-1/p32x32/51654914_2387811831237277_2326175307083546624_n.jpg?_nc_cat=104&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=076d4c78d4ff4a26e047af97aa9f54a6&oe=5D197ABA");
+        this.global.loginsave("elton2@gmail.com",'Guest',"https://scontent.xx.fbcdn.net/v/t1.0-1/p32x32/51654914_2387811831237277_2326175307083546624_n.jpg?_nc_cat=104&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=076d4c78d4ff4a26e047af97aa9f54a6&oe=5D197ABA");
         this.navCtrl.setRoot(TabsPage);
         });
   }

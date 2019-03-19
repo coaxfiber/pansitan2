@@ -125,7 +125,7 @@ favorites(){
                       this.loading.dismissAll();
                   }
              },error => {
-                this.presentToast("Oops! Something went wrong.");
+                this.presentToast("Connection Failed.");
                 this.loading.dismissAll();
            } 
            );
@@ -147,7 +147,7 @@ favorites(){
                     this.loading.dismissAll();
                   }
              },error => {
-                    this.presentToast("Oops! Something went wrong.");
+                    this.presentToast("Connection Failed.");
                     this.loading.dismissAll();
            } 
            );
@@ -173,7 +173,7 @@ ratingadd(rate){
 
                   this.checkrate = 1;this.ctrrate = false
              },error => {this.ctrrate = false
-                  this.presentToast("Oops! Something went wrong.");
+                  this.presentToast("Connection Failed.");
                    this.checkrate = 1;
            } 
            );
@@ -203,7 +203,7 @@ rating(rate){
               this.ctrrate = false;
              },error => {
                    this.loading.dismissAll();
-                    this.presentToast("Oops! Something went wrong.");
+                    this.presentToast("Connection Failed.");
                    this.ctrrate = false;
            } 
            );

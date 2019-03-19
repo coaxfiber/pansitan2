@@ -21,7 +21,7 @@ export class TabsPage {
   tab6Root = PropertyListPage;
 
   constructor() {
-
+  	
   }
 
 }
