@@ -42,9 +42,9 @@
         <ion-col col-10>
           <ion-item style="padding-left:0px;">
         <ion-avatar item-left>
-          <img src="http://ionicframework.com/dist/preview-app/www/assets/img/sarah-avatar.png.jpeg">
+          <img src="{{ post.account.name }}">
         </ion-avatar>
-        <h2 style="font-weight: bold">{{ post.account.name }}</h2>
+        <h2 style="font-weight: bold">{{ post.account.image }}</h2>
         <p *ngIf="post.pansitan.name!=null">{{ post.pansitan.name }}</p>
         
       </ion-item>
@@ -60,12 +60,12 @@
       </ion-row>
       
         <div *ngIf="post.images.length===1" >
-        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)"/>
+        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src='assets/img/broken.png';" />
         </div>
         <ion-slides  *ngIf="post.images.length>1">
 
         <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>
-            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"/>
+            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"  onerror="this.src='assets/img/broken.png';" />
             <p>{{ i + 1 }}/{{ post.images.length }}</p>
         </ion-slide>
 

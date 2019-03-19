@@ -21,7 +21,7 @@
   <ion-row padding>
     <!-- Avatar -->
     <ion-col col-3>
-      <img src="{{image}}" class="avatar" alt="">
+      <img src="{{image}}" class="avatar" alt=""  onerror="this.src='assets/img/broken.png';" >
     </ion-col>
     <!-- Information about user -->
     <ion-col col-3 text-center>
@@ -75,7 +75,7 @@
         <ion-item-sliding *ngFor="let property of properties">
             <button ion-item (click)="openPropertyDetail(property)">
                 <ion-thumbnail item-left>
-                    <img src="{{ global.site }}/uploads/s1.jpg"/>
+                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src='assets/img/broken.png';" />
                 </ion-thumbnail>
                 <h2>{{property.name}}</h2>
                 <p>{{property.address}}</p>
@@ -89,7 +89,7 @@
       <ion-grid>
         <ion-row >
           <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">
-            <img src="{{ global.site }}/uploads/{{i.images[0].imageid}}.jpg" alt="">
+            <img src="{{ global.site }}/uploads/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src='assets/img/broken.png';" > 
           </ion-col>
         </ion-row>
       </ion-grid>
