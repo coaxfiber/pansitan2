@@ -1,4 +1,4 @@
-webpackJsonp([9],{
+webpackJsonp([8],{
 
 /***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -50,7 +50,7 @@ var EditProfile = (function () {
 }());
 EditProfile = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-edit-profile',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\edit-profile\edit-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-buttons start left>\n\n      <button ion-button icon-only (click)="dismiss()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Edit Profile</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="updateProfile()">\n\n        <ion-icon name="checkmark" color="primary"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!-- Profile picture -->\n\n  <div text-center>\n\n    <img [src]="user_data.profile_img" class="edit-avatar" alt="">\n\n    <p class="change-text">Change Photo</p>\n\n  </div>\n\n\n\n  <!-- Form -->\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="clipboard" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.name_surname"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="person" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.username"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="globe" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.website"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label>\n\n      <ion-icon name="quote" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-textarea placeholder="" [value]="user_data.description"></ion-textarea>\n\n  </ion-item>\n\n\n\n  <!-- Private information form -->\n\n  <div margin-top padding-top>\n\n    <h4 no-margin no-padding class="info-text">Private Information</h4>\n\n    <hr class="custom-hr" color="gray">\n\n  </div>\n\n  \n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="mail" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.email"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="phone-portrait" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.phone" placeholder="Add your phone"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label>\n\n      <ion-icon name="transgender" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-select class="custom-select" [(ngModel)]="user_data.gender">\n\n      <ion-option value="male">Male</ion-option>\n\n      <ion-option value="female">Female</ion-option>\n\n      <ion-option value="none">Not Specified</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\edit-profile\edit-profile.html"*/,
+        selector: 'page-edit-profile',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\edit-profile\edit-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-buttons start left>\n\n      <button ion-button icon-only (click)="dismiss()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Edit Profile</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="updateProfile()">\n\n        <ion-icon name="checkmark" color="primary"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!-- Profile picture -->\n\n  <div text-center>\n\n    <img [src]="user_data.profile_img" class="edit-avatar" alt="">\n\n  </div>\n\n\n\n  <!-- Form -->\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="clipboard" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.name_surname"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label>\n\n      <ion-icon name="quote" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-textarea placeholder="" [value]="user_data.description"></ion-textarea>\n\n  </ion-item>\n\n\n\n  <!-- Private information form -->\n\n  <div margin-top padding-top>\n\n    <h4 no-margin no-padding class="info-text">Private Information</h4>\n\n    <hr class="custom-hr" color="gray">\n\n  </div>\n\n  \n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="mail" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.email"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="phone-portrait" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user_data.phone" placeholder="Add your phone"></ion-input>\n\n  </ion-item>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\edit-profile\edit-profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
@@ -102,7 +102,7 @@ var MessageDetail = (function () {
 }());
 MessageDetail = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-message-detail',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\message-detail\message-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>{{ sender }}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-note><p text-center no-padding no-margin>April 1, 7:29 PM</p></ion-note>\n\n    \n\n    <!-- Sender -->\n\n    <ion-item no-lines no-margin no-padding text-wrap>\n\n      <ion-avatar item-left>\n\n        <img [src]="profile_img">\n\n      </ion-avatar>\n\n      <div class="chatbox">LOL. Still using Ionic instead of native techs? It\'s 2017 mate.</div>\n\n    </ion-item>\n\n\n\n    <!-- Me -->\n\n    <ion-item no-lines no-margin no-padding text-wrap>\n\n      <ion-avatar item-right>\n\n        <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=460">\n\n      </ion-avatar>\n\n      <div margin-left class="chatbox chatbox-right">You are doomed bruh! ;)</div>\n\n    </ion-item>\n\n\n\n    \n\n    <ion-item no-lines no-margin no-padding text-wrap>\n\n      <ion-avatar item-left>\n\n        <img [src]="profile_img">\n\n      </ion-avatar>\n\n      <div class="chatbox">{{ last_message }}</div>\n\n    </ion-item>\n\n\n\n    <!-- Heart icon -->\n\n    <ion-item no-lines no-margin no-padding text-wrap *ngIf="send_like_icon" item-right>\n\n      <ion-avatar item-right>\n\n        <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=460">\n\n      </ion-avatar>\n\n      <div text-right [ngClass]="{\'like-msg-btn\': likeBtnVisible }">\n\n        <ion-icon name="heart" [ngClass]="{\'like-btn\': likeBtnVisible, \'heart-size\': true }" color="danger"></ion-icon>\n\n      </div>\n\n    </ion-item>\n\n\n\n</ion-content>\n\n<!-- Footer -->\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-buttons start left>\n\n      <button ion-button icon-right color="black">\n\n        <ion-icon name="images"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-input type="text" value=""></ion-input>\n\n    <ion-buttons end>\n\n      <button ion-button icon-right color="black" (click)="sendLike()">\n\n        <ion-icon name="heart-outline"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\message-detail\message-detail.html"*/,
+        selector: 'page-message-detail',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\message-detail\message-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>{{ sender }}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-note><p text-center no-padding no-margin>April 1, 7:29 PM</p></ion-note>\n\n    \n\n    <!-- Sender -->\n\n    <ion-item no-lines no-margin no-padding text-wrap>\n\n      <ion-avatar item-left>\n\n        <img [src]="profile_img">\n\n      </ion-avatar>\n\n      <div class="chatbox">LOL. Still using Ionic instead of native techs? It\'s 2017 mate.</div>\n\n    </ion-item>\n\n\n\n    <!-- Me -->\n\n    <ion-item no-lines no-margin no-padding text-wrap>\n\n      <ion-avatar item-right>\n\n        <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=460">\n\n      </ion-avatar>\n\n      <div margin-left class="chatbox chatbox-right">You are doomed bruh! ;)</div>\n\n    </ion-item>\n\n\n\n    \n\n    <ion-item no-lines no-margin no-padding text-wrap>\n\n      <ion-avatar item-left>\n\n        <img [src]="profile_img">\n\n      </ion-avatar>\n\n      <div class="chatbox">{{ last_message }}</div>\n\n    </ion-item>\n\n\n\n    <!-- Heart icon -->\n\n    <ion-item no-lines no-margin no-padding text-wrap *ngIf="send_like_icon" item-right>\n\n      <ion-avatar item-right>\n\n        <img src="https://avatars1.githubusercontent.com/u/918975?v=3&s=460">\n\n      </ion-avatar>\n\n      <div text-right [ngClass]="{\'like-msg-btn\': likeBtnVisible }">\n\n        <ion-icon name="heart" [ngClass]="{\'like-btn\': likeBtnVisible, \'heart-size\': true }" color="danger"></ion-icon>\n\n      </div>\n\n    </ion-item>\n\n\n\n</ion-content>\n\n<!-- Footer -->\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-buttons start left>\n\n      <button ion-button icon-right color="black">\n\n        <ion-icon name="images"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-input type="text" value=""></ion-input>\n\n    <ion-buttons end>\n\n      <button ion-button icon-right color="black" (click)="sendLike()">\n\n        <ion-icon name="heart-outline"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\message-detail\message-detail.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], MessageDetail);
@@ -171,7 +171,7 @@ var NewMessage = (function () {
 }());
 NewMessage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-new-message',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\new-message\new-message.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>New Message</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-item>\n\n    <ion-label color="black">To:</ion-label>\n\n    <ion-input type="text" placeholder="Search"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item *ngFor="let f of friends">\n\n    <ion-label>\n\n        <img [src]="f.profile_img" class="list-img" alt="">\n\n        <span class="list-username">{{ f.username }}</span>\n\n      </ion-label>\n\n    <ion-checkbox item-right color="primary" (ionChange)="checkBox(f.username)" checked="false"></ion-checkbox>\n\n  </ion-item>\n\n</ion-content>\n\n<!-- Footer -->\n\n<ion-footer *ngIf="input_visible">\n\n  <ion-toolbar>\n\n    <ion-buttons start left>\n\n      <button ion-button icon-right color="black">\n\n        <ion-icon name="images"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-input type="text" value=""></ion-input>\n\n    <ion-buttons end>\n\n      <button ion-button icon-right color="black">\n\n        <ion-icon name="heart-outline"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\new-message\new-message.html"*/,
+        selector: 'page-new-message',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\new-message\new-message.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>New Message</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-item>\n\n    <ion-label color="black">To:</ion-label>\n\n    <ion-input type="text" placeholder="Search"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item *ngFor="let f of friends">\n\n    <ion-label>\n\n        <img [src]="f.profile_img" class="list-img" alt="">\n\n        <span class="list-username">{{ f.username }}</span>\n\n      </ion-label>\n\n    <ion-checkbox item-right color="primary" (ionChange)="checkBox(f.username)" checked="false"></ion-checkbox>\n\n  </ion-item>\n\n</ion-content>\n\n<!-- Footer -->\n\n<ion-footer *ngIf="input_visible">\n\n  <ion-toolbar>\n\n    <ion-buttons start left>\n\n      <button ion-button icon-right color="black">\n\n        <ion-icon name="images"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-input type="text" value=""></ion-input>\n\n    <ion-buttons end>\n\n      <button ion-button icon-right color="black">\n\n        <ion-icon name="heart-outline"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\new-message\new-message.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], NewMessage);
@@ -188,14 +188,14 @@ NewMessage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_post_modal_post__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_post_modal_post__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_profile_edit_profile__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__options_options__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tagged_profile_tagged_profile__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__saved_profile_saved_profile__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__property_detail_property_detail__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__property_detail_property_detail__ = __webpack_require__(76);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -313,7 +313,7 @@ var Profile = (function () {
 }());
 Profile = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\profile\profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>{{acct.name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <!--<button ion-button icon-only>\n\n        <ion-icon name="person-add" class="badge-container">\n\n          <span class="custom-badge">3</span>\n\n        </ion-icon>\n\n      </button>-->\n\n      <button ion-button icon-only (click)="goOptions()">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-row padding>\n\n    <!-- Avatar -->\n\n    <ion-col col-3>\n\n      <img src="{{image}}" class="avatar" alt=""  onerror="this.src=\'assets/img/broken.png\';" >\n\n    </ion-col>\n\n    <!-- Information about user -->\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="properties!=null">{{properties.length}}</h6>\n\n      <h6  *ngIf="properties===null">0</h6>\n\n      <p no-paddin no-margin>favorites</p>\n\n    </ion-col>\n\n\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="posts!=null">{{posts.length}}</h6>\n\n      <h6  *ngIf="posts===null">0</h6>\n\n      <p no-paddin no-margin>posts</p>\n\n    </ion-col>\n\n    </ion-row>\n\n\n\n  <!-- Edit/follow button -->\n\n  <ion-row no-padding no-margin>\n\n    <ion-col no-padding no-margin col-4></ion-col>\n\n      <ion-col no-padding no-margin text-center col-8>\n\n      <button class="edit-button" (click)="goEditProfile()">Edit your profile</button>\n\n    </ion-col>\n\n    <ion-col col-3></ion-col>\n\n  </ion-row>\n\n\n\n  <!-- Profile info -->\n\n  <div padding>\n\n    <p no-margin no-padding><b>{{acct.name}}</b></p>\n\n    <p no-padding no-margin class="info">{{acct.descript}}</p>\n\n  </div>\n\n\n\n  <!-- Segments -->\n\n  <div>\n\n    <ion-segment [(ngModel)]="profile_segment">\n\n      <ion-segment-button value="grid">\n\n        <ion-icon name="star"></ion-icon> Favorites\n\n      </ion-segment-button>\n\n      <ion-segment-button value="list"> \n\n        <ion-icon name="list"></ion-icon> Posts\n\n      </ion-segment-button>\n\n      <!--<ion-segment-button value="saved" (click)="goSavedProfile()">\n\n        <ion-icon name="bookmark"></ion-icon> Saved\n\n      </ion-segment-button>-->\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <!-- Segment content -->\n\n  <div [ngSwitch]="profile_segment">\n\n\n\n    <ion-list *ngSwitchCase="\'grid\'">\n\n      <ion-list>\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n    </ion-list>\n\n\n\n    <ion-list *ngSwitchCase="\'list\'">\n\n\n\n      <ion-grid>\n\n        <ion-row >\n\n          <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">\n\n            <img src="{{ global.site }}/uploads/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src=\'assets/img/broken.png\';" > \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-list>\n\n  </div>\n\n  \n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\profile\profile.html"*/,
+        selector: 'page-profile',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\profile\profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>{{acct.name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <!--<button ion-button icon-only>\n\n        <ion-icon name="person-add" class="badge-container">\n\n          <span class="custom-badge">3</span>\n\n        </ion-icon>\n\n      </button>-->\n\n      <button ion-button icon-only (click)="goOptions()">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-row padding>\n\n    <!-- Avatar -->\n\n    <ion-col col-3>\n\n      <img src="{{image}}" class="avatar" alt=""  onerror="this.src=\'assets/img/broken.png\';" >\n\n    </ion-col>\n\n    <!-- Information about user -->\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="properties!=null">{{properties.length}}</h6>\n\n      <h6  *ngIf="properties===null">0</h6>\n\n      <p no-paddin no-margin>favorites</p>\n\n    </ion-col>\n\n\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="posts!=null">{{posts.length}}</h6>\n\n      <h6  *ngIf="posts===null">0</h6>\n\n      <p no-paddin no-margin>posts</p>\n\n    </ion-col>\n\n    </ion-row>\n\n\n\n  <!-- Edit/follow button -->\n\n  <ion-row no-padding no-margin>\n\n    <ion-col no-padding no-margin col-4></ion-col>\n\n      <ion-col no-padding no-margin text-center col-8>\n\n      <button class="edit-button" (click)="goEditProfile()">Edit your profile</button>\n\n    </ion-col>\n\n    <ion-col col-3></ion-col>\n\n  </ion-row>\n\n\n\n  <!-- Profile info -->\n\n  <div padding>\n\n    <p no-margin no-padding><b>{{acct.name}}</b></p>\n\n    <p no-padding no-margin class="info">{{acct.descript}}</p>\n\n  </div>\n\n\n\n  <!-- Segments -->\n\n  <div>\n\n    <ion-segment [(ngModel)]="profile_segment">\n\n      <ion-segment-button value="grid">\n\n        <ion-icon name="star"></ion-icon> Favorites\n\n      </ion-segment-button>\n\n      <ion-segment-button value="list"> \n\n        <ion-icon name="list"></ion-icon> Posts\n\n      </ion-segment-button>\n\n      <!--<ion-segment-button value="saved" (click)="goSavedProfile()">\n\n        <ion-icon name="bookmark"></ion-icon> Saved\n\n      </ion-segment-button>-->\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <!-- Segment content -->\n\n  <div [ngSwitch]="profile_segment">\n\n\n\n    <ion-list *ngSwitchCase="\'grid\'">\n\n      <ion-list>\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n    </ion-list>\n\n\n\n    <ion-list *ngSwitchCase="\'list\'">\n\n\n\n      <ion-grid>\n\n        <ion-row >\n\n          <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">\n\n            <img src="{{ global.site }}/uploads/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src=\'assets/img/broken.png\';" > \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-list>\n\n  </div>\n\n  \n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\profile\profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_9__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */],
@@ -369,7 +369,7 @@ var Options = (function () {
 }());
 Options = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-options',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\options\options.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Options</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div>\n\n    <h4 no-margin no-padding class="info-text">Invite Friends</h4>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item><ion-icon name="logo-facebook" color="facebook"></ion-icon> Invite Facebook Friends</ion-item>\n\n    <ion-item>Invite Friends</ion-item>\n\n  </div>\n\n\n\n  <div padding-top margin-top>\n\n    <h4 no-margin no-padding class="info-text">Follow People</h4>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item><ion-icon name="logo-facebook" color="facebook"></ion-icon> Facebook Friends</ion-item>\n\n    <ion-item><ion-icon name="contacts" color="primary"></ion-icon> Contacts</ion-item>\n\n  </div>\n\n\n\n  <div padding-top margin-top>\n\n    <h4 no-margin no-padding class="info-text">Account</h4>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item>Story Settings</ion-item>\n\n    <ion-item>Edit Profile</ion-item>\n\n    <ion-item>Change Password</ion-item>\n\n    <ion-item>Blocked Users</ion-item>\n\n    <ion-item>\n\n      <ion-label color="black">Private Account</ion-label>\n\n      <ion-toggle checked="true"></ion-toggle>\n\n    </ion-item>\n\n  </div>\n\n\n\n  <div padding-top margin-top>\n\n    <h4 no-margin no-padding class="info-text">About</h4>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item>Ads</ion-item>\n\n    <ion-item>Privacy Policy</ion-item>\n\n    <ion-item>Terms of Service</ion-item>\n\n  </div>\n\n\n\n  <div padding-top margin-top>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item>Clear History</ion-item>\n\n    <ion-item (click)=\'logout()\'>Log Out</ion-item>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\options\options.html"*/,
+        selector: 'page-options',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\options\options.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Options</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n\n\n  <div padding-top margin-top>\n\n    <h4 no-margin no-padding class="info-text">About</h4>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item>Privacy Policy</ion-item>\n\n    <ion-item>Terms of Service</ion-item>\n\n  </div>\n\n\n\n  <div padding-top margin-top>\n\n    <hr class="custom-hr" color="gray">\n\n    <ion-item ><a href="javascript:void()" (click)=\'logout()\' style="color: black;">Log Out</a></ion-item>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\options\options.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], Options);
@@ -426,7 +426,7 @@ var TaggedProfile = (function () {
 }());
 TaggedProfile = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-tagged-profile',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\tagged-profile\tagged-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Photos of You</ion-title>\n\n    <ion-buttons end right>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row >\n\n      <ion-col col-4 class="grid_img" *ngFor="let i of images">\n\n        <img [src]="i.post_img" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\tagged-profile\tagged-profile.html"*/,
+        selector: 'page-tagged-profile',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\tagged-profile\tagged-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Photos of You</ion-title>\n\n    <ion-buttons end right>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row >\n\n      <ion-col col-4 class="grid_img" *ngFor="let i of images">\n\n        <img [src]="i.post_img" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\tagged-profile\tagged-profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], TaggedProfile);
@@ -477,7 +477,7 @@ var SavedProfile = (function () {
 }());
 SavedProfile = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-saved-profile',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\saved-profile\saved-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Saved</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-toolbar text-center>\n\n    <p>Only you can see what you\'ve saved</p>\n\n  </ion-toolbar>\n\n\n\n  <ion-grid>\n\n    <ion-row >\n\n      <ion-col col-4 class="grid_img" *ngFor="let i of images">\n\n        <img [src]="i.post_img" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\saved-profile\saved-profile.html"*/,
+        selector: 'page-saved-profile',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\saved-profile\saved-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Saved</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-toolbar text-center>\n\n    <p>Only you can see what you\'ve saved</p>\n\n  </ion-toolbar>\n\n\n\n  <ion-grid>\n\n    <ion-row >\n\n      <ion-col col-4 class="grid_img" *ngFor="let i of images">\n\n        <img [src]="i.post_img" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\saved-profile\saved-profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], SavedProfile);
@@ -507,24 +507,20 @@ webpackEmptyAsyncContext.id = 127;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/comments/comments.module": [
-		341,
-		8
-	],
 	"../pages/edit-profile/edit-profile.module": [
-		340,
+		344,
 		7
 	],
 	"../pages/login/login.module": [
-		342,
+		345,
 		0
 	],
 	"../pages/message-detail/message-detail.module": [
-		345,
+		346,
 		6
 	],
 	"../pages/new-message/new-message.module": [
-		343,
+		347,
 		5
 	],
 	"../pages/options/options.module": [
@@ -532,15 +528,15 @@ var map = {
 		4
 	],
 	"../pages/profile/profile.module": [
-		344,
+		349,
 		3
 	],
 	"../pages/saved-profile/saved-profile.module": [
-		346,
+		350,
 		2
 	],
 	"../pages/tagged-profile/tagged-profile.module": [
-		347,
+		351,
 		1
 	]
 };
@@ -571,10 +567,10 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_owner__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages_messages__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -616,11 +612,41 @@ var Home = (function () {
         };
         this.tap = 0;
         this.limit = 0;
+        this.stories = [
+            {
+                id: 1,
+                img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+                user_name: 'candelibas'
+            },
+            {
+                id: 2,
+                img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+                user_name: 'maxlynch'
+            },
+            {
+                id: 3,
+                img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+                user_name: 'ashleyosama'
+            },
+            {
+                id: 4,
+                img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+                user_name: 'adam_bradley'
+            },
+            {
+                id: 5,
+                img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+                user_name: 'linus_torvalds'
+            }
+        ];
         //http://localhost/pansit/api.php?action=get_app_list
         this.loading = this.loadingCtrl.create({});
         this.loading.present();
-        storage.get('email').then(function (val) {
+        this.storage.get('email').then(function (val) {
             _this.email = val;
+        });
+        this.storage.get('image').then(function (val) {
+            _this.image = val;
         });
         this.http.get(this.global.site + 'api.php?action=postings&limit=' + this.limit)
             .map(function (response) { return response.json(); })
@@ -780,7 +806,7 @@ __decorate([
 ], Home.prototype, "content", void 0);
 Home = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="white">\n\n    <!--<ion-buttons start left>\n\n      <button color="black" ion-button icon-only>\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n    </ion-buttons>-->\n\n    \n\n    <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">Pansitan</ion-title>\n\n\n\n    <ion-buttons end right>\n\n      <!--<button color="black" ion-button icon-only (click)="goMessages()">\n\n        <ion-icon name="paper-plane"></ion-icon>\n\n      </button>\n\n      <button color="black" ion-button icon-only (click)="goMessages()">\n\n      <ion-icon name="person"></ion-icon>\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>-->\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <!-- Story line \n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <div (swipe)="swipePage($event)">\n\n-->\n\n  <hr no-margin no-padding>\n\n  <div>\n\n\n\n    <!-- Cards -->\n\n    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index" >\n\n\n\n      <ion-row>\n\n        <ion-col col-10>\n\n          <ion-item style="padding-left:0px;">\n\n        <ion-avatar item-left>\n\n          <img src="{{ post.account.name }}">\n\n        </ion-avatar>\n\n        <h2 style="font-weight: bold">{{ post.account.image }}</h2>\n\n        <p *ngIf="post.pansitan.name!=null">{{ post.pansitan.name }}</p>\n\n        \n\n      </ion-item>\n\n        </ion-col >\n\n        <ion-col col-2>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostPopover()" *ngIf="post.email != email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostOwner()" *ngIf="post.email == email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      \n\n        <div *ngIf="post.images.length===1" >\n\n        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src=\'assets/img/broken.png\';" />\n\n        </div>\n\n        <ion-slides  *ngIf="post.images.length>1">\n\n\n\n        <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"  onerror="this.src=\'assets/img/broken.png\';" />\n\n            <p>{{ i + 1 }}/{{ post.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n      <p no-margin no-padding>\n\n        <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!=\'heart\' || post.heart!=\'heart\'">\n\n          <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only class="like-btn" *ngIf="postheart(x,post.like)==\'heart\' || post.heart==\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n        <!--<button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="paper-plane" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button no-margin no-padding clear color="black" ion-button icon-only style="float: right">\n\n          <ion-icon name="ios-bookmark-outline"></ion-icon>\n\n        </button>-->\n\n      </p>\n\n      <hr>\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "post.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "post.like != null;"><ion-icon name="heart"></ion-icon> {{post.like.length}} likes</p>\n\n        <p><b>post.account.name</b> {{ post.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(post.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n\n\n    </ion-card>\n\n    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>\n\n  </div>\n\n\n\n\n\n     <ion-fab style="right: 3px !important;bottom: 3px !important">\n\n        <button ion-fab item-right style="right: 0;" (click) = "reset()"><ion-icon name="md-refresh"></ion-icon></button>\n\n     </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="white">\n\n    <!--<ion-buttons start left>\n\n      <button color="black" ion-button icon-only>\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n    </ion-buttons>-->\n\n    \n\n    <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">Pansitan</ion-title>\n\n\n\n    <ion-buttons end right>\n\n      <!--<button color="black" ion-button icon-only (click)="goMessages()">\n\n        <ion-icon name="paper-plane"></ion-icon>\n\n      </button>\n\n      <button color="black" ion-button icon-only (click)="goMessages()">\n\n      <ion-icon name="person"></ion-icon>\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>-->\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <p style="margin: 2px;">Most Sharers</p>\n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <!-- Story line \n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <div (swipe)="swipePage($event)">\n\n-->\n\n  <hr no-margin no-padding>\n\n  <div>\n\n\n\n    <!-- Cards -->\n\n    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index" >\n\n\n\n      <ion-row>\n\n        <ion-col col-10>\n\n          <ion-item style="padding-left:0px;">\n\n        <ion-avatar item-left>\n\n          <img src="{{ image }}">\n\n        </ion-avatar>\n\n        <h2 style="font-weight: bold">{{ post.account.name }}</h2>\n\n        <p *ngIf="post.pansitan.name!=null">{{ post.pansitan.name }}</p>\n\n        \n\n      </ion-item>\n\n        </ion-col >\n\n        <ion-col col-2>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostPopover()" *ngIf="post.email != email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostOwner()" *ngIf="post.email == email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      \n\n        <div *ngIf="post.images.length===1" >\n\n        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src=\'assets/img/broken.png\';" />\n\n        </div>\n\n        <ion-slides  *ngIf="post.images.length>1">\n\n\n\n        <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"  onerror="this.src=\'assets/img/broken.png\';" />\n\n            <p>{{ i + 1 }}/{{ post.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n      <p no-margin no-padding>\n\n        <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!=\'heart\' || post.heart!=\'heart\'">\n\n          <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only class="like-btn" *ngIf="postheart(x,post.like)==\'heart\' || post.heart==\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n        <!--<button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="paper-plane" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button no-margin no-padding clear color="black" ion-button icon-only style="float: right">\n\n          <ion-icon name="ios-bookmark-outline"></ion-icon>\n\n        </button>-->\n\n      </p>\n\n      <hr>\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "post.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "post.like != null;"><ion-icon name="heart"></ion-icon> {{post.like.length}} likes</p>\n\n        <p><b>post.account.name</b> {{ post.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(post.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n\n\n    </ion-card>\n\n    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>\n\n  </div>\n\n\n\n\n\n     <ion-fab style="right: 3px !important;bottom: 3px !important">\n\n        <button ion-fab item-right style="right: 0;" (click) = "reset()"><ion-icon name="md-refresh"></ion-icon></button>\n\n     </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* PopoverController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
@@ -960,7 +986,7 @@ var Messages = (function () {
 }());
 Messages = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-messages',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\messages\messages.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>Messages</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item no-lines *ngFor="let m of messages" (click)="goMessageDetail(m.sender, m.profile_img, m.last_message)">\n\n      <ion-avatar item-left>\n\n        <img [src]="m.profile_img">\n\n      </ion-avatar>\n\n      <h2 style="font-weight: bold">{{ m.sender }}</h2>\n\n      <p>{{ m.last_message }} <ion-note item-right style="padding-left: 2px">{{ m.time }}</ion-note></p>\n\n      \n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n<ion-footer (click)="goNewMessage()">\n\n  <ion-toolbar>\n\n     <p text-center><ion-icon name="add"></ion-icon> New Message</p>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\messages\messages.html"*/,
+        selector: 'page-messages',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\messages\messages.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>Messages</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item no-lines *ngFor="let m of messages" (click)="goMessageDetail(m.sender, m.profile_img, m.last_message)">\n\n      <ion-avatar item-left>\n\n        <img [src]="m.profile_img">\n\n      </ion-avatar>\n\n      <h2 style="font-weight: bold">{{ m.sender }}</h2>\n\n      <p>{{ m.last_message }} <ion-note item-right style="padding-left: 2px">{{ m.time }}</ion-note></p>\n\n      \n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n<ion-footer (click)="goNewMessage()">\n\n  <ion-toolbar>\n\n     <p text-center><ion-icon name="add"></ion-icon> New Message</p>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\messages\messages.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
 ], Messages);
@@ -976,7 +1002,7 @@ Messages = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Search; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_post_modal_post__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_post_modal_post__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1056,7 +1082,7 @@ var Search = (function () {
 }());
 Search = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\search\search.html"*/'<ion-header>\n\n    <ion-searchbar class="searchbar" (input)="getItems($event)"></ion-searchbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col *ngFor="let s of search_data" class="grid_img" col-4 (press)="pressPhoto(s.id, s.username, s.profile_img, s.post_img)">\n\n        <img [src]="s.post_img" alt="">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\search\search.html"*/,
+        selector: 'page-search',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\search\search.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>About</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <!--<button ion-button icon-only>\n\n        <ion-icon name="person-add" class="badge-container">\n\n          <span class="custom-badge">3</span>\n\n        </ion-icon>\n\n      </button>\n\n      <button ion-button icon-only (click)="goOptions()">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>-->\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n	<ion-card>\n\n	  <ion-card-content>\n\n	  	<b>The Developer</b>\n\n\n\n	  	<ion-row>\n\n        <ion-col col-10>\n\n          <ion-item style="padding-left:0px;">\n\n	        <ion-avatar item-left>\n\n	          <img src="assets/img/dev.jpg" style="width: 70px;height: 70px">\n\n	        </ion-avatar>\n\n	        <h2 style="font-weight: bold">Elton Bagne</h2> \n\n	        <p>Website: <a href="http://eltonbagne.info/#about_me" target="_blank">eltonbagne.info/#about_me</a></p>       \n\n	      </ion-item>\n\n        </ion-col >\n\n    	</ion-row><br><br>\n\n    <h4><b>Powered By:</b></h4>\n\n	  	<img src="assets/img/tv.png" >\n\n	  	<p  style="text-align: center;"><a href="http://techventuresph.com/" target="_blank">techventuresph.com</a></p> <br>\n\n	  	<img src="assets/img/htn.png">\n\n	  	<p style="text-align: center;">\n\n	    	<a href="https://hackthenorth.ph/" target="_blank">hackthenorth.ph</a></p> \n\n	  </ion-card-content>\n\n	</ion-card>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\search\search.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
@@ -1100,7 +1126,7 @@ var Notifications = (function () {
 }());
 Notifications = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-notifications',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\notifications\notifications.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-segment [(ngModel)]="viewMode">\n\n       \n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n         <ion-segment-button value="map" (ionSelect)="showMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n    \n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{property.thumbnail}}"/>\n\n                </ion-thumbnail>\n\n                <h2>{{property.title}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n    <div *ngIf="viewMode===\'map\'" style="width:100%;height:90%;" id="map"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\notifications\notifications.html"*/,
+        selector: 'page-notifications',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\notifications\notifications.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-segment [(ngModel)]="viewMode">\n\n       \n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n         <ion-segment-button value="map" (ionSelect)="showMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n    \n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{property.thumbnail}}"/>\n\n                </ion-thumbnail>\n\n                <h2>{{property.title}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n    <div *ngIf="viewMode===\'map\'" style="width:100%;height:90%;" id="map"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\notifications\notifications.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__["a" /* PropertyService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Config */]])
 ], Notifications);
@@ -1130,7 +1156,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
  * Generated class for the FarmerLocationPage page.
  *
@@ -1138,8 +1163,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var PansitanLocationPage = (function () {
-    function PansitanLocationPage(alertCtrl, navCtrl, navParams) {
-        this.alertCtrl = alertCtrl;
+    function PansitanLocationPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewMode = "map";
@@ -1184,9 +1208,9 @@ var PansitanLocationPage = (function () {
 }());
 PansitanLocationPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-pansitan-location',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\pansitan-location\pansitan-location.html"*/'<!--\n\n  Generated template for the FarmerLocationPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{ property.name }}\'s Location</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div style="width:100%;height:100%;" id="map"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\pansitan-location\pansitan-location.html"*/,
+        selector: 'page-pansitan-location',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\pansitan-location\pansitan-location.html"*/'<!--\n  Generated template for the FarmerLocationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ property.name }}\'s Location</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<div style="width:100%;height:100%;" id="map"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\pansitan-location\pansitan-location.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], PansitanLocationPage);
 
 //# sourceMappingURL=pansitan-location.js.map
@@ -1201,14 +1225,14 @@ PansitanLocationPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__property_detail_property_detail__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__property_detail_property_detail__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1323,7 +1347,7 @@ var PropertyListPage = (function () {
 }());
 PropertyListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-property-list',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\property-list\property-list.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    \n\n    <ion-segment [(ngModel)]="viewMode">\n\n       \n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n         <ion-segment-button value="map" (ionSelect)="showMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n    <div style="height: 2px"></div>\n\n\n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n\n\n    <div *ngIf="viewMode===\'map\'" style="width:100%;height:90%;" id="map"></div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\property-list\property-list.html"*/
+        selector: 'page-property-list',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-list\property-list.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    \n\n    <ion-segment [(ngModel)]="viewMode">\n\n       \n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n         <ion-segment-button value="map" (ionSelect)="showMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n    <div style="height: 2px"></div>\n\n\n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n\n\n    <div *ngIf="viewMode===\'map\'" style="width:100%;height:90%;" id="map"></div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-list\property-list.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__["a" /* PropertyService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Config */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* Http */]])
 ], PropertyListPage);
@@ -1338,6 +1362,8 @@ PropertyListPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadImagePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1348,29 +1374,94 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var UploadImagePage = (function () {
-    function UploadImagePage() {
+    function UploadImagePage(alertCtrl, toastCtrl) {
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.uploadFinished = false;
     }
+    UploadImagePage.prototype.submit = function () {
+        var _this = this;
+        if (this.multiImageUpload.images.length == 0) {
+            this.showToast("Please select at least 1 photo");
+            return;
+        }
+        this.multiImageUpload.uploadImages().then(function (images) {
+            _this.uploadFinished = true;
+            _this.showToast("Upload successful, view console for details");
+            console.dir(images);
+        }).catch(function () {
+        });
+    };
+    UploadImagePage.prototype.cancel = function () {
+        var _this = this;
+        this.confirm('Are you sure to cancel?').then(function (value) {
+            if (value) {
+                _this.multiImageUpload.abort();
+            }
+        });
+    };
+    UploadImagePage.prototype.showToast = function (text) {
+        this.toastCtrl.create({
+            message: text,
+            duration: 5000,
+            position: 'bottom'
+        }).present();
+    };
+    UploadImagePage.prototype.confirm = function (text) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.alertCtrl.create({
+                message: text,
+                buttons: [
+                    {
+                        text: "No",
+                        role: 'cancel',
+                        handler: function () {
+                            resolve(false);
+                        }
+                    },
+                    {
+                        text: "Yes",
+                        handler: function () {
+                            resolve(true);
+                        }
+                    }
+                ]
+            }).present();
+        });
+    };
     return UploadImagePage;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */])
+], UploadImagePage.prototype, "multiImageUpload", void 0);
 UploadImagePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-upload-image',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\upload-image\upload-image.html"*/'<!--\n\n  Generated template for the UploadImagePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Select Photos</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<div>\n\n  <div class="images-wrapper">\n\n    <div class="image-wrapper" *ngFor="let image of imagesValue">\n\n      <ion-icon class="remove-image" name="close" *ngIf="!isUploading" (click)="removeImage(image)"></ion-icon>\n\n      <div class="image" [style.background-image]="image.sanitized">\n\n        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="\n\n             [class.uploading]="isUploading" alt=""/>\n\n        <ion-spinner *ngIf="isUploading && uploadingProgress[image.url]<100"></ion-spinner>\n\n\n\n        <ion-icon name="checkmark" *ngIf="isUploading && uploadingProgress[image.url]==100"></ion-icon>\n\n        <div *ngIf="isUploading" class="progress-bar">\n\n          <div class="progress" [style.width]="(uploadingProgress[image.url]||0)+\'%\'"></div>\n\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class="image-wrapper add-image-btn" *ngIf="!isUploading" (click)="showAddImage()">\n\n      <div class="image">\n\n        <ion-icon name="add"></ion-icon>\n\n        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""/>\n\n      </div>\n\n    </div>\n\n  </div>\n\n    <button ion-button block outline (click)="uploadImages()" >Upload</button>\n\n</div>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\upload-image\upload-image.html"*/,
+        selector: 'page-upload-image',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\upload-image\upload-image.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-title>Nasingngo ba Pansi?</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n    <multi-image-upload></multi-image-upload>\n\n    <button ion-button block (click)="submit()" *ngIf="!multiImageUpload.isUploading && !uploadFinished">\n\n        <ion-icon name="checkmark"></ion-icon>\n\n        Upload\n\n    </button>\n\n    <button ion-button block (click)="cancel()" color="danger" *ngIf="multiImageUpload.isUploading && !uploadFinished">\n\n        <ion-icon name="close"></ion-icon>\n\n        Cancel\n\n    </button>\n\n    <p style="text-align: center;" *ngIf="uploadFinished">Tap <ion-icon name="aperture"> to Post again</ion-icon></p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\upload-image\upload-image.html"*/
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */]])
 ], UploadImagePage);
 
 //# sourceMappingURL=upload-image.js.map
 
 /***/ }),
 
-/***/ 265:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Comments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MultiImageUpload; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_path__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_transfer__ = __webpack_require__(316);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1382,30 +1473,255 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the Comments page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Comments = (function () {
-    function Comments(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    Comments.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Comments');
-    };
-    return Comments;
-}());
-Comments = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-comments',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\comments\comments.html"*/'<!--\n\n  Generated template for the Comments page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>comments</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\comments\comments.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
-], Comments);
 
-//# sourceMappingURL=comments.js.map
+
+
+
+
+var MultiImageUpload = (function () {
+    function MultiImageUpload(sanitization, actionSheetCtrl, camera, file, alertCtrl, toastCtrl) {
+        this.sanitization = sanitization;
+        this.actionSheetCtrl = actionSheetCtrl;
+        this.camera = camera;
+        this.file = file;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.serverUrl = "http://eltonbagne.info/api/pansitan/upload.php/";
+        this.isUploading = false;
+        this.uploadingProgress = {};
+        this.uploadingHandler = {};
+        this.images = [];
+        this.util = (function (_this) {
+            return {
+                removeFromArray: function (array, item) {
+                    var index = array.indexOf(item);
+                    if (index !== -1) {
+                        array.splice(index, 1);
+                    }
+                },
+                confirm: function (text, title, yes, no) {
+                    if (title === void 0) { title = ''; }
+                    if (yes === void 0) { yes = "Yes"; }
+                    if (no === void 0) { no = "No"; }
+                    return new Promise(function (resolve) {
+                        _this.alertCtrl.create({
+                            title: title,
+                            message: text,
+                            buttons: [
+                                {
+                                    text: no,
+                                    role: 'cancel',
+                                    handler: function () {
+                                        resolve(false);
+                                    }
+                                },
+                                {
+                                    text: yes,
+                                    handler: function () {
+                                        resolve(true);
+                                    }
+                                }
+                            ]
+                        }).present();
+                    });
+                },
+                trustImages: function () {
+                    _this.imagesValue = _this.images.map(function (val) {
+                        return {
+                            url: val,
+                            sanitized: _this.sanitization.bypassSecurityTrustStyle("url(" + val + ")")
+                        };
+                    });
+                },
+                showToast: function (text) {
+                    _this.toastCtrl.create({
+                        message: text,
+                        duration: 5000,
+                        position: 'bottom'
+                    }).present();
+                }
+            };
+        })(this);
+    }
+    MultiImageUpload.prototype.uploadImages = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.isUploading = true;
+            Promise.all(_this.images.map(function (image) {
+                return _this.uploadImage(image);
+            }))
+                .then(resolve)
+                .catch(function (reason) {
+                _this.isUploading = false;
+                _this.uploadingProgress = {};
+                _this.uploadingHandler = {};
+                reject(reason);
+            });
+        });
+    };
+    MultiImageUpload.prototype.abort = function () {
+        if (!this.isUploading)
+            return;
+        this.isUploading = false;
+        for (var key in this.uploadingHandler) {
+            this.uploadingHandler[key].abort();
+        }
+    };
+    // ======================================================================
+    MultiImageUpload.prototype.removeImage = function (image) {
+        var _this = this;
+        if (this.isUploading)
+            return;
+        this.util.confirm("Are you sure to remove it?").then(function (value) {
+            if (value) {
+                _this.util.removeFromArray(_this.imagesValue, image);
+                _this.util.removeFromArray(_this.images, image.url);
+            }
+        });
+    };
+    MultiImageUpload.prototype.showAddImage = function () {
+        var _this = this;
+        if (!window['cordova']) {
+            var input_1 = document.createElement('input');
+            input_1.type = 'file';
+            input_1.accept = "image/x-png,image/gif,image/jpeg";
+            input_1.click();
+            input_1.onchange = function () {
+                var blob = window.URL.createObjectURL(input_1.files[0]);
+                _this.images.push(blob);
+                _this.util.trustImages();
+            };
+        }
+        else {
+            new Promise(function (resolve, reject) {
+                var actionSheet = _this.actionSheetCtrl.create({
+                    title: 'Add a photo',
+                    buttons: [
+                        {
+                            text: 'From photo library',
+                            handler: function () {
+                                resolve(_this.camera.PictureSourceType.PHOTOLIBRARY);
+                            }
+                        },
+                        {
+                            text: 'From camera',
+                            handler: function () {
+                                resolve(_this.camera.PictureSourceType.CAMERA);
+                            }
+                        },
+                        {
+                            text: 'Cancel',
+                            role: 'cancel',
+                            handler: function () {
+                                reject();
+                            }
+                        }
+                    ]
+                });
+                actionSheet.present();
+            }).then(function (sourceType) {
+                if (!window['cordova'])
+                    return;
+                var options = {
+                    quality: 100,
+                    sourceType: sourceType,
+                    saveToPhotoAlbum: false,
+                    correctOrientation: true
+                };
+                _this.camera.getPicture(options).then(function (imagePath) {
+                    _this.images.push(imagePath);
+                    _this.util.trustImages();
+                });
+            }).catch(function () {
+            });
+        }
+    };
+    MultiImageUpload.prototype.uploadImage = function (targetPath) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.uploadingProgress[targetPath] = 0;
+            if (window['cordova']) {
+                var options = {
+                    fileKey: "files",
+                    fileName: targetPath,
+                    chunkedMode: false,
+                    mimeType: "multipart/form-data",
+                };
+                var fileTransfer = new __WEBPACK_IMPORTED_MODULE_6__ionic_native_transfer__["a" /* TransferObject */]();
+                _this.uploadingHandler[targetPath] = fileTransfer;
+                fileTransfer.upload(targetPath, _this.serverUrl, options).then(function (data) {
+                    resolve(JSON.parse(data.response));
+                }).catch(function () {
+                    askRetry();
+                });
+                fileTransfer.onProgress(function (event2) {
+                    _this.uploadingProgress[targetPath] = event2.loaded * 100 / event2.total;
+                });
+            }
+            else {
+                var xhr_1 = new XMLHttpRequest();
+                xhr_1.open('GET', targetPath, true);
+                xhr_1.responseType = 'blob';
+                xhr_1.onload = function (e) {
+                    if (xhr_1['status'] != 200) {
+                        _this.util.showToast("Your browser doesn't support blob API");
+                        console.error(e, xhr_1);
+                        askRetry();
+                    }
+                    else {
+                        var blob = xhr_1['response'];
+                        var formData = new FormData(), xhr2_1 = new XMLHttpRequest();
+                        formData.append('files[]', blob);
+                        _this.uploadingHandler[targetPath] = xhr2_1;
+                        xhr2_1.onreadystatechange = function () {
+                            if (xhr2_1.readyState === 4) {
+                                if (xhr2_1.status === 200)
+                                    resolve(JSON.parse(xhr2_1.response));
+                                else
+                                    askRetry();
+                            }
+                        };
+                        xhr2_1.upload.onprogress = function (event) {
+                            _this.uploadingProgress[targetPath] = event.loaded * 100 / event.total;
+                        };
+                        xhr2_1.open('POST', _this.serverUrl, true);
+                        xhr2_1.send(formData);
+                    }
+                };
+                xhr_1.send();
+            }
+            var askRetry = function () {
+                // might have been aborted
+                if (!_this.isUploading)
+                    return reject(null);
+                _this.util.confirm('Do you wish to retry?', 'Upload failed').then(function (res) {
+                    if (!res) {
+                        _this.isUploading = false;
+                        for (var key in _this.uploadingHandler) {
+                            _this.uploadingHandler[key].abort();
+                        }
+                        return reject(null);
+                    }
+                    else {
+                        if (!_this.isUploading)
+                            return reject(null);
+                        _this.uploadImage(targetPath).then(resolve, reject);
+                    }
+                });
+            };
+        });
+    };
+    return MultiImageUpload;
+}());
+MultiImageUpload = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        selector: 'multi-image-upload',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\components\multi-image-upload\multi-image-upload.html"*/'<div>\n  <div class="images-wrapper">\n    <div class="image-wrapper" *ngFor="let image of imagesValue">\n      <ion-icon class="remove-image" name="close" *ngIf="!isUploading" (click)="removeImage(image)"></ion-icon>\n      <div class="image" [style.background-image]="image.sanitized">\n        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="\n             [class.uploading]="isUploading" alt=""/>\n        <ion-spinner *ngIf="uploadingProgress[image.url]<99"></ion-spinner>\n\n        <ion-icon name="checkmark" *ngIf="uploadingProgress[image.url]>98"></ion-icon>\n        <div *ngIf="isUploading" class="progress-bar">\n          <div class="progress" [style.width]="(uploadingProgress[image.url]||0)+\'%\'"></div>\n        </div>\n      </div>\n    </div>\n    <div class="image-wrapper add-image-btn" *ngIf="!isUploading" (click)="showAddImage()">\n      <div class="image">\n        <ion-icon name="add"></ion-icon>\n        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""/>\n      </div>\n    </div>\n  </div>\n</div>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\components\multi-image-upload\multi-image-upload.html"*/,
+        providers: [__WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_file__["a" /* File */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_path__["a" /* FilePath */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* Platform */]]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_file__["a" /* File */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */]])
+], MultiImageUpload);
+
+//# sourceMappingURL=multi-image-upload.js.map
 
 /***/ }),
 
@@ -1449,7 +1765,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" swipeBackEnabled="true" tabIcon="home"></ion-tab>\n\n  <ion-tab [root]="tab6Root" tabIcon="restaurant"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabIcon="aperture" (click)="openCamera()"></ion-tab>\n\n  <ion-tab [root]="tab5Root" tabIcon="person"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\tabs\tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" swipeBackEnabled="true" tabIcon="home"></ion-tab>\n\n  <ion-tab [root]="tab6Root" tabIcon="restaurant"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabIcon="aperture"></ion-tab>\n\n  <ion-tab [root]="tab5Root" tabIcon="person"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\tabs\tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -1478,14 +1794,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(340);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_post_popover__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_post_owner__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_search_search__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_modal_post_modal_post__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_modal_post_modal_post__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_messages_messages__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_message_detail_message_detail__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_new_message_new_message__ = __webpack_require__(116);
@@ -1495,20 +1811,20 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tagged_profile_tagged_profile__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_saved_profile_saved_profile__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_options_options__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_comments_comments__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_upload_image_upload_image__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_property_list_property_list__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_property_detail_property_detail__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_pansitan_location_pansitan_location__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ionic3_star_rating__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_globalvars_globalvars__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ionic_native_geolocation__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_google_plus__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_storage__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_tabs_tabs__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_upload_image_upload_image__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_property_list_property_list__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_property_detail_property_detail__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_pansitan_location_pansitan_location__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ionic3_star_rating__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_globalvars_globalvars__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_geolocation__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ionic_native_google_plus__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_storage__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_multi_image_upload_multi_image_upload__ = __webpack_require__(152);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1570,31 +1886,30 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__pages_tagged_profile_tagged_profile__["a" /* TaggedProfile */],
             __WEBPACK_IMPORTED_MODULE_16__pages_saved_profile_saved_profile__["a" /* SavedProfile */],
             __WEBPACK_IMPORTED_MODULE_17__pages_options_options__["a" /* Options */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_comments_comments__["a" /* Comments */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_property_list_property_list__["a" /* PropertyListPage */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_property_detail_property_detail__["a" /* PropertyDetailPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_upload_image_upload_image__["a" /* UploadImagePage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_pansitan_location_pansitan_location__["a" /* PansitanLocationPage */]
+            __WEBPACK_IMPORTED_MODULE_18__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_property_list_property_list__["a" /* PropertyListPage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_property_detail_property_detail__["a" /* PropertyDetailPage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_upload_image_upload_image__["a" /* UploadImagePage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_pansitan_location_pansitan_location__["a" /* PansitanLocationPage */],
+            __WEBPACK_IMPORTED_MODULE_31__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_27_ionic3_star_rating__["a" /* StarRatingModule */],
+            __WEBPACK_IMPORTED_MODULE_26_ionic3_star_rating__["a" /* StarRatingModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_20__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_19__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/edit-profile/edit-profile.module#EditProfileModule', name: 'EditProfile', segment: 'edit-profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/comments/comments.module#CommentsModule', name: 'Comments', segment: 'comments', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/new-message/new-message.module#NewMessageModule', name: 'NewMessage', segment: 'new-message', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/profile/profile.module#ProfileModule', name: 'Profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/message-detail/message-detail.module#MessageDetailModule', name: 'MessageDetail', segment: 'message-detail', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/new-message/new-message.module#NewMessageModule', name: 'NewMessage', segment: 'new-message', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/options/options.module#OptionsModule', name: 'Options', segment: 'options', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/profile/profile.module#ProfileModule', name: 'Profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/saved-profile/saved-profile.module#SavedProfileModule', name: 'SavedProfile', segment: 'saved-profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/tagged-profile/tagged-profile.module#TaggedProfileModule', name: 'TaggedProfile', segment: 'tagged-profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/options/options.module#OptionsModule', name: 'Options', segment: 'options', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/tagged-profile/tagged-profile.module#TaggedProfileModule', name: 'TaggedProfile', segment: 'tagged-profile', priority: 'low', defaultHistory: [] }
                 ]
             }),
-            __WEBPACK_IMPORTED_MODULE_31__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+            __WEBPACK_IMPORTED_MODULE_30__ionic_storage__["a" /* IonicStorageModule */].forRoot()
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicApp */]],
         entryComponents: [
@@ -1613,20 +1928,20 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__pages_tagged_profile_tagged_profile__["a" /* TaggedProfile */],
             __WEBPACK_IMPORTED_MODULE_16__pages_saved_profile_saved_profile__["a" /* SavedProfile */],
             __WEBPACK_IMPORTED_MODULE_17__pages_options_options__["a" /* Options */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_comments_comments__["a" /* Comments */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_property_list_property_list__["a" /* PropertyListPage */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_property_detail_property_detail__["a" /* PropertyDetailPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_upload_image_upload_image__["a" /* UploadImagePage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_pansitan_location_pansitan_location__["a" /* PansitanLocationPage */]
+            __WEBPACK_IMPORTED_MODULE_18__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_property_list_property_list__["a" /* PropertyListPage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_property_detail_property_detail__["a" /* PropertyDetailPage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_upload_image_upload_image__["a" /* UploadImagePage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_pansitan_location_pansitan_location__["a" /* PansitanLocationPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_29__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_30__ionic_native_google_plus__["a" /* GooglePlus */],
+            __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_28__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_29__ionic_native_google_plus__["a" /* GooglePlus */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_22__providers_property_service_mock_property_service_mock__["a" /* PropertyService */],
-            __WEBPACK_IMPORTED_MODULE_28__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]
+            __WEBPACK_IMPORTED_MODULE_21__providers_property_service_mock_property_service_mock__["a" /* PropertyService */],
+            __WEBPACK_IMPORTED_MODULE_27__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */],
+            __WEBPACK_IMPORTED_MODULE_31__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */]
         ]
     })
 ], AppModule);
@@ -1641,10 +1956,7 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalvarsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1656,8 +1968,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
 /*
   Generated class for the GlobalvarsProvider provider.
 
@@ -1665,11 +1975,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   for more info on providers and Angular 2 DI.
 */
 var GlobalvarsProvider = (function () {
-    function GlobalvarsProvider(http, storage) {
-        this.http = http;
+    function GlobalvarsProvider(storage) {
         this.storage = storage;
-        //site = 'http://eltonbagne.info/api/pansitan/';
-        this.site = 'http://localhost/pansit/';
+        this.site = 'http://eltonbagne.info/api/pansitan/';
     }
     GlobalvarsProvider.prototype.loginsave = function (email, name, image) {
         this.storage.set('email', email);
@@ -1680,21 +1988,21 @@ var GlobalvarsProvider = (function () {
 }());
 GlobalvarsProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
 ], GlobalvarsProvider);
 
 //# sourceMappingURL=globalvars.js.map
 
 /***/ }),
 
-/***/ 336:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(264);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1719,7 +2027,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]])
 ], MyApp);
@@ -1734,7 +2042,7 @@ MyApp = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PropertyService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globalvars_globalvars__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1800,7 +2108,7 @@ PropertyService = __decorate([
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1809,7 +2117,7 @@ PropertyService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1915,7 +2223,7 @@ var ModalPost = (function () {
 }());
 ModalPost = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-modalpost',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\modal-post\modal-post.html"*/'<ion-content class="main-modal">\n\n  <div class="modal">\n\n\n\n    <ion-row>\n\n      <ion-col col-2>\n\n        <img [src]="modal_data.account.image" class="avatar-modal" alt=""> \n\n      </ion-col>\n\n\n\n      <ion-col col-8>\n\n        <h5 style="font-weight: bold">{{ modal_data.account.name }}</h5>\n\n        <p *ngIf="modal_data.pansitan.name!=null" class="pansitan">{{ modal_data.pansitan.name }}</p>\n\n      </ion-col>\n\n\n\n      <!-- If you wish, you can add close icon too. Just delete comment code -->\n\n      <ion-col col-2><span style="float: right" (click)="dismiss()"><ion-icon name="ios-close-circle-outline"></ion-icon></span></ion-col>\n\n\n\n    </ion-row>\n\n\n\n    <!-- Post image -->\n\n    <div>\n\n      \n\n        <ion-slides>\n\n\n\n        <ion-slide   *ngFor="let p of modal_data.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post)"/>\n\n            <p class="number">{{ i + 1 }}/{{ modal_data.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n    </div>\n\n\n\n    <ion-row text-center>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)!=\'heart\' && modal_data.heart!=\'heart\' ">\n\n          <ion-icon no-padding name="heart-outline" color="black" class="icon-space"></ion-icon>\n\n        </button>\n\n\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)===\'heart\'||modal_data.heart===\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button no-margin no-padding clear color="black" ion-button icon-only (click)="goUserProfile(1)">\n\n          <ion-icon name="person"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button clear color="black" ion-button icon-only style="margin-top: 2px">\n\n          <ion-icon name="paper-plane"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding style="margin-bottom: 5px">\n\n        <!--<button clear color="black" ion-button icon-only>\n\n          <ion-icon name="more"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n      <hr>\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "modal_data.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "modal_data.like != null;"><ion-icon name="heart"></ion-icon> {{modal_data.like.length}} likes</p>\n\n        <p><b>modal_data.account.name</b> {{ modal_data.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(modal_data.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\modal-post\modal-post.html"*/,
+        selector: 'page-modalpost',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\modal-post\modal-post.html"*/'<ion-content class="main-modal">\n\n  <div class="modal">\n\n\n\n    <ion-row>\n\n      <ion-col col-2>\n\n        <img [src]="modal_data.account.image" class="avatar-modal" alt=""> \n\n      </ion-col>\n\n\n\n      <ion-col col-8>\n\n        <h5 style="font-weight: bold">{{ modal_data.account.name }}</h5>\n\n        <p *ngIf="modal_data.pansitan.name!=null" class="pansitan">{{ modal_data.pansitan.name }}</p>\n\n      </ion-col>\n\n\n\n      <!-- If you wish, you can add close icon too. Just delete comment code -->\n\n      <ion-col col-2><span style="float: right" (click)="dismiss()"><ion-icon name="ios-close-circle-outline"></ion-icon></span></ion-col>\n\n\n\n    </ion-row>\n\n\n\n    <!-- Post image -->\n\n    <div>\n\n      \n\n        <ion-slides>\n\n\n\n        <ion-slide   *ngFor="let p of modal_data.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post)"/>\n\n            <p class="number">{{ i + 1 }}/{{ modal_data.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n    </div>\n\n\n\n    <ion-row text-center>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)!=\'heart\' && modal_data.heart!=\'heart\' ">\n\n          <ion-icon no-padding name="heart-outline" color="black" class="icon-space"></ion-icon>\n\n        </button>\n\n\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)===\'heart\'||modal_data.heart===\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button no-margin no-padding clear color="black" ion-button icon-only (click)="goUserProfile(1)">\n\n          <ion-icon name="person"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button clear color="black" ion-button icon-only style="margin-top: 2px">\n\n          <ion-icon name="paper-plane"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding style="margin-bottom: 5px">\n\n        <!--<button clear color="black" ion-button icon-only>\n\n          <ion-icon name="more"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n      <hr>\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "modal_data.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "modal_data.like != null;"><ion-icon name="heart"></ion-icon> {{modal_data.like.length}} likes</p>\n\n        <p><b>modal_data.account.name</b> {{ modal_data.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(modal_data.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\modal-post\modal-post.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */]])
@@ -1925,7 +2233,7 @@ ModalPost = __decorate([
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1933,10 +2241,10 @@ ModalPost = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pansitan_location_pansitan_location__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(30);
@@ -2153,7 +2461,7 @@ var PropertyDetailPage = (function () {
 }());
 PropertyDetailPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-property-detail',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\property-detail\property-detail.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>{{property.name}}</ion-title>\n\n    <ion-buttons end right>\n\n      <button color="black" ion-button icon-only (click)="seelocation(this.property)">\n\n        <ion-icon name="locate"></ion-icon> Location\n\n      </button>\n\n    </ion-buttons>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-card *ngIf="property.pansitanid">\n\n        <ion-slides>\n\n\n\n        <ion-slide  *ngFor="let p of image; let i = index">\n\n            <img src="{{ global.site }}uploads/{{ p.imageid }}.jpg"  onerror="this.src=\'assets/img/broken.png\';"/>\n\n            <p>{{ i + 1 }}/{{ length }}</p>\n\n        </ion-slide>\n\n\n\n    </ion-slides>\n\n        <p style="position: absolute; right: 3px;margin-top: 6px">{{ratelength}} people&nbsp;&nbsp;&nbsp;</p>\n\n         <ionic3-star-rating \n\n            activeIcon = "ios-star"\n\n            defaultIcon = "ios-star-outline"\n\n            activeColor = "#488aff" \n\n            defaultColor = "#488aff"\n\n            readonly="true"\n\n            [rating]="finalrate">\n\n        </ionic3-star-rating> \n\n        <!--<img src="{{property.picture}}"/>-->\n\n        <ion-card-content>\n\n            <h2 class="card-title">{{property.name}}</h2>\n\n            <p>{{property.address}}</p>\n\n        </ion-card-content>\n\n        <ion-list>\n\n            <ion-item *ngIf="property.contact!=\'\'">\n\n                <ion-icon item-left name="call"></ion-icon>\n\n                <h3>Contact</h3>\n\n                <ion-note item-right>{{property.contact}}</ion-note>\n\n            </ion-item>\n\n            <ion-item  *ngIf="property.prices!=\'\'">\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Prices</h3>\n\n                <ion-note item-right>{{property.prices}}</ion-note>\n\n            </ion-item>\n\n            <ion-item *ngIf="property.specialty!=\'\'">\n\n                <ion-icon item-left name="list-box"></ion-icon>\n\n                <h3>Specialty</h3>\n\n                <ion-note item-right>{{property.specialty}}</ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Your rate</h3>\n\n                <ion-note item-right>\n\n                    <ionic3-star-rating \n\n                        activeIcon = "ios-star"\n\n                        defaultIcon = "ios-star-outline"\n\n                        activeColor = "#488aff" \n\n                        defaultColor = "#488aff"\n\n                        readonly="{{ ctrrate }}"\n\n                        [rating]="yourrate">\n\n                    </ionic3-star-rating> \n\n                </ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <button ion-button block  style="width: 100%;" *ngIf="checkfav==0" (click)="favorites()">Add to Favorites</button>\n\n                <button ion-button block outline  style="width: 100%;" *ngIf="checkfav==1"  (click)="favorites()">Remove from Favorites</button>\n\n            </ion-item>\n\n        </ion-list>\n\n\n\n        \n\n\n\n    </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\property-detail\property-detail.html"*/
+        selector: 'page-property-detail',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-detail\property-detail.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>{{property.name}}</ion-title>\n\n    <ion-buttons end right>\n\n      <button color="black" ion-button icon-only (click)="seelocation(this.property)">\n\n        <ion-icon name="locate"></ion-icon> Location\n\n      </button>\n\n    </ion-buttons>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-card *ngIf="property.pansitanid">\n\n        <ion-slides>\n\n\n\n        <ion-slide  *ngFor="let p of image; let i = index">\n\n            <img src="{{ global.site }}uploads/{{ p.imageid }}.jpg"  onerror="this.src=\'assets/img/broken.png\';"/>\n\n            <p>{{ i + 1 }}/{{ length }}</p>\n\n        </ion-slide>\n\n\n\n    </ion-slides>\n\n        <p style="position: absolute; right: 3px;margin-top: 6px">{{ratelength}} people&nbsp;&nbsp;&nbsp;</p>\n\n         <ionic3-star-rating \n\n            activeIcon = "ios-star"\n\n            defaultIcon = "ios-star-outline"\n\n            activeColor = "#488aff" \n\n            defaultColor = "#488aff"\n\n            readonly="true"\n\n            [rating]="finalrate">\n\n        </ionic3-star-rating> \n\n        <!--<img src="{{property.picture}}"/>-->\n\n        <ion-card-content>\n\n            <h2 class="card-title">{{property.name}}</h2>\n\n            <p>{{property.address}}</p>\n\n        </ion-card-content>\n\n        <ion-list>\n\n            <ion-item *ngIf="property.contact!=\'\'">\n\n                <ion-icon item-left name="call"></ion-icon>\n\n                <h3>Contact</h3>\n\n                <ion-note item-right>{{property.contact}}</ion-note>\n\n            </ion-item>\n\n            <ion-item  *ngIf="property.prices!=\'\'">\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Prices</h3>\n\n                <ion-note item-right>{{property.prices}}</ion-note>\n\n            </ion-item>\n\n            <ion-item *ngIf="property.specialty!=\'\'">\n\n                <ion-icon item-left name="list-box"></ion-icon>\n\n                <h3>Specialty</h3>\n\n                <ion-note item-right>{{property.specialty}}</ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Your rate</h3>\n\n                <ion-note item-right>\n\n                    <ionic3-star-rating \n\n                        activeIcon = "ios-star"\n\n                        defaultIcon = "ios-star-outline"\n\n                        activeColor = "#488aff" \n\n                        defaultColor = "#488aff"\n\n                        readonly="{{ ctrrate }}"\n\n                        [rating]="yourrate">\n\n                    </ionic3-star-rating> \n\n                </ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <button ion-button block  style="width: 100%;" *ngIf="checkfav==0" (click)="favorites()">Add to Favorites</button>\n\n                <button ion-button block outline  style="width: 100%;" *ngIf="checkfav==1"  (click)="favorites()">Remove from Favorites</button>\n\n            </ion-item>\n\n        </ion-list>\n\n\n\n        \n\n\n\n    </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-detail\property-detail.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_8__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__["a" /* PropertyService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]])
 ], PropertyDetailPage);

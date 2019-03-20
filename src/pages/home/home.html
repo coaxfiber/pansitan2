@@ -22,6 +22,14 @@
 
 <ion-content>
 
+  <p style="margin: 2px;">Most Sharers</p>
+  <ion-scroll class="story" scrollX="true">
+    <div class="story_scroll" *ngFor="let s of stories">
+      <div class="story_img_bg">
+      <img no-margin no-padding class="story_img" [src]="s.img"></div>
+      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>
+    </div>
+  </ion-scroll>
   <!-- Story line 
   <ion-scroll class="story" scrollX="true">
     <div class="story_scroll" *ngFor="let s of stories">
@@ -42,9 +50,9 @@
         <ion-col col-10>
           <ion-item style="padding-left:0px;">
         <ion-avatar item-left>
-          <img src="{{ post.account.name }}">
+          <img src="{{ image }}">
         </ion-avatar>
-        <h2 style="font-weight: bold">{{ post.account.image }}</h2>
+        <h2 style="font-weight: bold">{{ post.account.name }}</h2>
         <p *ngIf="post.pansitan.name!=null">{{ post.pansitan.name }}</p>
         
       </ion-item>

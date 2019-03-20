@@ -4,7 +4,7 @@ import { PostPopover } from './post-popover';
 import { PostOwner } from './post-owner';
 import { Messages } from '../messages/messages';
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
-import {Http } from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {LoadingController, Loading } from 'ionic-angular';
@@ -33,18 +33,53 @@ export class Home {
   posts:any;
   addlike:any;
   email;
+  image
+
+
+   public stories = [
+    {
+      id: 1,
+      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+      user_name: 'candelibas'
+    },
+    {
+      id: 2,
+      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+      user_name: 'maxlynch'
+    },
+    {
+      id: 3,
+      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+      user_name: 'ashleyosama'
+    },
+    {
+      id: 4,
+      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+      user_name: 'adam_bradley'
+    },
+    {
+      id: 5,
+      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
+      user_name: 'linus_torvalds'
+    }
+    
+  ];
 
   constructor( 
-    private storage: Storage,
-    public toastCtrl: ToastController,private alertCtrl: AlertController,public loadingCtrl: LoadingController,private http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
+    public storage: Storage,
+    public toastCtrl: ToastController,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
    //http://localhost/pansit/api.php?action=get_app_list
     this.loading = this.loadingCtrl.create({
       });
       this.loading.present();
          
-          storage.get('email').then((val) => {
+          this.storage.get('email').then((val) => {
             this.email = val;
           });
+          this.storage.get('image').then((val) => {
+            this.image = val;
+          });
+
           
          this.http.get(this.global.site + 'api.php?action=postings&limit='+this.limit)
           .map(response => response.json())

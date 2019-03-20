@@ -34,7 +34,7 @@ export class PropertyDetailPage {
     yourrateid=0;
     finalrate=0;
     constructor(
-    private storage: Storage,public global:GlobalvarsProvider,private alertCtrl: AlertController,public loadingCtrl: LoadingController, public events: Events,public actionSheetCtrl: ActionSheetController,private http:Http, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
+    public storage: Storage,public global:GlobalvarsProvider,private alertCtrl: AlertController,public loadingCtrl: LoadingController, public events: Events,public actionSheetCtrl: ActionSheetController,public http:Http, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
       this.property = this.navParams.data;
       this.ctrrate = false;
       this.loading = this.loadingCtrl.create({

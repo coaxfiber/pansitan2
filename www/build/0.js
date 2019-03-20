@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 342:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(352);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ LoginPageModule = __decorate([
 
 /***/ }),
 
-/***/ 349:
+/***/ 352:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -158,7 +158,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\login\login.html"*/'<ion-content padding class="transparent-header">\n\n  <ion-header>\n\n    <ion-navbar>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  <img class="logo" src="assets/img/logo/logo-instagram.png" />\n\n  <div padding>\n\n    <ion-item>\n\n      <ion-input type="text" placeholder="Username"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n    <button ion-button block outline (click)="login()" color="light" class="login-button">Login</button>\n\n  </div>\n\n  <div class="strike">\n\n    <span>OR</span>\n\n  </div>\n\n  <button ion-button block clear (click)="login()" color="light" class="login-button"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar class="footer">\n\n    <div (click)="goToSignup()">\n\n      <span>Don\'t have an account? <strong>Sign up here</strong>.</span>\n\n    </div>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\login\login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\login\login.html"*/'<ion-content padding class="transparent-header">\n\n  <ion-header>\n\n    <ion-navbar>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  <img class="logo" src="assets/img/logo/logo-instagram.png" />\n\n  <div padding>\n\n    <ion-item>\n\n      <ion-input type="text" placeholder="Username"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-input type="password" placeholder="Password"></ion-input>\n\n    </ion-item>\n\n    <button ion-button block outline (click)="login()" color="light" class="login-button">Login</button>\n\n  </div>\n\n  <div class="strike">\n\n    <span>OR</span>\n\n  </div>\n\n  <button ion-button block clear (click)="login()" color="light" class="login-button"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar class="footer">\n\n    <div (click)="goToSignup()">\n\n      <span>Don\'t have an account? <strong>Sign up here</strong>.</span>\n\n    </div>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */],

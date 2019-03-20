@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {  NavController } from 'ionic-angular';
 import {Config} from 'ionic-angular';
 import {PropertyService} from '../../providers/property-service-mock/property-service-mock';
-import {PropertyDetailPage} from '../property-detail/property-detail';
 
 @Component({
   selector: 'page-notifications',

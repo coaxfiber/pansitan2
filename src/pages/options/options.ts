@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
-import { LoginPage } from "../login/login";
 /**
  * Generated class for the Options page.
  *
@@ -17,7 +16,7 @@ import { LoginPage } from "../login/login";
 export class Options {
 
   constructor(
-    private storage: Storage,public navCtrl: NavController, public navParams: NavParams) {
+    public storage: Storage,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

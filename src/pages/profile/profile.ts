@@ -27,9 +27,9 @@ export class Profile {
   acct = {"accountid":"0","email":" ","name":" ","descript":"","contact":"","gender":"","image":"0","status":"0"};
   email;name;image;properties=[{'name':"","address":''}]
   constructor(
-    private alertCtrl: AlertController,public loadingCtrl: LoadingController, 
-    private http:Http, public global:GlobalvarsProvider,
-    private storage: Storage,public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public toastCtrl: ToastController) {  
+    public alertCtrl: AlertController,public loadingCtrl: LoadingController, 
+    public http:Http, public global:GlobalvarsProvider,
+    public storage: Storage,public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public toastCtrl: ToastController) {  
       
             
             

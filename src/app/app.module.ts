@@ -17,7 +17,6 @@ import { EditProfile } from '../pages/edit-profile/edit-profile';
 import { TaggedProfile } from '../pages/tagged-profile/tagged-profile';
 import { SavedProfile } from '../pages/saved-profile/saved-profile';
 import { Options } from '../pages/options/options';
-import { Comments } from '../pages/comments/comments';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,6 +32,7 @@ import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { IonicStorageModule } from '@ionic/storage';
+import {MultiImageUpload} from "../components/multi-image-upload/multi-image-upload";
 
 @NgModule({
   declarations: [
@@ -51,12 +51,12 @@ import { IonicStorageModule } from '@ionic/storage';
     TaggedProfile,
     SavedProfile,
     Options,
-    Comments,
     TabsPage,
     PropertyListPage,
     PropertyDetailPage,
     UploadImagePage,
-    PansitanLocationPage
+    PansitanLocationPage,
+        MultiImageUpload
   ],
   imports: [
   StarRatingModule,
@@ -82,7 +82,6 @@ import { IonicStorageModule } from '@ionic/storage';
     TaggedProfile,
     SavedProfile,
     Options,
-    Comments,
     TabsPage,
     PropertyListPage,
     PropertyDetailPage,
@@ -95,7 +94,8 @@ import { IonicStorageModule } from '@ionic/storage';
       GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PropertyService,
-    GlobalvarsProvider
+    GlobalvarsProvider,
+    MultiImageUpload
   ]
 })
 export class AppModule {}

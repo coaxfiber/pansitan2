@@ -20,9 +20,9 @@ export class LoginPage {
   public loginForm: any;
 
   constructor(
-    private storage: Storage,
+    public storage: Storage,
     public global:GlobalvarsProvider,
-     private googlePlus: GooglePlus,
+     public googlePlus: GooglePlus,
     public loadingCtrl: LoadingController,
     public app: App,
     public navCtrl: NavController,

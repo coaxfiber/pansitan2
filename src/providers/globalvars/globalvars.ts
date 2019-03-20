@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
 
 /*
@@ -11,11 +9,11 @@ import { Storage } from '@ionic/storage';
 */
 @Injectable()
 export class GlobalvarsProvider {
-  //site = 'http://eltonbagne.info/api/pansitan/';
-  site = 'http://localhost/pansit/';
+  site = 'http://eltonbagne.info/api/pansitan/';
+  //site = 'http://localhost/pansit/';
   name;
   image;
-  constructor(public http: Http,private storage: Storage) {
+  constructor(public storage: Storage) {
   }
   loginsave(email,name,image){
   	this.storage.set('email', email);

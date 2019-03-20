@@ -9,7 +9,7 @@ export class PropertyService {
   favorites: Array<any> = [];
   properties: Array<any>;
 
-  constructor(private http:Http,public global:GlobalvarsProvider) {
+  constructor(public http:Http,public global:GlobalvarsProvider) {
 
        this.http.get(this.global.site+'api.php?action=get_app_list')
       .map(response => response.json())

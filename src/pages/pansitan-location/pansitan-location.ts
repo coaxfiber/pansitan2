@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
 import leaflet from 'leaflet';
 /**
  * Generated class for the FarmerLocationPage page.
@@ -17,7 +16,7 @@ export class PansitanLocationPage {
     property;
     map;
     markersGroup; viewMode: string = "map";
-  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.property = this.navParams.data;
   	
   	this.showMap();
