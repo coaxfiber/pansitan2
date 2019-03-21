@@ -5,6 +5,8 @@
 </ion-header>
 <ion-content padding>
     <multi-image-upload></multi-image-upload>
+    <hr>
+    <ion-textarea [(ngModel)]="descript"  ></ion-textarea>
     <button ion-button block (click)="submit()" *ngIf="!multiImageUpload.isUploading && !uploadFinished">
         <ion-icon name="checkmark"></ion-icon>
         Upload

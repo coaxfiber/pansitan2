@@ -9,8 +9,8 @@ import { Storage } from '@ionic/storage';
 */
 @Injectable()
 export class GlobalvarsProvider {
-  site = 'http://eltonbagne.info/api/pansitan/';
-  //site = 'http://localhost/pansit/';
+  //site = 'http://eltonbagne.info/api/pansitan/';
+ site = 'http://localhost/pansit/';
   name;
   image;
   constructor(public storage: Storage) {
