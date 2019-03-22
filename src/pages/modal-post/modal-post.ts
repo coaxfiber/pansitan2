@@ -21,7 +21,8 @@ export class ModalPost {
   constructor(
     public storage: Storage,
     public toastCtrl: ToastController,public http:Http,public viewCtrl: ViewController,public global:GlobalvarsProvider, public navParams: NavParams, public modalCtrl: ModalController) {
-    this.modal_data = this.navParams.data.user_id;
+    this.modal_data = this.navParams.data;
+    console.log(this.navParams.data)
      storage.get('email').then((val) => {
             this.email = val;
           });

@@ -4,6 +4,8 @@ import {AlertController, ToastController,} from "ionic-angular";
 import {Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import {LoadingController, Loading } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
+import { Messages } from '../messages/messages';
 
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 @Component({
@@ -13,13 +15,21 @@ import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 })
 
 
+
 export class UploadImagePage {
 @ViewChild(MultiImageUpload) multiImageUpload: MultiImageUpload;
     protected uploadFinished = false;
     email;descript='';
      loading: Loading;
-    constructor(public global:GlobalvarsProvider,public http:Http,public storage: Storage,public loadingCtrl: LoadingController, 
+     messages;
+
+     id=0;
+     address='';
+     name='';
+
+    constructor(public navCtrl: NavController,public global:GlobalvarsProvider,public http:Http,public storage: Storage,public loadingCtrl: LoadingController, 
    private alertCtrl: AlertController, private toastCtrl: ToastController) {
+      this.global.uploadid = 0;
             this.storage.get('email').then((val) => {
                 this.email = val;
             });
@@ -37,12 +47,13 @@ export class UploadImagePage {
                           });
                           this.loading.present();
 
-                           this.http.get(this.global.site + 'api.php?action=addpost&email='+this.email+'&pansitanid='+1+'&descript='+this.descript)
+                           this.http.get(this.global.site + 'api.php?action=addpost&email='+this.email+'&pansitanid='+this.id+'&descript='+this.descript)
                             .map(response => response.json())
-                            .subscribe(res => {
+                            .subscribe(res => {  
+                                console.log(res.pansitan)
 
                                   this.loading.dismissAll();
-                                  this.multiImageUpload.serverUrl = this.global.site + "upload.php?pansitanid="+res.pansitan +'&type=1';
+                                  this.multiImageUpload.serverUrl = this.global.site + "upload.php?pansitanid="+res.pansitanid +'&type=2';
                                     this.multiImageUpload.uploadImages().then((images) => {
                                         this.uploadFinished = true;
                                         this.showToast("Posting successful.");
@@ -108,4 +119,14 @@ export class UploadImagePage {
             });
             alert.present();
           }
+
+   openPropertyDetail() {
+        this.navCtrl.push(Messages);
+    }
+
+  ionViewWillEnter(){
+      this.id= this.global.uploadid;
+      this.address= this.global.uploadaddress
+      this.name= this.global.uploadname
+    }
 }

@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62,7 +62,7 @@ EditProfile = __decorate([
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -111,7 +111,7 @@ MessageDetail = __decorate([
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -180,22 +180,22 @@ NewMessage = __decorate([
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Profile; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_post_modal_post__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_profile_edit_profile__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__options_options__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tagged_profile_tagged_profile__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__saved_profile_saved_profile__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__property_detail_property_detail__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_post_modal_post__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_profile_edit_profile__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__options_options__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tagged_profile_tagged_profile__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__saved_profile_saved_profile__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_http__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__property_detail_property_detail__ = __webpack_require__(77);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -313,7 +313,7 @@ var Profile = (function () {
 }());
 Profile = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-profile',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\profile\profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>{{acct.name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <!--<button ion-button icon-only>\n\n        <ion-icon name="person-add" class="badge-container">\n\n          <span class="custom-badge">3</span>\n\n        </ion-icon>\n\n      </button>-->\n\n      <button ion-button icon-only (click)="goOptions()">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-row padding>\n\n    <!-- Avatar -->\n\n    <ion-col col-3>\n\n      <img src="{{image}}" class="avatar" alt=""  onerror="this.src=\'assets/img/broken.png\';" >\n\n    </ion-col>\n\n    <!-- Information about user -->\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="properties!=null">{{properties.length}}</h6>\n\n      <h6  *ngIf="properties===null">0</h6>\n\n      <p no-paddin no-margin>favorites</p>\n\n    </ion-col>\n\n\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="posts!=null">{{posts.length}}</h6>\n\n      <h6  *ngIf="posts===null">0</h6>\n\n      <p no-paddin no-margin>posts</p>\n\n    </ion-col>\n\n    </ion-row>\n\n\n\n  <!-- Edit/follow button -->\n\n  <ion-row no-padding no-margin>\n\n    <ion-col no-padding no-margin col-4></ion-col>\n\n      <ion-col no-padding no-margin text-center col-8>\n\n      <button class="edit-button" (click)="goEditProfile()">Edit your profile</button>\n\n    </ion-col>\n\n    <ion-col col-3></ion-col>\n\n  </ion-row>\n\n\n\n  <!-- Profile info -->\n\n  <div padding>\n\n    <p no-margin no-padding><b>{{acct.name}}</b></p>\n\n    <p no-padding no-margin class="info">{{acct.descript}}</p>\n\n  </div>\n\n\n\n  <!-- Segments -->\n\n  <div>\n\n    <ion-segment [(ngModel)]="profile_segment">\n\n      <ion-segment-button value="grid">\n\n        <ion-icon name="star"></ion-icon> Favorites\n\n      </ion-segment-button>\n\n      <ion-segment-button value="list"> \n\n        <ion-icon name="list"></ion-icon> Posts\n\n      </ion-segment-button>\n\n      <!--<ion-segment-button value="saved" (click)="goSavedProfile()">\n\n        <ion-icon name="bookmark"></ion-icon> Saved\n\n      </ion-segment-button>-->\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <!-- Segment content -->\n\n  <div [ngSwitch]="profile_segment">\n\n\n\n    <ion-list *ngSwitchCase="\'grid\'">\n\n      <ion-list>\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n    </ion-list>\n\n\n\n    <ion-list *ngSwitchCase="\'list\'">\n\n\n\n      <ion-grid>\n\n        <ion-row >\n\n          <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">\n\n            <img src="{{ global.site }}/uploads/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src=\'assets/img/broken.png\';" > \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-list>\n\n  </div>\n\n  \n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\profile\profile.html"*/,
+        selector: 'page-profile',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\profile\profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>{{acct.name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <!--<button ion-button icon-only>\n\n        <ion-icon name="person-add" class="badge-container">\n\n          <span class="custom-badge">3</span>\n\n        </ion-icon>\n\n      </button>-->\n\n      <button ion-button icon-only (click)="goOptions()">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n\n\n  <ion-row padding>\n\n    <!-- Avatar -->\n\n    <ion-col col-3>\n\n      <img src="{{image}}" class="avatar" alt=""  onerror="this.src=\'assets/img/broken.png\';" >\n\n    </ion-col>\n\n    <!-- Information about user -->\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="properties!=null">{{properties.length}}</h6>\n\n      <h6  *ngIf="properties===null">0</h6>\n\n      <p no-paddin no-margin>favorites</p>\n\n    </ion-col>\n\n\n\n    <ion-col col-3 text-center>\n\n      <h6 *ngIf="posts!=null">{{posts.length}}</h6>\n\n      <h6  *ngIf="posts===null">0</h6>\n\n      <p no-paddin no-margin>posts</p>\n\n    </ion-col>\n\n    </ion-row>\n\n\n\n  <!-- Edit/follow button -->\n\n  <ion-row no-padding no-margin>\n\n    <ion-col no-padding no-margin col-4></ion-col>\n\n      <ion-col no-padding no-margin text-center col-8>\n\n      <button class="edit-button" (click)="goEditProfile()">Edit your profile</button>\n\n    </ion-col>\n\n    <ion-col col-3></ion-col>\n\n  </ion-row>\n\n\n\n  <!-- Profile info -->\n\n  <div padding>\n\n    <p no-margin no-padding><b>{{acct.name}}</b></p>\n\n    <p no-padding no-margin class="info">{{acct.descript}}</p>\n\n  </div>\n\n\n\n  <!-- Segments -->\n\n  <div>\n\n    <ion-segment [(ngModel)]="profile_segment">\n\n      <ion-segment-button value="grid">\n\n        <ion-icon name="star"></ion-icon> Favorites\n\n      </ion-segment-button>\n\n      <ion-segment-button value="list"> \n\n        <ion-icon name="list"></ion-icon> Posts\n\n      </ion-segment-button>\n\n      <!--<ion-segment-button value="saved" (click)="goSavedProfile()">\n\n        <ion-icon name="bookmark"></ion-icon> Saved\n\n      </ion-segment-button>-->\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <!-- Segment content -->\n\n  <div [ngSwitch]="profile_segment">\n\n\n\n    <ion-list *ngSwitchCase="\'grid\'">\n\n      <ion-list>\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n    </ion-list>\n\n\n\n    <ion-list *ngSwitchCase="\'list\'">\n\n\n\n      <ion-grid>\n\n        <ion-row >\n\n          <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">\n\n            <img src="{{ global.site }}/uploads/posts/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src=\'assets/img/broken.png\';" > \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-list>\n\n  </div>\n\n  \n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\profile\profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_9__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */],
@@ -324,14 +324,14 @@ Profile = __decorate([
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Options; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -378,7 +378,7 @@ Options = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -435,7 +435,7 @@ TaggedProfile = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -486,7 +486,7 @@ SavedProfile = __decorate([
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -499,11 +499,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 127;
+webpackEmptyAsyncContext.id = 128;
 
 /***/ }),
 
-/***/ 141:
+/***/ 142:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -551,28 +551,28 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 141;
+webpackAsyncContext.id = 142;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 142:
+/***/ 143:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Home; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__post_popover__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_owner__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages_messages__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__post_popover__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_owner__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages_messages__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -612,6 +612,8 @@ var Home = (function () {
         };
         this.tap = 0;
         this.limit = 0;
+        //type of pansitan =2   sa image yan
+        //type of post =1
         this.stories = [
             {
                 id: 1,
@@ -652,6 +654,7 @@ var Home = (function () {
             .map(function (response) { return response.json(); })
             .subscribe(function (res) {
             _this.posts = res;
+            console.log(res);
             _this.loading.dismissAll();
         }, function (error) {
             _this.presentAlert("Connection Error!");
@@ -806,7 +809,7 @@ __decorate([
 ], Home.prototype, "content", void 0);
 Home = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="white">\n\n    <!--<ion-buttons start left>\n\n      <button color="black" ion-button icon-only>\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n    </ion-buttons>-->\n\n    \n\n    <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">Pansitan</ion-title>\n\n\n\n    <ion-buttons end right>\n\n      <!--<button color="black" ion-button icon-only (click)="goMessages()">\n\n        <ion-icon name="paper-plane"></ion-icon>\n\n      </button>\n\n      <button color="black" ion-button icon-only (click)="goMessages()">\n\n      <ion-icon name="person"></ion-icon>\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>-->\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <p style="margin: 2px;">Most Sharers</p>\n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <!-- Story line \n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <div (swipe)="swipePage($event)">\n\n-->\n\n  <hr no-margin no-padding>\n\n  <div>\n\n\n\n    <!-- Cards -->\n\n    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index" >\n\n\n\n      <ion-row>\n\n        <ion-col col-10>\n\n          <ion-item style="padding-left:0px;">\n\n        <ion-avatar item-left>\n\n          <img src="{{ image }}">\n\n        </ion-avatar>\n\n        <h2 style="font-weight: bold">{{ post.account.name }}</h2>\n\n        <p *ngIf="post.pansitan.name!=null">{{ post.pansitan.name }}</p>\n\n        \n\n      </ion-item>\n\n        </ion-col >\n\n        <ion-col col-2>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostPopover()" *ngIf="post.email != email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostOwner()" *ngIf="post.email == email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      \n\n        <div *ngIf="post.images.length===1" >\n\n        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src=\'assets/img/broken.png\';" />\n\n        </div>\n\n        <ion-slides  *ngIf="post.images.length>1">\n\n\n\n        <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"  onerror="this.src=\'assets/img/broken.png\';" />\n\n            <p>{{ i + 1 }}/{{ post.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n      <p no-margin no-padding>\n\n        <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!=\'heart\' || post.heart!=\'heart\'">\n\n          <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only class="like-btn" *ngIf="postheart(x,post.like)==\'heart\' || post.heart==\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n        <!--<button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="paper-plane" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button no-margin no-padding clear color="black" ion-button icon-only style="float: right">\n\n          <ion-icon name="ios-bookmark-outline"></ion-icon>\n\n        </button>-->\n\n      </p>\n\n      <hr>\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "post.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "post.like != null;"><ion-icon name="heart"></ion-icon> {{post.like.length}} likes</p>\n\n        <p><b>post.account.name</b> {{ post.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(post.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n\n\n    </ion-card>\n\n    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>\n\n  </div>\n\n\n\n\n\n     <ion-fab style="right: 3px !important;bottom: 3px !important">\n\n        <button ion-fab item-right style="right: 0;" (click) = "reset()"><ion-icon name="md-refresh"></ion-icon></button>\n\n     </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="white">\n\n    <!--<ion-buttons start left>\n\n      <button color="black" ion-button icon-only>\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n    </ion-buttons>-->\n\n    \n\n    <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">Pansitan</ion-title>\n\n\n\n    <ion-buttons end right>\n\n      <!--<button color="black" ion-button icon-only (click)="goMessages()">\n\n        <ion-icon name="paper-plane"></ion-icon>\n\n      </button>\n\n      <button color="black" ion-button icon-only (click)="goMessages()">\n\n      <ion-icon name="person"></ion-icon>\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>-->\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <p style="margin: 2px;">Most Sharers</p>\n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <!-- Story line \n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <div (swipe)="swipePage($event)">\n\n-->\n\n  <hr no-margin no-padding>\n\n  <div>\n\n\n\n    <!-- Cards -->\n\n    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index" >\n\n\n\n      <ion-row>\n\n        <ion-col col-10>\n\n          <ion-item style="padding-left:0px;">\n\n        <ion-avatar item-left>\n\n          <img src="{{ image }}">\n\n        </ion-avatar>\n\n        <h2 style="font-weight: bold">{{ post.account.name }}</h2>\n\n        <p *ngIf="post.pansitan.name!=null">{{ post.pansitan.name }}</p>\n\n        \n\n      </ion-item>\n\n        </ion-col >\n\n        <ion-col col-2>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostPopover()" *ngIf="post.email != email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostOwner()" *ngIf="post.email == email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n        </ion-col>\n\n      </ion-row>\n\n        <div *ngIf="post.images!=null" >\n\n        <div *ngIf="post.images.length===1" >\n\n        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src=\'assets/img/broken.png\';" />\n\n        </div>\n\n        <ion-slides  *ngIf="post.images.length>1">\n\n\n\n        <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"  onerror="this.src=\'assets/img/broken.png\';" />\n\n            <p>{{ i + 1 }}/{{ post.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n        </div>\n\n      <p no-margin no-padding>\n\n        <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!=\'heart\' || post.heart!=\'heart\'">\n\n          <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only class="like-btn" *ngIf="postheart(x,post.like)==\'heart\' || post.heart==\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n        <!--<button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="paper-plane" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button no-margin no-padding clear color="black" ion-button icon-only style="float: right">\n\n          <ion-icon name="ios-bookmark-outline"></ion-icon>\n\n        </button>-->\n\n      </p>\n\n      <hr style="margin: 0">\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "post.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "post.like != null;"><ion-icon name="heart"></ion-icon> {{post.like.length}} likes</p>\n\n        <p><b>{{post.account.name}}</b> {{ post.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(post.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n\n\n    </ion-card>\n\n    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>\n\n  </div>\n\n\n\n\n\n     <ion-fab style="right: 3px !important;bottom: 3px !important">\n\n        <button ion-fab item-right style="right: 0;" (click) = "reset()"><ion-icon name="md-refresh"></ion-icon></button>\n\n     </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* PopoverController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
@@ -816,7 +819,7 @@ Home = __decorate([
 
 /***/ }),
 
-/***/ 143:
+/***/ 144:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -863,7 +866,7 @@ PostPopover = __decorate([
 
 /***/ }),
 
-/***/ 144:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -910,91 +913,6 @@ PostOwner = __decorate([
 
 /***/ }),
 
-/***/ 145:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Messages; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_detail_message_detail__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__new_message_new_message__ = __webpack_require__(116);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var Messages = (function () {
-    function Messages(navCtrl, navParams, app) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.app = app;
-        // You can get this data from your API. This is a dumb data for being an example.
-        this.messages = [
-            {
-                id: 1,
-                profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-                sender: 'candelibas',
-                last_message: 'How you doin?',
-                time: '6h'
-            },
-            {
-                id: 2,
-                profile_img: 'https://pbs.twimg.com/profile_images/726955832785571840/8OxhcDxl_400x400.jpg',
-                sender: 'maxlynch',
-                last_message: 'LOL. Ionic in 2017',
-                time: '11h'
-            },
-            {
-                id: 3,
-                profile_img: 'http://ionicframework.com/dist/preview-app/www/assets/img/sarah-avatar.png.jpeg',
-                sender: 'ashleyosama',
-                last_message: 'Wanna hang out?',
-                time: '1d'
-            },
-            {
-                id: 4,
-                profile_img: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa_400x400.jpeg',
-                sender: 'adam_bradley',
-                last_message: 'Typescript <3 me',
-                time: '3d'
-            },
-            {
-                id: 5,
-                profile_img: 'https://avatars1.githubusercontent.com/u/1024025?v=3&s=120',
-                sender: 'linus_torvalds',
-                last_message: 'I am installing Ubuntu right now.',
-                time: '6d'
-            }
-        ];
-    }
-    Messages.prototype.goNewMessage = function () {
-        this.app.getRootNav().push(__WEBPACK_IMPORTED_MODULE_3__new_message_new_message__["a" /* NewMessage */]);
-    };
-    Messages.prototype.goMessageDetail = function (sender, profile_img, last_message) {
-        this.app.getRootNav().push(__WEBPACK_IMPORTED_MODULE_2__message_detail_message_detail__["a" /* MessageDetail */], { sender: sender, profile_img: profile_img, last_message: last_message });
-    };
-    return Messages;
-}());
-Messages = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-messages',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\messages\messages.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="white">\n\n    <ion-title>Messages</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item no-lines *ngFor="let m of messages" (click)="goMessageDetail(m.sender, m.profile_img, m.last_message)">\n\n      <ion-avatar item-left>\n\n        <img [src]="m.profile_img">\n\n      </ion-avatar>\n\n      <h2 style="font-weight: bold">{{ m.sender }}</h2>\n\n      <p>{{ m.last_message }} <ion-note item-right style="padding-left: 2px">{{ m.time }}</ion-note></p>\n\n      \n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n<ion-footer (click)="goNewMessage()">\n\n  <ion-toolbar>\n\n     <p text-center><ion-icon name="add"></ion-icon> New Message</p>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\messages\messages.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
-], Messages);
-
-//# sourceMappingURL=messages.js.map
-
-/***/ }),
-
 /***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1002,7 +920,7 @@ Messages = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Search; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_post_modal_post__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_post_modal_post__ = __webpack_require__(76);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1100,7 +1018,7 @@ Search = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Notifications; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1224,15 +1142,15 @@ PansitanLocationPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PropertyListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__property_detail_property_detail__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__property_detail_property_detail__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1347,9 +1265,12 @@ var PropertyListPage = (function () {
 }());
 PropertyListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-property-list',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-list\property-list.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    \n\n    <ion-segment [(ngModel)]="viewMode">\n\n       \n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n         <ion-segment-button value="map" (ionSelect)="showMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n    <div style="height: 2px"></div>\n\n\n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n\n\n    <div *ngIf="viewMode===\'map\'" style="width:100%;height:90%;" id="map"></div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-list\property-list.html"*/
+        selector: 'page-property-list',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-list\property-list.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    \n\n    <ion-segment [(ngModel)]="viewMode">\n\n       \n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n         <ion-segment-button value="map" (ionSelect)="showMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n    <div style="height: 2px"></div>\n\n\n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let property of properties">\n\n            <button ion-item (click)="openPropertyDetail(property)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{ global.site }}/uploads/{{property.pansitanid}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                </ion-thumbnail>\n\n                <h2>{{property.name}}</h2>\n\n                <p>{{property.address}}</p>\n\n            </button>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n\n\n    <div *ngIf="viewMode===\'map\'" style="width:100%;height:90%;" id="map"></div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-list\property-list.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__["a" /* PropertyService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Config */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* Http */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__["a" /* PropertyService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Config */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* Http */]])
 ], PropertyListPage);
 
 //# sourceMappingURL=property-list.js.map
@@ -1364,9 +1285,10 @@ PropertyListPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__messages_messages__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1383,9 +1305,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var UploadImagePage = (function () {
-    function UploadImagePage(global, http, storage, loadingCtrl, alertCtrl, toastCtrl) {
+    function UploadImagePage(navCtrl, global, http, storage, loadingCtrl, alertCtrl, toastCtrl) {
         var _this = this;
+        this.navCtrl = navCtrl;
         this.global = global;
         this.http = http;
         this.storage = storage;
@@ -1394,6 +1319,10 @@ var UploadImagePage = (function () {
         this.toastCtrl = toastCtrl;
         this.uploadFinished = false;
         this.descript = '';
+        this.id = 0;
+        this.address = '';
+        this.name = '';
+        this.global.uploadid = 0;
         this.storage.get('email').then(function (val) {
             _this.email = val;
         });
@@ -1406,11 +1335,12 @@ var UploadImagePage = (function () {
         }
         this.loading = this.loadingCtrl.create({});
         this.loading.present();
-        this.http.get(this.global.site + 'api.php?action=addpost&email=' + this.email + '&pansitanid=' + 1 + '&descript=' + this.descript)
+        this.http.get(this.global.site + 'api.php?action=addpost&email=' + this.email + '&pansitanid=' + this.id + '&descript=' + this.descript)
             .map(function (response) { return response.json(); })
             .subscribe(function (res) {
+            console.log(res.pansitan);
             _this.loading.dismissAll();
-            _this.multiImageUpload.serverUrl = _this.global.site + "upload.php?pansitanid=" + res.pansitan + '&type=1';
+            _this.multiImageUpload.serverUrl = _this.global.site + "upload.php?pansitanid=" + res.pansitanid + '&type=2';
             _this.multiImageUpload.uploadImages().then(function (images) {
                 _this.uploadFinished = true;
                 _this.showToast("Posting successful.");
@@ -1469,20 +1399,28 @@ var UploadImagePage = (function () {
         });
         alert.present();
     };
+    UploadImagePage.prototype.openPropertyDetail = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__messages_messages__["a" /* Messages */]);
+    };
+    UploadImagePage.prototype.ionViewWillEnter = function () {
+        this.id = this.global.uploadid;
+        this.address = this.global.uploadaddress;
+        this.name = this.global.uploadname;
+    };
     return UploadImagePage;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__components_multi_image_upload_multi_image_upload__["a" /* MultiImageUpload */])
 ], UploadImagePage.prototype, "multiImageUpload", void 0);
 UploadImagePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-upload-image',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\upload-image\upload-image.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-title>Nasingngo ba Pansi?</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n    <multi-image-upload></multi-image-upload>\n\n    <hr>\n\n    <ion-textarea [(ngModel)]="descript"  ></ion-textarea>\n\n    <button ion-button block (click)="submit()" *ngIf="!multiImageUpload.isUploading && !uploadFinished">\n\n        <ion-icon name="checkmark"></ion-icon>\n\n        Upload\n\n    </button>\n\n    <button ion-button block (click)="cancel()" color="danger" *ngIf="multiImageUpload.isUploading && !uploadFinished">\n\n        <ion-icon name="close"></ion-icon>\n\n        Cancel\n\n    </button>\n\n    <p style="text-align: center;" *ngIf="uploadFinished">Tap <ion-icon name="aperture"> to Post again</ion-icon></p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\upload-image\upload-image.html"*/
+        selector: 'page-upload-image',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\upload-image\upload-image.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-title>Nasingngo ba Pansi?</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n    <multi-image-upload></multi-image-upload>\n\n    <hr>\n\n    <button ion-button block outline (click)=\'openPropertyDetail()\' *ngIf="global.uploadid===0&&!uploadFinished">Add Location</button>\n\n\n\n     \n\n              <ion-list  *ngIf="global.uploadid!=0 && !uploadFinished ">\n\n                <ion-item (click)=\'openPropertyDetail()\'>\n\n                  <ion-avatar item-left>\n\n                    <img src="{{ global.site }}/uploads/{{id}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                  </ion-avatar>\n\n                  <h2 style="font-weight: bold">{{name}}</h2>\n\n                  <p>{{address}}</p>\n\n                  \n\n                </ion-item>\n\n              </ion-list>\n\n\n\n\n\n              <ion-list  *ngIf="uploadFinished ">\n\n                <ion-item>\n\n                  <ion-avatar item-left>\n\n                    <img src="{{ global.site }}/uploads/{{id}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                  </ion-avatar>\n\n                  <h2 style="font-weight: bold">{{name}}</h2>\n\n                  <p>{{address}}</p>\n\n                  \n\n                </ion-item>\n\n              </ion-list>\n\n\n\n    <hr>\n\n    <ion-textarea [(ngModel)]="descript" placeholder="Share your Experience.." style="height:100px"  *ngIf="!uploadFinished" ></ion-textarea>\n\n    <ion-textarea [(ngModel)]="descript" placeholder="Share your Experience.." style="height:100px"  *ngIf="uploadFinished" readonly></ion-textarea>\n\n\n\n    <hr>\n\n    <div *ngIf="!multiImageUpload.isUploading && !uploadFinished">\n\n    <button ion-button block (click)="submit()" >\n\n        <ion-icon name="checkmark"></ion-icon>\n\n        Upload\n\n    </button>\n\n    <p style="text-align: center">Uploading may take a while due to the number and size of the image(s)</p>\n\n    </div>\n\n    <button ion-button block color="danger" *ngIf="multiImageUpload.isUploading && !uploadFinished">\n\n        Uploading...\n\n    </button>\n\n    <p style="text-align: center;" *ngIf="uploadFinished">Tap <ion-icon name="aperture"> to Post again</ion-icon></p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\upload-image\upload-image.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */]])
 ], UploadImagePage);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=upload-image.js.map
 
 /***/ }),
@@ -1493,7 +1431,7 @@ var _a, _b, _c, _d, _e, _f, _g;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MultiImageUpload; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file__ = __webpack_require__(314);
@@ -1762,13 +1700,13 @@ MultiImageUpload = __decorate([
 
 /***/ }),
 
-/***/ 24:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalvarsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1789,13 +1727,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var GlobalvarsProvider = (function () {
     function GlobalvarsProvider(storage) {
         this.storage = storage;
-        //site = 'http://eltonbagne.info/api/pansitan/';
-        this.site = 'http://localhost/pansit/';
+        this.site = 'http://eltonbagne.info/api/pansitan/';
+        this.uploadname = '';
+        this.uploadaddress = '';
+        this.uploadid = 0;
+        this.uploadid = 0;
     }
     GlobalvarsProvider.prototype.loginsave = function (email, name, image) {
         this.storage.set('email', email);
         this.storage.set('name', name);
         this.storage.set('image', image);
+    };
+    GlobalvarsProvider.prototype.pass = function (name, address, pansitanid) {
+        this.uploadname = name;
+        this.uploadaddress = address;
+        this.uploadid = pansitanid;
     };
     return GlobalvarsProvider;
 }());
@@ -1814,10 +1760,10 @@ GlobalvarsProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__notifications_notifications__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__property_list_property_list__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__upload_image_upload_image__ = __webpack_require__(151);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1877,36 +1823,36 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_post_popover__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_post_owner__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_post_popover__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_post_owner__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_search_search__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_modal_post_modal_post__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_messages_messages__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_message_detail_message_detail__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_new_message_new_message__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_modal_post_modal_post__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_messages_messages__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_message_detail_message_detail__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_new_message_new_message__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_notifications_notifications__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_profile_profile__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_edit_profile_edit_profile__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tagged_profile_tagged_profile__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_saved_profile_saved_profile__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_options_options__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_profile_profile__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_edit_profile_edit_profile__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tagged_profile_tagged_profile__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_saved_profile_saved_profile__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_options_options__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_tabs_tabs__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_http__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_property_service_mock_property_service_mock__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_upload_image_upload_image__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_property_list_property_list__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_property_detail_property_detail__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_property_detail_property_detail__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_pansitan_location_pansitan_location__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ionic3_star_rating__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_globalvars_globalvars__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_globalvars_globalvars__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_geolocation__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ionic_native_google_plus__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_storage__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_storage__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_multi_image_upload_multi_image_upload__ = __webpack_require__(152);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2074,14 +2020,14 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 49:
+/***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PropertyService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globalvars_globalvars__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globalvars_globalvars__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2146,16 +2092,110 @@ PropertyService = __decorate([
 
 /***/ }),
 
-/***/ 75:
+/***/ 73:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Messages; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_detail_message_detail__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__new_message_new_message__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_property_service_mock_property_service_mock__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var Messages = (function () {
+    // You can get this data from your API. This is a dumb data for being an example.
+    function Messages(service, global, navCtrl, http, loadingCtrl, navParams, app) {
+        var _this = this;
+        this.service = service;
+        this.global = global;
+        this.navCtrl = navCtrl;
+        this.http = http;
+        this.loadingCtrl = loadingCtrl;
+        this.navParams = navParams;
+        this.app = app;
+        this.searchKey = "";
+        this.loading = this.loadingCtrl.create({});
+        this.loading.present();
+        this.http.get(this.global.site + 'api.php?action=get_app_list')
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            _this.properties = res;
+            _this.loading.dismissAll();
+        }, function (error) {
+            _this.loading.dismissAll();
+        });
+        this.findAll();
+    }
+    Messages.prototype.findAll = function () {
+        var _this = this;
+        this.service.findAll()
+            .then(function (data) { return _this.properties = data; })
+            .catch(function (error) { return alert(error); });
+    };
+    Messages.prototype.onInput = function (event) {
+        var _this = this;
+        this.service.findByName(this.searchKey)
+            .then(function (data) {
+            _this.properties = data;
+        })
+            .catch(function (error) { return alert(JSON.stringify(error)); });
+    };
+    Messages.prototype.onCancel = function (event) {
+        this.findAll();
+    };
+    Messages.prototype.goNewMessage = function () {
+        this.app.getRootNav().push(__WEBPACK_IMPORTED_MODULE_3__new_message_new_message__["a" /* NewMessage */]);
+    };
+    Messages.prototype.goMessageDetail = function (sender, profile_img, last_message) {
+        this.app.getRootNav().push(__WEBPACK_IMPORTED_MODULE_2__message_detail_message_detail__["a" /* MessageDetail */], { sender: sender, profile_img: profile_img, last_message: last_message });
+    };
+    Messages.prototype.close = function (name, address, pansitanid) {
+        this.global.pass(name, address, pansitanid);
+        this.navCtrl.pop();
+    };
+    return Messages;
+}());
+Messages = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        selector: 'page-messages',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\messages\messages.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <ion-list>\n\n    <ion-item *ngFor="let property of properties" (click)="close(property.name,property.address,property.pansitanid)">\n\n      <ion-avatar item-left>\n\n        <img src="{{ global.site }}/uploads/{{property.pansitanid}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n      </ion-avatar>\n\n      <h2 style="font-weight: bold">{{property.name}}</h2>\n\n      <p>{{property.address}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\messages\messages.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_property_service_mock_property_service_mock__["a" /* PropertyService */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
+], Messages);
+
+//# sourceMappingURL=messages.js.map
+
+/***/ }),
+
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPost; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2185,7 +2225,8 @@ var ModalPost = (function () {
             color: 'black',
             icon_name: 'heart-outline'
         };
-        this.modal_data = this.navParams.data.user_id;
+        this.modal_data = this.navParams.data;
+        console.log(this.navParams.data);
         storage.get('email').then(function (val) {
             _this.email = val;
         });
@@ -2261,7 +2302,7 @@ var ModalPost = (function () {
 }());
 ModalPost = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-modalpost',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\modal-post\modal-post.html"*/'<ion-content class="main-modal">\n\n  <div class="modal">\n\n\n\n    <ion-row>\n\n      <ion-col col-2>\n\n        <img [src]="modal_data.account.image" class="avatar-modal" alt=""> \n\n      </ion-col>\n\n\n\n      <ion-col col-8>\n\n        <h5 style="font-weight: bold">{{ modal_data.account.name }}</h5>\n\n        <p *ngIf="modal_data.pansitan.name!=null" class="pansitan">{{ modal_data.pansitan.name }}</p>\n\n      </ion-col>\n\n\n\n      <!-- If you wish, you can add close icon too. Just delete comment code -->\n\n      <ion-col col-2><span style="float: right" (click)="dismiss()"><ion-icon name="ios-close-circle-outline"></ion-icon></span></ion-col>\n\n\n\n    </ion-row>\n\n\n\n    <!-- Post image -->\n\n    <div>\n\n      \n\n        <ion-slides>\n\n\n\n        <ion-slide   *ngFor="let p of modal_data.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post)"/>\n\n            <p class="number">{{ i + 1 }}/{{ modal_data.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n    </div>\n\n\n\n    <ion-row text-center>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)!=\'heart\' && modal_data.heart!=\'heart\' ">\n\n          <ion-icon no-padding name="heart-outline" color="black" class="icon-space"></ion-icon>\n\n        </button>\n\n\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)===\'heart\'||modal_data.heart===\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button no-margin no-padding clear color="black" ion-button icon-only (click)="goUserProfile(1)">\n\n          <ion-icon name="person"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button clear color="black" ion-button icon-only style="margin-top: 2px">\n\n          <ion-icon name="paper-plane"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding style="margin-bottom: 5px">\n\n        <!--<button clear color="black" ion-button icon-only>\n\n          <ion-icon name="more"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n      <hr>\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "modal_data.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "modal_data.like != null;"><ion-icon name="heart"></ion-icon> {{modal_data.like.length}} likes</p>\n\n        <p><b>modal_data.account.name</b> {{ modal_data.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(modal_data.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\modal-post\modal-post.html"*/,
+        selector: 'page-modalpost',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\modal-post\modal-post.html"*/'<ion-content class="main-modal">\n\n  <div class="modal">\n\n\n\n    <ion-row>\n\n      <ion-col col-2>\n\n        <img [src]="modal_data.account.image" class="avatar-modal" alt=""> \n\n      </ion-col>\n\n\n\n      <ion-col col-8>\n\n        <h5 style="font-weight: bold">{{ modal_data.account.name }}</h5>\n\n        <p *ngIf="modal_data.pansitan.name!=null" class="pansitan">{{ modal_data.pansitan.name }}</p>\n\n      </ion-col>\n\n\n\n      <!-- If you wish, you can add close icon too. Just delete comment code -->\n\n      <ion-col col-2><span style="float: right" (click)="dismiss()"><ion-icon name="ios-close-circle-outline"></ion-icon></span></ion-col>\n\n\n\n    </ion-row>\n\n\n\n    <!-- Post image -->\n\n    <div>\n\n      \n\n        <ion-slides>\n\n\n\n        <ion-slide   *ngFor="let p of modal_data.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post)"/>\n\n            <p class="number">{{ i + 1 }}/{{ modal_data.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n    </div>\n\n\n\n    <ion-row text-center>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)!=\'heart\' && modal_data.heart!=\'heart\' ">\n\n          <ion-icon no-padding name="heart-outline" color="black" class="icon-space"></ion-icon>\n\n        </button>\n\n\n\n        <button style="margin-top: 2px" clear ion-button icon-only (click)="likeButton()" class="like-btn" *ngIf="postheart(modal_data.like)===\'heart\'||modal_data.heart===\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button no-margin no-padding clear color="black" ion-button icon-only (click)="goUserProfile(1)">\n\n          <ion-icon name="person"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding>\n\n        <!--<button clear color="black" ion-button icon-only style="margin-top: 2px">\n\n          <ion-icon name="paper-plane"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n      <ion-col col-3 no-margin no-padding style="margin-bottom: 5px">\n\n        <!--<button clear color="black" ion-button icon-only>\n\n          <ion-icon name="more"></ion-icon>\n\n        </button>-->\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n      <hr style="margin: 0">\n\n\n\n      <ion-card-content>\n\n        <p class="like-content" *ngIf = "modal_data.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n        <p class="like-content" *ngIf = "modal_data.like != null;"><ion-icon name="heart"></ion-icon> {{modal_data.like.length}} likes</p>\n\n        <p><b>{{modal_data.account.name}}</b> {{ modal_data.descript }}</p>\n\n      \n\n        <ion-note style="font-size: 12px">\n\n          {{ process(modal_data.timestamp)  }}\n\n        </ion-note>\n\n      </ion-card-content>\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\modal-post\modal-post.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */]])
@@ -2271,22 +2312,22 @@ ModalPost = __decorate([
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PropertyDetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pansitan_location_pansitan_location__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_globalvars_globalvars__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_globalvars_globalvars__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2338,7 +2379,7 @@ var PropertyDetailPage = (function () {
         this.loading.present();
         storage.get('email').then(function (val) {
             _this.email = val;
-            _this.http.get(_this.global.site + 'api.php?action=getimage&g=1&id=' + _this.property.pansitanid + '&email=' + _this.email)
+            _this.http.get(_this.global.site + 'api.php?action=getimage&g=2&id=' + _this.property.pansitanid + '&email=' + _this.email)
                 .map(function (response) { return response.json(); })
                 .subscribe(function (res) {
                 _this.image = res.image;
@@ -2499,7 +2540,7 @@ var PropertyDetailPage = (function () {
 }());
 PropertyDetailPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-property-detail',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-detail\property-detail.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>{{property.name}}</ion-title>\n\n    <ion-buttons end right>\n\n      <button color="black" ion-button icon-only (click)="seelocation(this.property)">\n\n        <ion-icon name="locate"></ion-icon> Location\n\n      </button>\n\n    </ion-buttons>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-card *ngIf="property.pansitanid">\n\n        <ion-slides>\n\n\n\n        <ion-slide  *ngFor="let p of image; let i = index">\n\n            <img src="{{ global.site }}uploads/{{ p.imageid }}.jpg"  onerror="this.src=\'assets/img/broken.png\';"/>\n\n            <p>{{ i + 1 }}/{{ length }}</p>\n\n        </ion-slide>\n\n\n\n    </ion-slides>\n\n        <p style="position: absolute; right: 3px;margin-top: 6px">{{ratelength}} people&nbsp;&nbsp;&nbsp;</p>\n\n         <ionic3-star-rating \n\n            activeIcon = "ios-star"\n\n            defaultIcon = "ios-star-outline"\n\n            activeColor = "#488aff" \n\n            defaultColor = "#488aff"\n\n            readonly="true"\n\n            [rating]="finalrate">\n\n        </ionic3-star-rating> \n\n        <!--<img src="{{property.picture}}"/>-->\n\n        <ion-card-content>\n\n            <h2 class="card-title">{{property.name}}</h2>\n\n            <p>{{property.address}}</p>\n\n        </ion-card-content>\n\n        <ion-list>\n\n            <ion-item *ngIf="property.contact!=\'\'">\n\n                <ion-icon item-left name="call"></ion-icon>\n\n                <h3>Contact</h3>\n\n                <ion-note item-right>{{property.contact}}</ion-note>\n\n            </ion-item>\n\n            <ion-item  *ngIf="property.prices!=\'\'">\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Prices</h3>\n\n                <ion-note item-right>{{property.prices}}</ion-note>\n\n            </ion-item>\n\n            <ion-item *ngIf="property.specialty!=\'\'">\n\n                <ion-icon item-left name="list-box"></ion-icon>\n\n                <h3>Specialty</h3>\n\n                <ion-note item-right>{{property.specialty}}</ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Your rate</h3>\n\n                <ion-note item-right>\n\n                    <ionic3-star-rating \n\n                        activeIcon = "ios-star"\n\n                        defaultIcon = "ios-star-outline"\n\n                        activeColor = "#488aff" \n\n                        defaultColor = "#488aff"\n\n                        readonly="{{ ctrrate }}"\n\n                        [rating]="yourrate">\n\n                    </ionic3-star-rating> \n\n                </ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <button ion-button block  style="width: 100%;" *ngIf="checkfav==0" (click)="favorites()">Add to Favorites</button>\n\n                <button ion-button block outline  style="width: 100%;" *ngIf="checkfav==1"  (click)="favorites()">Remove from Favorites</button>\n\n            </ion-item>\n\n        </ion-list>\n\n\n\n        \n\n\n\n    </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-detail\property-detail.html"*/
+        selector: 'page-property-detail',template:/*ion-inline-start:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-detail\property-detail.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>{{property.name}}</ion-title>\n\n    <ion-buttons end right>\n\n      <button color="black" ion-button icon-only (click)="seelocation(this.property)">\n\n        <ion-icon name="locate"></ion-icon> Location\n\n      </button>\n\n    </ion-buttons>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-card *ngIf="property.pansitanid">\n\n        <ion-slides>\n\n\n\n        <ion-slide  *ngFor="let p of image; let i = index">\n\n            <img src="{{ global.site }}uploads/pansitan/{{ p.imageid }}.jpg"  onerror="this.src=\'assets/img/broken.png\';"/>\n\n            <p>{{ i + 1 }}/{{ length }}</p>\n\n        </ion-slide>\n\n\n\n    </ion-slides>\n\n        <p style="position: absolute; right: 3px;margin-top: 6px">{{ratelength}} people&nbsp;&nbsp;&nbsp;</p>\n\n         <ionic3-star-rating \n\n            activeIcon = "ios-star"\n\n            defaultIcon = "ios-star-outline"\n\n            activeColor = "#488aff" \n\n            defaultColor = "#488aff"\n\n            readonly="true"\n\n            [rating]="finalrate">\n\n        </ionic3-star-rating> \n\n        <!--<img src="{{property.picture}}"/>-->\n\n        <ion-card-content>\n\n            <h2 class="card-title">{{property.name}}</h2>\n\n            <p>{{property.address}}</p>\n\n        </ion-card-content>\n\n        <ion-list>\n\n            <ion-item *ngIf="property.contact!=\'\'">\n\n                <ion-icon item-left name="call"></ion-icon>\n\n                <h3>Contact</h3>\n\n                <ion-note item-right>{{property.contact}}</ion-note>\n\n            </ion-item>\n\n            <ion-item  *ngIf="property.prices!=\'\'">\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Prices</h3>\n\n                <ion-note item-right>{{property.prices}}</ion-note>\n\n            </ion-item>\n\n            <ion-item *ngIf="property.specialty!=\'\'">\n\n                <ion-icon item-left name="list-box"></ion-icon>\n\n                <h3>Specialty</h3>\n\n                <ion-note item-right>{{property.specialty}}</ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-icon item-left name="pricetag"></ion-icon>\n\n                <h3>Your rate</h3>\n\n                <ion-note item-right>\n\n                    <ionic3-star-rating \n\n                        activeIcon = "ios-star"\n\n                        defaultIcon = "ios-star-outline"\n\n                        activeColor = "#488aff" \n\n                        defaultColor = "#488aff"\n\n                        readonly="{{ ctrrate }}"\n\n                        [rating]="yourrate">\n\n                    </ionic3-star-rating> \n\n                </ion-note>\n\n            </ion-item>\n\n            <ion-item>\n\n                <button ion-button block  style="width: 100%;" *ngIf="checkfav==0" (click)="favorites()">Add to Favorites</button>\n\n                <button ion-button block outline  style="width: 100%;" *ngIf="checkfav==1"  (click)="favorites()">Remove from Favorites</button>\n\n            </ion-item>\n\n        </ion-list>\n\n\n\n        \n\n\n\n    </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\user\Desktop\projects\pansitan2\pansitan2\src\pages\property-detail\property-detail.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_8__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_property_service_mock_property_service_mock__["a" /* PropertyService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]])
 ], PropertyDetailPage);

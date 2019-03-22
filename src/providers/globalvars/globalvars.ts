@@ -9,15 +9,26 @@ import { Storage } from '@ionic/storage';
 */
 @Injectable()
 export class GlobalvarsProvider {
-  //site = 'http://eltonbagne.info/api/pansitan/';
- site = 'http://localhost/pansit/';
+  site = 'http://eltonbagne.info/api/pansitan/';
+  //site = 'http://localhost/pansit/';
   name;
   image;
+
+  uploadname='';
+  uploadaddress='';
+  uploadid=0;
   constructor(public storage: Storage) {
+    this.uploadid=0;
   }
   loginsave(email,name,image){
   	this.storage.set('email', email);
     this.storage.set('name', name);
     this.storage.set('image', image);
+  }
+
+  pass(name,address,pansitanid){
+        this.uploadname = name;
+        this.uploadaddress = address;
+        this.uploadid = pansitanid;
   }
 }

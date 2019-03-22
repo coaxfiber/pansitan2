@@ -27,7 +27,7 @@
         <ion-item-sliding *ngFor="let property of properties">
             <button ion-item (click)="openPropertyDetail(property)">
                 <ion-thumbnail item-left>
-                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src='assets/img/broken.png';" />
+                    <img src="{{ global.site }}/uploads/{{property.pansitanid}}.jpg"  onerror="this.src='assets/img/broken.png';" />
                 </ion-thumbnail>
                 <h2>{{property.name}}</h2>
                 <p>{{property.address}}</p>

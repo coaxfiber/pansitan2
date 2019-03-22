@@ -35,7 +35,8 @@ export class Home {
   email;
   image
 
-
+  //type of pansitan =2   sa image yan
+  //type of post =1
    public stories = [
     {
       id: 1,
@@ -85,6 +86,7 @@ export class Home {
           .map(response => response.json())
           .subscribe(res => {
             this.posts = res;
+            console.log(res)
             this.loading.dismissAll();
 
           },error => {

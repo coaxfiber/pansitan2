@@ -44,7 +44,7 @@ export class PropertyDetailPage {
      
        storage.get('email').then((val) => {
          this.email = val;
-         this.http.get(this.global.site + 'api.php?action=getimage&g=1&id='+this.property.pansitanid+'&email='+this.email)
+         this.http.get(this.global.site + 'api.php?action=getimage&g=2&id='+this.property.pansitanid+'&email='+this.email)
           .map(response => response.json())
           .subscribe(res => {
             this.image = res.image;

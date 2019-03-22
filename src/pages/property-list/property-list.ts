@@ -22,7 +22,10 @@ export class PropertyListPage {
     viewMode: string = "list";
     map;
     markersGroup;
-    constructor(public navCtrl: NavController,public loadingCtrl: LoadingController, public global:GlobalvarsProvider, public service: PropertyService, public config: Config,public http:Http) {
+    constructor(public navCtrl: NavController,
+        public loadingCtrl: LoadingController,
+         public global:GlobalvarsProvider,
+          public service: PropertyService, public config: Config,public http:Http) {
 
     this.loading = this.loadingCtrl.create({
     });

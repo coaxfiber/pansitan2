@@ -1,26 +1,24 @@
 <ion-header>
 
-  <ion-navbar color="white">
-    <ion-title>Messages</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)"></ion-searchbar>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
+
   <ion-list>
-    <ion-item no-lines *ngFor="let m of messages" (click)="goMessageDetail(m.sender, m.profile_img, m.last_message)">
+    <ion-item *ngFor="let property of properties" (click)="close(property.name,property.address,property.pansitanid)">
       <ion-avatar item-left>
-        <img [src]="m.profile_img">
+        <img src="{{ global.site }}/uploads/{{property.pansitanid}}.jpg"  onerror="this.src='assets/img/broken.png';" />
       </ion-avatar>
-      <h2 style="font-weight: bold">{{ m.sender }}</h2>
-      <p>{{ m.last_message }} <ion-note item-right style="padding-left: 2px">{{ m.time }}</ion-note></p>
-      
+      <h2 style="font-weight: bold">{{property.name}}</h2>
+      <p>{{property.address}}</p>
     </ion-item>
   </ion-list>
 
 </ion-content>
-<ion-footer (click)="goNewMessage()">
-  <ion-toolbar>
-     <p text-center><ion-icon name="add"></ion-icon> New Message</p>
-  </ion-toolbar>
-</ion-footer>

@@ -66,7 +66,7 @@
         </button>
         </ion-col>
       </ion-row>
-      
+        <div *ngIf="post.images!=null" >
         <div *ngIf="post.images.length===1" >
         <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src='assets/img/broken.png';" />
         </div>
@@ -78,6 +78,7 @@
         </ion-slide>
 
         </ion-slides>
+        </div>
       <p no-margin no-padding>
         <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!='heart' || post.heart!='heart'">
           <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>
@@ -95,12 +96,12 @@
           <ion-icon name="ios-bookmark-outline"></ion-icon>
         </button>-->
       </p>
-      <hr>
+      <hr style="margin: 0">
 
       <ion-card-content>
         <p class="like-content" *ngIf = "post.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>
         <p class="like-content" *ngIf = "post.like != null;"><ion-icon name="heart"></ion-icon> {{post.like.length}} likes</p>
-        <p><b>post.account.name</b> {{ post.descript }}</p>
+        <p><b>{{post.account.name}}</b> {{ post.descript }}</p>
       
         <ion-note style="font-size: 12px">
           {{ process(post.timestamp)  }}

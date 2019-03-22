@@ -56,12 +56,12 @@
       </ion-col>
     </ion-row>
 
-      <hr>
+      <hr style="margin: 0">
 
       <ion-card-content>
         <p class="like-content" *ngIf = "modal_data.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>
         <p class="like-content" *ngIf = "modal_data.like != null;"><ion-icon name="heart"></ion-icon> {{modal_data.like.length}} likes</p>
-        <p><b>modal_data.account.name</b> {{ modal_data.descript }}</p>
+        <p><b>{{modal_data.account.name}}</b> {{ modal_data.descript }}</p>
       
         <ion-note style="font-size: 12px">
           {{ process(modal_data.timestamp)  }}
