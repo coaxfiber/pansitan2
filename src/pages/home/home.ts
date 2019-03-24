@@ -55,6 +55,7 @@ export class Home {
             console.log(res)
             this.loadp = 1;
           },error => {
+            console.log(error)
             this.loadp = 2;
            } 
            );

@@ -51,6 +51,7 @@ export class Profile {
                             .map(response => response.json())
                             .subscribe(res => {
                               this.properties = res.pansitanfav;
+                              console.log(res)
                               this.acct = res;  
                                      this.http.get(this.global.site + 'api.php?action=userpostings&email='+this.email+'&limit='+this.limit)
                                         .map(response => response.json())

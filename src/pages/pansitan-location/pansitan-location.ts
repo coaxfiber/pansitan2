@@ -14,7 +14,7 @@ import leaflet from 'leaflet';
 export class PansitanLocationPage {
 
     property;
-    map;
+    map2;
     markersGroup; viewMode: string = "map";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.property = this.navParams.data;
@@ -23,34 +23,34 @@ export class PansitanLocationPage {
   }
    showMarkers() {
         if (this.markersGroup) {
-            this.map.removeLayer(this.markersGroup);
+            this.map2.removeLayer(this.markersGroup);
         }
         this.markersGroup = leaflet.layerGroup([]);
                 let marker: any = leaflet.marker([this.property.lati, this.property.longti]).on('click', event => console.log("map marker"));
                 this.markersGroup.addLayer(marker);
-        this.map.addLayer(this.markersGroup);
+        this.map2.addLayer(this.markersGroup);
     }
 		
 		showMap() {
 		                setTimeout(() => {
-		                     this.map = leaflet.map("map").setView([this.property.lati, this.property.longti], 10);
-		                      leaflet.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+		                     this.map2 = leaflet.map("map2").setView([this.property.lati, this.property.longti], 10);
+		                      leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		                                 attribution: '&copy; techventures.ph'
-		                             }).addTo(this.map);
+		                             }).addTo(this.map2);
 		                             this.showMarkers();
 		                     
-		                     this.map.locate({setView: false, maxZoom: 10});
-		                        this.map.on('locationfound', e => {
+		                     this.map2.locate({setView: false, maxZoom: 10});
+		                        this.map2.on('locationfound', e => {
 		                        var radius = e.accuracy / 2;
 		                        var popup = leaflet.popup();
 		                        popup
 		                      .setLatLng(e.latlng)
 		                      .setContent("You are currently here!")
-		                      .openOn(this.map); 
+		                      .openOn(this.map2); 
 		                    
 		                    
 
-		                    leaflet.circle(e.latlng, radius).addTo(this.map);
+		                    leaflet.circle(e.latlng, radius).addTo(this.map2);
 
 		                     
 		                   });
@@ -59,7 +59,7 @@ export class PansitanLocationPage {
 		                        alert("Turn on your service location to see your current location!");
 		                         this.viewMode = "list";
 		                        }
-		                     this.map.on('locationerror', onLocationError);
+		                     this.map2.on('locationerror', onLocationError);
 		                 })
 		        
 		        
