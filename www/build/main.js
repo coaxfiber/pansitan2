@@ -549,23 +549,23 @@ var map = {
 		6
 	],
 	"../pages/new-message/new-message.module": [
-		350,
+		347,
 		5
 	],
 	"../pages/options/options.module": [
-		351,
+		348,
 		4
 	],
 	"../pages/profile/profile.module": [
-		347,
+		349,
 		3
 	],
 	"../pages/saved-profile/saved-profile.module": [
-		348,
+		350,
 		2
 	],
 	"../pages/tagged-profile/tagged-profile.module": [
-		349,
+		351,
 		1
 	]
 };
@@ -1278,7 +1278,6 @@ var UploadImagePage = (function () {
         header.append("Accept", "application/json");
         header.append("Content-Type", "application/x-www-form-urlencoded");
         var option = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestOptions */]({ headers: header });
-        console.log(this.global.site + "upload.php?pansitanid=" + res.pansitanid + '&type=2');
         this.http.post(this.global.site + 'api.php?action=addpost&email=' + this.email + '&pansitanid=' + this.id, body, option)
             .map(function (response) { return response.json(); })
             .subscribe(function (res) {
@@ -1358,7 +1357,7 @@ __decorate([
 ], UploadImagePage.prototype, "multiImageUpload", void 0);
 UploadImagePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-upload-image',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\upload-image\upload-image.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-title>Nasingngo ba Pansi?</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n    <multi-image-upload></multi-image-upload>\n\n    <hr>\n\n    <button ion-button block outline (click)=\'openPropertyDetail()\' *ngIf="global.uploadid===0&&!uploadFinished">Add Location</button>\n\n\n\n     \n\n              <ion-list  *ngIf="global.uploadid!=0 && !uploadFinished ">\n\n                <ion-item (click)=\'openPropertyDetail()\'>\n\n                  <ion-avatar item-left>\n\n                    <img src="{{ global.site }}/uploads/{{id}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                  </ion-avatar>\n\n                  <h2 style="font-weight: bold">{{name}}</h2>\n\n                  <p>{{address}}</p>\n\n                  \n\n                </ion-item>\n\n              </ion-list>\n\n\n\n\n\n              <ion-list  *ngIf="uploadFinished ">\n\n                <ion-item>\n\n                  <ion-avatar item-left>\n\n                    <img src="{{ global.site }}/uploads/{{id}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                  </ion-avatar>\n\n                  <h2 style="font-weight: bold">{{name}}</h2>\n\n                  <p>{{address}}</p>\n\n                  \n\n                </ion-item>\n\n              </ion-list>\n\n\n\n    <hr>\n\n    <ion-textarea [(ngModel)]="descript" placeholder="Share your Experience.." style="height:100px"  *ngIf="!uploadFinished" ></ion-textarea>\n\n    <ion-textarea [(ngModel)]="descript" placeholder="Share your Experience.." style="height:100px"  *ngIf="uploadFinished" readonly></ion-textarea>\n\n\n\n    <hr>\n\n    <div *ngIf="!multiImageUpload.isUploading && !uploadFinished">\n\n    <button ion-button block (click)="submit()" >\n\n        <ion-icon name="checkmark"></ion-icon>\n\n        Upload\n\n    </button>\n\n    <p style="text-align: center"  *ngIf="multiImageUpload.isUploading && !uploadFinished">Uploading may take a while due to the number and size of the image(s)</p>\n\n    </div>\n\n    <button ion-button block color="danger" *ngIf="multiImageUpload.isUploading && !uploadFinished">\n\n        Uploading...\n\n    </button>\n\n    <p style="text-align: center;" *ngIf="uploadFinished">Tap <ion-icon name="aperture"> to Post again</ion-icon></p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\upload-image\upload-image.html"*/
+        selector: 'page-upload-image',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\upload-image\upload-image.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-title>Nasingngo ba Pansi?</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n    <multi-image-upload></multi-image-upload>\n\n    <hr>\n\n    <button ion-button block outline (click)=\'openPropertyDetail()\' *ngIf="global.uploadid===0&&!uploadFinished">Add Location</button>\n\n\n\n     \n\n              <ion-list  *ngIf="global.uploadid!=0 && !uploadFinished ">\n\n                <ion-item (click)=\'openPropertyDetail()\'>\n\n                  <ion-avatar item-left>\n\n                    <img src="{{ global.site }}/uploads/{{id}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                  </ion-avatar>\n\n                  <h2 style="font-weight: bold">{{name}}</h2>\n\n                  <p>{{address}}</p>\n\n                  \n\n                </ion-item>\n\n              </ion-list>\n\n\n\n\n\n              <ion-list  *ngIf="uploadFinished ">\n\n                <ion-item>\n\n                  <ion-avatar item-left>\n\n                    <img src="{{ global.site }}/uploads/{{id}}.jpg"  onerror="this.src=\'assets/img/broken.png\';" />\n\n                  </ion-avatar>\n\n                  <h2 style="font-weight: bold">{{name}}</h2>\n\n                  <p>{{address}}</p>\n\n                  \n\n                </ion-item>\n\n              </ion-list>\n\n\n\n    <hr>\n\n    <ion-textarea [(ngModel)]="descript" placeholder="Share your Experience.." style="height:100px"  *ngIf="!uploadFinished" ></ion-textarea>\n\n    <ion-textarea [(ngModel)]="descript" placeholder="Share your Experience.." style="height:100px"  *ngIf="uploadFinished" readonly></ion-textarea>\n\n\n\n    <hr>\n\n    <div *ngIf="!multiImageUpload.isUploading && !uploadFinished">\n\n    <button ion-button block (click)="submit()" >\n\n        <ion-icon name="checkmark"></ion-icon>\n\n        Upload\n\n    </button>\n\n    <p style="text-align: center" *ngIf="multiImageUpload.isUploading && !uploadFinished">Uploading may take a while due to the number and size of the image(s)</p>\n\n    </div>\n\n    <button ion-button block color="danger" *ngIf="multiImageUpload.isUploading && !uploadFinished">\n\n        Uploading...\n\n    </button>\n\n    <p style="text-align: center;" *ngIf="uploadFinished">Tap <ion-icon name="aperture"> to Post again</ion-icon></p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\upload-image\upload-image.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */]) === "function" && _h || Object])
 ], UploadImagePage);
@@ -1874,11 +1873,11 @@ AppModule = __decorate([
                     { loadChildren: '../pages/edit-profile/edit-profile.module#EditProfileModule', name: 'EditProfile', segment: 'edit-profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/message-detail/message-detail.module#MessageDetailModule', name: 'MessageDetail', segment: 'message-detail', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/new-message/new-message.module#NewMessageModule', name: 'NewMessage', segment: 'new-message', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/options/options.module#OptionsModule', name: 'Options', segment: 'options', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/profile/profile.module#ProfileModule', name: 'Profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/saved-profile/saved-profile.module#SavedProfileModule', name: 'SavedProfile', segment: 'saved-profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/tagged-profile/tagged-profile.module#TaggedProfileModule', name: 'TaggedProfile', segment: 'tagged-profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/new-message/new-message.module#NewMessageModule', name: 'NewMessage', segment: 'new-message', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/options/options.module#OptionsModule', name: 'Options', segment: 'options', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/tagged-profile/tagged-profile.module#TaggedProfileModule', name: 'TaggedProfile', segment: 'tagged-profile', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_30__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -2301,7 +2300,7 @@ var PostPopover = (function () {
     };
     PostPopover.prototype.presentToast = function () {
         var toast = this.toastCtrl.create({
-            message: 'Notification',
+            message: 'Not Yet Implemented',
             duration: 2000
         });
         toast.present();
@@ -2310,11 +2309,12 @@ var PostPopover = (function () {
 }());
 PostPopover = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        template: "\n    <ion-list>\n      <button ion-item (click)=\"close()\">Report</button>\n      <button ion-item (click)=\"close()\">Copy Share URL</button>\n      <button ion-item (click)=\"close()\">Turn on Post Notifications</button>\n      <button ion-item (click)=\"close()\">Share on Messenger</button>\n    </ion-list>\n  "
+        template: "\n    <ion-list>\n      <button ion-item (click)=\"close()\">Report</button>\n      <button ion-item (click)=\"close()\">Copy Share URL</button>\n    </ion-list>\n  "
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]) === "function" && _b || Object])
 ], PostPopover);
 
+var _a, _b;
 //# sourceMappingURL=post-popover.js.map
 
 /***/ }),
@@ -2391,11 +2391,12 @@ var PostOwner = (function () {
 }());
 PostOwner = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        template: "\n    <ion-list>\n      <button ion-item (click)=\"alertremove()\">Remove</button>\n      <button ion-item (click)=\"close()\">Update</button>\n    </ion-list>\n  "
+        template: "\n    <ion-list>\n      <button ion-item (click)=\"alertremove()\">Remove</button>\n    </ion-list>\n  "
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]) === "function" && _e || Object])
 ], PostOwner);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=post-owner.js.map
 
 /***/ }),

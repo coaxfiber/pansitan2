@@ -6,8 +6,6 @@ import { ViewController, ToastController } from 'ionic-angular';
     <ion-list>
       <button ion-item (click)="close()">Report</button>
       <button ion-item (click)="close()">Copy Share URL</button>
-      <button ion-item (click)="close()">Turn on Post Notifications</button>
-      <button ion-item (click)="close()">Share on Messenger</button>
     </ion-list>
   `
 })
@@ -21,7 +19,7 @@ export class PostPopover {
 
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'Notification',
+      message: 'Not Yet Implemented',
       duration: 2000
     });
     toast.present();

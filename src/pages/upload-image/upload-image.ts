@@ -55,11 +55,10 @@ export class UploadImagePage {
                           header.append("Accept", "application/json");
                           header.append("Content-Type", "application/x-www-form-urlencoded");    
                           let option = new RequestOptions({ headers: header });
-                          console.log(this.global.site + "upload.php?pansitanid="+res.pansitanid +'&type=2')
                            this.http.post(this.global.site + 'api.php?action=addpost&email='+this.email+'&pansitanid='+this.id,body,option)
                             .map(response => response.json())
                             .subscribe(res => {  
-                                
+
                                   this.loading.dismissAll();
                                   this.multiImageUpload.serverUrl = this.global.site + "upload.php?pansitanid="+res.pansitanid +'&type=2';
                                     this.multiImageUpload.uploadImages().then((images) => {

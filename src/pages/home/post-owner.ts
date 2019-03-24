@@ -7,7 +7,6 @@ import { Http } from '@angular/http';
   template: `
     <ion-list>
       <button ion-item (click)="alertremove()">Remove</button>
-      <button ion-item (click)="close()">Update</button>
     </ion-list>
   `
 })
