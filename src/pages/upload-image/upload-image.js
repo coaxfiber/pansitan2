@@ -9,12 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, ViewChild } from '@angular/core';
 import { MultiImageUpload } from "../../components/multi-image-upload/multi-image-upload";
-import { AlertController, ToastController } from "ionic-angular";
+import { AlertController, ToastController, } from "ionic-angular";
+import { Http } from '@angular/http';
+import { Storage } from '@ionic/storage';
+import { LoadingController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { Messages } from '../messages/messages';
+import { Headers, RequestOptions } from '@angular/http';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 var UploadImagePage = /** @class */ (function () {
-    function UploadImagePage(alertCtrl, toastCtrl) {
+    function UploadImagePage(navCtrl, global, http, storage, loadingCtrl, alertCtrl, toastCtrl) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.global = global;
+        this.http = http;
+        this.storage = storage;
+        this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
         this.toastCtrl = toastCtrl;
         this.uploadFinished = false;
+        this.descript = '';
+        this.id = 0;
+        this.address = '';
+        this.name = '';
+        this.global.uploadid = 0;
+        this.storage.get('email').then(function (val) {
+            _this.email = val;
+        });
     }
     UploadImagePage.prototype.submit = function () {
         var _this = this;
@@ -22,12 +43,31 @@ var UploadImagePage = /** @class */ (function () {
             this.showToast("Please select at least 1 photo");
             return;
         }
-        this.multiImageUpload.uploadImages().then(function (images) {
-            _this.showToast("Upload successful, view console for details");
-            _this.uploadFinished = true;
-            console.dir(images);
-            alert(images);
-        }).catch(function () {
+        this.loading = this.loadingCtrl.create({});
+        this.loading.present();
+        var urlSearchParams = new URLSearchParams();
+        urlSearchParams.append("descript", this.descript);
+        var body = urlSearchParams.toString();
+        var header = new Headers();
+        header.append("Accept", "application/json");
+        header.append("Content-Type", "application/x-www-form-urlencoded");
+        var option = new RequestOptions({ headers: header });
+        this.http.post(this.global.site + 'api.php?action=addpost&email=' + this.email + '&pansitanid=' + this.id, body, option)
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            console.log(res.pansitan);
+            _this.loading.dismissAll();
+            _this.multiImageUpload.serverUrl = _this.global.site + "upload.php?pansitanid=" + res.pansitanid + '&type=2';
+            _this.multiImageUpload.uploadImages().then(function (images) {
+                _this.uploadFinished = true;
+                _this.showToast("Posting successful.");
+                console.dir(images);
+            }).catch(function () {
+            });
+        }, function (error) {
+            console.log(error);
+            _this.presentAlert("Connection Error!");
+            _this.loading.dismissAll();
         });
     };
     UploadImagePage.prototype.cancel = function () {
@@ -68,6 +108,22 @@ var UploadImagePage = /** @class */ (function () {
             }).present();
         });
     };
+    UploadImagePage.prototype.presentAlert = function (val) {
+        var alert = this.alertCtrl.create({
+            title: 'Alert',
+            subTitle: val,
+            buttons: ['Dismiss']
+        });
+        alert.present();
+    };
+    UploadImagePage.prototype.openPropertyDetail = function () {
+        this.navCtrl.push(Messages);
+    };
+    UploadImagePage.prototype.ionViewWillEnter = function () {
+        this.id = this.global.uploadid;
+        this.address = this.global.uploadaddress;
+        this.name = this.global.uploadname;
+    };
     __decorate([
         ViewChild(MultiImageUpload),
         __metadata("design:type", MultiImageUpload)
@@ -77,7 +133,8 @@ var UploadImagePage = /** @class */ (function () {
             selector: 'page-upload-image',
             templateUrl: 'upload-image.html'
         }),
-        __metadata("design:paramtypes", [AlertController, ToastController])
+        __metadata("design:paramtypes", [NavController, GlobalvarsProvider, Http, Storage, LoadingController,
+            AlertController, ToastController])
     ], UploadImagePage);
     return UploadImagePage;
 }());

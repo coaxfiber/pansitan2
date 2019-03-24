@@ -17,6 +17,8 @@ export class GlobalvarsProvider {
   uploadname='';
   uploadaddress='';
   uploadid=0;
+
+  postdelete
   constructor(public storage: Storage) {
     this.uploadid=0;
   }

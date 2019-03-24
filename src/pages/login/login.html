@@ -1,10 +1,12 @@
-<ion-content padding class="transparent-header">
+
+<ion-content padding class="transparent-header" style="background-image: url('assets/img/cover.jpg');
+    background-size: cover;">
   <ion-header>
     <ion-navbar>
     </ion-navbar>
   </ion-header>
-  <img class="logo" src="assets/img/logo/logo-instagram.png" />
-  <div padding>
+  <!--<img class="logo" src="assets/img/logo/logo-instagram.png" />-->
+  <!--<div padding>
     <ion-item>
       <ion-input type="text" placeholder="Username"></ion-input>
     </ion-item>
@@ -14,10 +16,10 @@
     <button ion-button block outline (click)="login()" color="light" class="login-button">Login</button>
   </div>
   <div class="strike">
-    <span>OR</span>
-  </div>
-  <button ion-button block clear (click)="login()" color="light" class="login-button"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>
-</ion-content>
+    <span>Login with</span>
+  </div>-->
+  <button ion-button block clear (click)="login()" color="light" class="login-button" style="background: rgba(0, 0, 0, .4);border-color:white;border-width: 1px;border-style: solid !important;margin-top: auto;margin-bottom: auto;"><ion-icon name="logo-google"></ion-icon> Login with Google</button>
+
 <ion-footer>
   <ion-toolbar class="footer">
     <div (click)="goToSignup()">

@@ -11,62 +11,68 @@ import { Component } from '@angular/core';
 import { App, NavController, NavParams } from 'ionic-angular';
 import { MessageDetail } from '../message-detail/message-detail';
 import { NewMessage } from '../new-message/new-message';
+import { PropertyService } from '../../providers/property-service-mock/property-service-mock';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
+import { Http } from '@angular/http';
+import { LoadingController } from 'ionic-angular';
 var Messages = /** @class */ (function () {
-    function Messages(navCtrl, navParams, app) {
+    // You can get this data from your API. This is a dumb data for being an example.
+    function Messages(service, global, navCtrl, http, loadingCtrl, navParams, app) {
+        var _this = this;
+        this.service = service;
+        this.global = global;
         this.navCtrl = navCtrl;
+        this.http = http;
+        this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.app = app;
-        // You can get this data from your API. This is a dumb data for being an example.
-        this.messages = [
-            {
-                id: 1,
-                profile_img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-                sender: 'candelibas',
-                last_message: 'How you doin?',
-                time: '6h'
-            },
-            {
-                id: 2,
-                profile_img: 'https://pbs.twimg.com/profile_images/726955832785571840/8OxhcDxl_400x400.jpg',
-                sender: 'maxlynch',
-                last_message: 'LOL. Ionic in 2017',
-                time: '11h'
-            },
-            {
-                id: 3,
-                profile_img: 'http://ionicframework.com/dist/preview-app/www/assets/img/sarah-avatar.png.jpeg',
-                sender: 'ashleyosama',
-                last_message: 'Wanna hang out?',
-                time: '1d'
-            },
-            {
-                id: 4,
-                profile_img: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa_400x400.jpeg',
-                sender: 'adam_bradley',
-                last_message: 'Typescript <3 me',
-                time: '3d'
-            },
-            {
-                id: 5,
-                profile_img: 'https://avatars1.githubusercontent.com/u/1024025?v=3&s=120',
-                sender: 'linus_torvalds',
-                last_message: 'I am installing Ubuntu right now.',
-                time: '6d'
-            }
-        ];
+        this.searchKey = "";
+        this.loading = this.loadingCtrl.create({});
+        this.loading.present();
+        this.http.get(this.global.site + 'api.php?action=get_app_list')
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            _this.properties = res;
+            _this.loading.dismissAll();
+        }, function (error) {
+            _this.loading.dismissAll();
+        });
+        this.findAll();
     }
+    Messages.prototype.findAll = function () {
+        var _this = this;
+        this.service.findAll()
+            .then(function (data) { return _this.properties = data; })
+            .catch(function (error) { return alert(error); });
+    };
+    Messages.prototype.onInput = function (event) {
+        var _this = this;
+        this.service.findByName(this.searchKey)
+            .then(function (data) {
+            _this.properties = data;
+        })
+            .catch(function (error) { return alert(JSON.stringify(error)); });
+    };
+    Messages.prototype.onCancel = function (event) {
+        this.findAll();
+    };
     Messages.prototype.goNewMessage = function () {
         this.app.getRootNav().push(NewMessage);
     };
     Messages.prototype.goMessageDetail = function (sender, profile_img, last_message) {
         this.app.getRootNav().push(MessageDetail, { sender: sender, profile_img: profile_img, last_message: last_message });
     };
+    Messages.prototype.close = function (name, address, pansitanid) {
+        this.global.pass(name, address, pansitanid);
+        this.navCtrl.pop();
+    };
     Messages = __decorate([
         Component({
             selector: 'page-messages',
             templateUrl: 'messages.html',
         }),
-        __metadata("design:paramtypes", [NavController, NavParams, App])
+        __metadata("design:paramtypes", [PropertyService,
+            GlobalvarsProvider, NavController, Http, LoadingController, NavParams, App])
     ], Messages);
     return Messages;
 }());

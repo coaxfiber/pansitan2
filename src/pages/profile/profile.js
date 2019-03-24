@@ -52,9 +52,7 @@ var Profile = /** @class */ (function () {
                         .map(function (response) { return response.json(); })
                         .subscribe(function (res) {
                         _this.properties = res.pansitanfav;
-                        console.log(_this.properties);
                         _this.acct = res;
-                        console.log(_this.email);
                         _this.http.get(_this.global.site + 'api.php?action=userpostings&email=' + _this.email + '&limit=' + _this.limit)
                             .map(function (response) { return response.json(); })
                             .subscribe(function (res) {
@@ -79,10 +77,9 @@ var Profile = /** @class */ (function () {
         this.navCtrl.push(PropertyDetailPage, property);
     };
     // Define segment for everytime when profile page is active
-    Profile.prototype.goEditProfile = function () {
+    Profile.prototype.goEditProfile = function (user) {
         // Open it as a modal page
-        var modal = this.modalCtrl.create(EditProfile);
-        modal.present();
+        this.navCtrl.push(EditProfile, user);
     };
     Profile.prototype.goOptions = function () {
         this.navCtrl.push(Options, {});

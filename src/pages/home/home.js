@@ -19,8 +19,10 @@ import 'rxjs/add/operator/catch';
 import { LoadingController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { PropertyDetailPage } from '../property-detail/property-detail';
 var Home = /** @class */ (function () {
     function Home(storage, toastCtrl, alertCtrl, loadingCtrl, http, global, navCtrl, popoverCtrl, app) {
+        //http://localhost/pansit/api.php?action=get_app_list
         var _this = this;
         this.storage = storage;
         this.toastCtrl = toastCtrl;
@@ -37,11 +39,24 @@ var Home = /** @class */ (function () {
         };
         this.tap = 0;
         this.limit = 0;
-        //http://localhost/pansit/api.php?action=get_app_list
+        //type of pansitan =2   sa image yan
+        //type of post =1
+        this.loadp = 0;
+        this.http.get(this.global.site + 'api.php?action=top')
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            _this.top = res;
+            _this.loadp = 1;
+        }, function (error) {
+            _this.loadp = 2;
+        });
         this.loading = this.loadingCtrl.create({});
         this.loading.present();
         this.storage.get('email').then(function (val) {
             _this.email = val;
+        });
+        this.storage.get('image').then(function (val) {
+            _this.image = val;
         });
         this.http.get(this.global.site + 'api.php?action=postings&limit=' + this.limit)
             .map(function (response) { return response.json(); })
@@ -140,8 +155,21 @@ var Home = /** @class */ (function () {
             //this.goMessages();
         }
     };
+    Home.prototype.gotopansitan = function (property) {
+        this.navCtrl.push(PropertyDetailPage, property);
+    };
     Home.prototype.reset = function () {
         var _this = this;
+        this.loadp = 0;
+        this.http.get(this.global.site + 'api.php?action=top')
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            _this.top = res;
+            console.log(res);
+            _this.loadp = 1;
+        }, function (error) {
+            _this.loadp = 2;
+        });
         this.content.scrollToTop();
         this.limit = 0;
         this.loading = this.loadingCtrl.create({});
@@ -192,6 +220,9 @@ var Home = /** @class */ (function () {
             duration: 2000
         });
         toast.present();
+    };
+    Home.prototype.openPropertyDetail = function (property) {
+        this.navCtrl.push(PropertyDetailPage, property);
     };
     __decorate([
         ViewChild(Content),

@@ -8,15 +8,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { ModalController, ViewController, NavParams } from 'ionic-angular';
+import { ModalController, ViewController, PopoverController, NavParams } from 'ionic-angular';
+import { PostOwner } from './../home/post-owner';
+import { PostPopover } from './../home/post-popover';
 import { ToastController } from 'ionic-angular';
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
 var ModalPost = /** @class */ (function () {
-    function ModalPost(storage, toastCtrl, http, viewCtrl, global, navParams, modalCtrl) {
+    function ModalPost(storage, popoverCtrl, toastCtrl, http, viewCtrl, global, navParams, modalCtrl) {
         var _this = this;
         this.storage = storage;
+        this.popoverCtrl = popoverCtrl;
         this.toastCtrl = toastCtrl;
         this.http = http;
         this.viewCtrl = viewCtrl;
@@ -27,7 +30,8 @@ var ModalPost = /** @class */ (function () {
             color: 'black',
             icon_name: 'heart-outline'
         };
-        this.modal_data = this.navParams.data.user_id;
+        this.modal_data = this.navParams.data;
+        console.log(this.navParams.data);
         storage.get('email').then(function (val) {
             _this.email = val;
         });
@@ -99,12 +103,20 @@ var ModalPost = /** @class */ (function () {
         });
         toast.present();
     };
+    ModalPost.prototype.presentPostPopover = function () {
+        var popover = this.popoverCtrl.create(PostPopover);
+        popover.present();
+    };
+    ModalPost.prototype.presentPostOwner = function () {
+        var popover = this.popoverCtrl.create(PostOwner);
+        popover.present();
+    };
     ModalPost = __decorate([
         Component({
             selector: 'page-modalpost',
             templateUrl: 'modal-post.html',
         }),
-        __metadata("design:paramtypes", [Storage,
+        __metadata("design:paramtypes", [Storage, PopoverController,
             ToastController, Http, ViewController, GlobalvarsProvider, NavParams, ModalController])
     ], ModalPost);
     return ModalPost;

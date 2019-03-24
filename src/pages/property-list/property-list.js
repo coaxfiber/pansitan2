@@ -112,7 +112,10 @@ var PropertyListPage = /** @class */ (function () {
             selector: 'page-property-list',
             templateUrl: 'property-list.html'
         }),
-        __metadata("design:paramtypes", [NavController, LoadingController, GlobalvarsProvider, PropertyService, Config, Http])
+        __metadata("design:paramtypes", [NavController,
+            LoadingController,
+            GlobalvarsProvider,
+            PropertyService, Config, Http])
     ], PropertyListPage);
     return PropertyListPage;
 }());

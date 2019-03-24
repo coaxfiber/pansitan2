@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ModalController, ViewController, NavParams } from 'ionic-angular';
+import { ModalController, ViewController, PopoverController, NavParams } from 'ionic-angular';
 
+import { PostOwner } from './../home/post-owner';
+import { PostPopover } from './../home/post-popover';
 import { ToastController } from 'ionic-angular';
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 import { Storage } from '@ionic/storage';
@@ -19,7 +21,7 @@ export class ModalPost {
   modal_data;
   email
   constructor(
-    public storage: Storage,
+    public storage: Storage,public popoverCtrl: PopoverController,
     public toastCtrl: ToastController,public http:Http,public viewCtrl: ViewController,public global:GlobalvarsProvider, public navParams: NavParams, public modalCtrl: ModalController) {
     this.modal_data = this.navParams.data;
     console.log(this.navParams.data)
@@ -107,4 +109,15 @@ export class ModalPost {
     });
     toast.present();
   }
+
+  presentPostPopover() {
+    let popover = this.popoverCtrl.create(PostPopover);
+    popover.present();
+  }
+  presentPostOwner(x) {
+    this.global.postdelete = x;
+    let popover = this.popoverCtrl.create(PostOwner);
+    popover.present();
+  }
+  
 }

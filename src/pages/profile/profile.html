@@ -41,7 +41,7 @@
   <ion-row no-padding no-margin>
     <ion-col no-padding no-margin col-4></ion-col>
       <ion-col no-padding no-margin text-center col-8>
-      <button class="edit-button" (click)="goEditProfile()">Edit your profile</button>
+      <button class="edit-button" (click)="goEditProfile(acct)">Edit your profile</button>
     </ion-col>
     <ion-col col-3></ion-col>
   </ion-row>
@@ -49,7 +49,7 @@
   <!-- Profile info -->
   <div padding>
     <p no-margin no-padding><b>{{acct.name}}</b></p>
-    <p no-padding no-margin class="info">{{acct.descript}}</p>
+    <p no-padding no-margin class="info" style="white-space: pre-line;">{{acct.descript}}</p>
   </div>
 
   <!-- Segments -->
@@ -75,7 +75,7 @@
         <ion-item-sliding *ngFor="let property of properties">
             <button ion-item (click)="openPropertyDetail(property)">
                 <ion-thumbnail item-left>
-                    <img src="{{ global.site }}/uploads/s1.jpg"  onerror="this.src='assets/img/broken.png';" />
+                    <img src="{{ global.site }}/uploads/{{property.pansitanid}}.jpg"  onerror="this.src='assets/img/broken.png';" />
                 </ion-thumbnail>
                 <h2>{{property.name}}</h2>
                 <p>{{property.address}}</p>
@@ -89,7 +89,8 @@
       <ion-grid>
         <ion-row >
           <ion-col col-4 class="grid_img" *ngFor="let i of posts" (press)="pressPhoto(i)">
-            <img src="{{ global.site }}/uploads/posts/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src='assets/img/broken.png';" > 
+            <img src="{{ global.site }}/uploads/posts/{{i.images[0].imageid}}.jpg" alt=""  onerror="this.src='assets/img/broken.png';"  *ngIf="i.images!=null">
+            <img src="assets/img/broken.png" *ngIf="i.images==null"> 
           </ion-col>
         </ion-row>
       </ion-grid>

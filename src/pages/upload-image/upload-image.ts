@@ -7,6 +7,7 @@ import {LoadingController, Loading } from 'ionic-angular';
 import { NavController} from 'ionic-angular';
 import { Messages } from '../messages/messages';
 
+import {Headers,RequestOptions} from '@angular/http';
 import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 @Component({
   selector: 'page-upload-image',
@@ -47,11 +48,18 @@ export class UploadImagePage {
                           });
                           this.loading.present();
 
-                           this.http.get(this.global.site + 'api.php?action=addpost&email='+this.email+'&pansitanid='+this.id+'&descript='+this.descript)
+                          let urlSearchParams = new URLSearchParams();
+                            urlSearchParams.append("descript",this.descript);
+                          let body = urlSearchParams.toString()
+                          var header = new Headers();
+                          header.append("Accept", "application/json");
+                          header.append("Content-Type", "application/x-www-form-urlencoded");    
+                          let option = new RequestOptions({ headers: header });
+                          console.log(this.global.site + "upload.php?pansitanid="+res.pansitanid +'&type=2')
+                           this.http.post(this.global.site + 'api.php?action=addpost&email='+this.email+'&pansitanid='+this.id,body,option)
                             .map(response => response.json())
                             .subscribe(res => {  
-                                console.log(res.pansitan)
-
+                                
                                   this.loading.dismissAll();
                                   this.multiImageUpload.serverUrl = this.global.site + "upload.php?pansitanid="+res.pansitanid +'&type=2';
                                     this.multiImageUpload.uploadImages().then((images) => {

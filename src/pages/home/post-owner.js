@@ -8,28 +8,60 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { ViewController, ToastController } from 'ionic-angular';
+import { ViewController, AlertController, ToastController } from 'ionic-angular';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
+import { Http } from '@angular/http';
 var PostOwner = /** @class */ (function () {
-    function PostOwner(viewCtrl, toastCtrl) {
+    function PostOwner(global, http, alertCtrl, viewCtrl, toastCtrl) {
+        this.global = global;
+        this.http = http;
+        this.alertCtrl = alertCtrl;
         this.viewCtrl = viewCtrl;
         this.toastCtrl = toastCtrl;
     }
     PostOwner.prototype.close = function () {
-        this.presentToast();
         this.viewCtrl.dismiss();
     };
-    PostOwner.prototype.presentToast = function () {
+    PostOwner.prototype.alertremove = function () {
+        var _this = this;
+        this.viewCtrl.dismiss();
+        var text = "Remove this post?";
+        this.alertCtrl.create({
+            message: text,
+            buttons: [
+                {
+                    text: "No",
+                    role: 'cancel',
+                    handler: function () {
+                    }
+                },
+                {
+                    text: "Yes",
+                    handler: function () {
+                        _this.http.get(_this.global.site + 'api.php?action=deletepost&id=' + _this.global, postdelete)
+                            .map(function (response) { return response.json(); })
+                            .subscribe(function (res) {
+                            _this.presentToast('Post has been Removed. Refresh to');
+                        }, function (error) {
+                            _this.loading.dismissAll();
+                        });
+                    }
+                }
+            ]
+        }).present();
+    };
+    PostOwner.prototype.presentToast = function (text) {
         var toast = this.toastCtrl.create({
-            message: 'Notification',
+            message: text,
             duration: 2000
         });
         toast.present();
     };
     PostOwner = __decorate([
         Component({
-            template: "\n    <ion-list>\n      <button ion-item (click)=\"close()\">Remove</button>\n      <button ion-item (click)=\"close()\">Update</button>\n    </ion-list>\n  "
+            template: "\n    <ion-list>\n      <button ion-item (click)=\"alertremove()\">Remove</button>\n      <button ion-item (click)=\"close()\">Update</button>\n    </ion-list>\n  "
         }),
-        __metadata("design:paramtypes", [ViewController, ToastController])
+        __metadata("design:paramtypes", [GlobalvarsProvider, Http, AlertController, ViewController, ToastController])
     ], PostOwner);
     return PostOwner;
 }());

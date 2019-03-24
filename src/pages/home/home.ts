@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 import {LoadingController, Loading } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {PropertyDetailPage} from '../property-detail/property-detail';
 
 @Component({
   selector: 'page-home',
@@ -37,39 +38,27 @@ export class Home {
 
   //type of pansitan =2   sa image yan
   //type of post =1
-   public stories = [
-    {
-      id: 1,
-      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      user_name: 'candelibas'
-    },
-    {
-      id: 2,
-      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      user_name: 'maxlynch'
-    },
-    {
-      id: 3,
-      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      user_name: 'ashleyosama'
-    },
-    {
-      id: 4,
-      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      user_name: 'adam_bradley'
-    },
-    {
-      id: 5,
-      img: 'https://avatars1.githubusercontent.com/u/918975?v=3&s=120',
-      user_name: 'linus_torvalds'
-    }
-    
-  ];
-
+   
+  loadp=0;
+  top;
   constructor( 
     public storage: Storage,
     public toastCtrl: ToastController,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public http:Http, public global:GlobalvarsProvider,public navCtrl: NavController, public popoverCtrl: PopoverController, public app: App) {
    //http://localhost/pansit/api.php?action=get_app_list
+
+
+         this.http.get(this.global.site + 'api.php?action=top')
+          .map(response => response.json())
+          .subscribe(res => {
+            this.top =res;
+            console.log(res)
+            this.loadp = 1;
+          },error => {
+            this.loadp = 2;
+           } 
+           );
+
+
     this.loading = this.loadingCtrl.create({
       });
       this.loading.present();
@@ -86,7 +75,6 @@ export class Home {
           .map(response => response.json())
           .subscribe(res => {
             this.posts = res;
-            console.log(res)
             this.loading.dismissAll();
 
           },error => {
@@ -94,6 +82,9 @@ export class Home {
             this.loading.dismissAll();
            } 
            );
+
+
+
   }
 
   seemore(){
@@ -175,7 +166,8 @@ export class Home {
     let popover = this.popoverCtrl.create(PostPopover);
     popover.present();
   }
-  presentPostOwner() {
+  presentPostOwner(x) {
+    this.global.postdelete = x;
     let popover = this.popoverCtrl.create(PostOwner);
     popover.present();
   }
@@ -194,14 +186,30 @@ export class Home {
     }
     
   }
+
+  gotopansitan(property: any) {
+        this.navCtrl.push(PropertyDetailPage, property);
+    }
+
   reset(){
+    this.loadp = 0;
+    this.http.get(this.global.site + 'api.php?action=top')
+          .map(response => response.json())
+          .subscribe(res => {
+            this.top =res;
+            console.log(res)
+            this.loadp = 1;
+          },error => {
+            this.loadp = 2;
+           } 
+           );
+
     this.content.scrollToTop();
     this.limit = 0;
     this.loading = this.loadingCtrl.create({
       });
 
       this.loading.present();
-      this.email = "elton@gmail.com";
          this.http.get(this.global.site + 'api.php?action=postings&limit='+this.limit)
           .map(response => response.json())
           .subscribe(res => {
@@ -258,4 +266,7 @@ export class Home {
     });
     toast.present();
   }
+  openPropertyDetail(property: any) {
+        this.navCtrl.push(PropertyDetailPage, property);
+    }
 }

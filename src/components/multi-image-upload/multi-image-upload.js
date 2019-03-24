@@ -187,7 +187,6 @@ var MultiImageUpload = /** @class */ (function () {
                 _this_1.uploadingHandler[targetPath] = fileTransfer;
                 fileTransfer.upload(targetPath, _this_1.serverUrl, options).then(function (data) {
                     resolve(JSON.parse(data.response));
-                    alert(JSON.stringify(JSON.parse(data.response)));
                 }).catch(function () {
                     askRetry();
                 });

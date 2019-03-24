@@ -18,12 +18,22 @@ import { Storage } from '@ionic/storage';
 var GlobalvarsProvider = /** @class */ (function () {
     function GlobalvarsProvider(storage) {
         this.storage = storage;
-        this.site = 'http://eltonbagne.info/api/pansitan/';
+        //site = 'http://eltonbagne.info/api/pansitan/';
+        this.site = 'http://localhost/pansit/';
+        this.uploadname = '';
+        this.uploadaddress = '';
+        this.uploadid = 0;
+        this.uploadid = 0;
     }
     GlobalvarsProvider.prototype.loginsave = function (email, name, image) {
         this.storage.set('email', email);
         this.storage.set('name', name);
         this.storage.set('image', image);
+    };
+    GlobalvarsProvider.prototype.pass = function (name, address, pansitanid) {
+        this.uploadname = name;
+        this.uploadaddress = address;
+        this.uploadid = pansitanid;
     };
     GlobalvarsProvider = __decorate([
         Injectable(),

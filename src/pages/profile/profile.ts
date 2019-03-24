@@ -51,9 +51,7 @@ export class Profile {
                             .map(response => response.json())
                             .subscribe(res => {
                               this.properties = res.pansitanfav;
-                              console.log(this.properties)
                               this.acct = res;  
-                                       console.log(this.email)
                                      this.http.get(this.global.site + 'api.php?action=userpostings&email='+this.email+'&limit='+this.limit)
                                         .map(response => response.json())
                                         .subscribe(res => {
@@ -79,10 +77,10 @@ export class Profile {
   // Define segment for everytime when profile page is active
  
 
-  goEditProfile() {
+  goEditProfile(user) {
     // Open it as a modal page
-    let modal = this.modalCtrl.create(EditProfile);
-    modal.present();
+    
+        this.navCtrl.push(EditProfile, user);
   }
 
   goOptions() {
