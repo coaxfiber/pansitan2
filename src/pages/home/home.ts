@@ -40,6 +40,7 @@ export class Home {
   //type of post =1
    
   loadp=0;
+  loadpost=0;
   top;
   constructor( 
     public storage: Storage,
@@ -59,9 +60,6 @@ export class Home {
            );
 
 
-    this.loading = this.loadingCtrl.create({
-      });
-      this.loading.present();
          
           this.storage.get('email').then((val) => {
             this.email = val;
@@ -75,11 +73,10 @@ export class Home {
           .map(response => response.json())
           .subscribe(res => {
             this.posts = res;
-            this.loading.dismissAll();
+            this.loadpost =1;
 
           },error => {
-            this.presentAlert("Connection Error!");
-            this.loading.dismissAll();
+            this.loadpost =2;
            } 
            );
 
@@ -193,11 +190,11 @@ export class Home {
 
   reset(){
     this.loadp = 0;
+    this.loadpost = 0;
     this.http.get(this.global.site + 'api.php?action=top')
           .map(response => response.json())
           .subscribe(res => {
             this.top =res;
-            console.log(res)
             this.loadp = 1;
           },error => {
             this.loadp = 2;
@@ -206,19 +203,15 @@ export class Home {
 
     this.content.scrollToTop();
     this.limit = 0;
-    this.loading = this.loadingCtrl.create({
-      });
 
-      this.loading.present();
          this.http.get(this.global.site + 'api.php?action=postings&limit='+this.limit)
           .map(response => response.json())
           .subscribe(res => {
             this.posts = res;
-            this.loading.dismissAll();
+            this.loadpost = 1;
 
           },error => {
-            this.presentAlert("Connection Error!");
-            this.loading.dismissAll();
+            this.loadpost = 2;
            } 
            );
 

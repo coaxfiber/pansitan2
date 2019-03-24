@@ -28,7 +28,7 @@
   <ion-scroll class="story" scrollX="true"  *ngIf="loadp===1">
     <div class="story_scroll" *ngFor="let s of top" (click)="openPropertyDetail(s)">
       <div class="story_img_bg">
-      <img no-margin no-padding class="story_img" src="{{ global.site }}/uploads/{{s.pansitanid}}.jpg"></div>
+      <img no-margin no-padding class="story_img" src="{{ global.site }}/uploads/{{s.pansitanid}}.jpg" onerror="this.src='assets/img/broken.png';" ></div>
       <p no-margin no-padding text-center class="story_text">{{ s.name }}</p>
     </div>
   </ion-scroll>
@@ -46,7 +46,8 @@
   <div>
 
     <!-- Cards -->
-    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index" >
+    <div  *ngIf="loadpost===1">
+    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index"  >
 
       <ion-row>
         <ion-col col-10>
@@ -113,10 +114,14 @@
         </button>-->
       </p>
       <hr style="margin: 0">
-
+        
+    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>
 
     </ion-card>
-    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>
+</div>
+
+  <p style="text-align: center;"  *ngIf="loadpost===0"> <ion-spinner name="crescent"></ion-spinner></p>
+  <p style="text-align: center;" *ngIf="loadpost===2">Connection Error!</p>
   </div>
 
 
