@@ -4,100 +4,6 @@ webpackJsonp([8],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProfile; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var EditProfile = (function () {
-    function EditProfile(alertCtrl, storage, navCtrl, navParams, viewCtrl, loadingCtrl, http, global) {
-        var _this = this;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.http = http;
-        this.global = global;
-        this.user = this.navParams.data;
-        this.storage.get('image').then(function (val) {
-            _this.image = val;
-        });
-    }
-    EditProfile.prototype.updateProfile = function () {
-        var _this = this;
-        this.loading = this.loadingCtrl.create({});
-        this.loading.present();
-        var urlSearchParams = new URLSearchParams();
-        urlSearchParams.append("descript", this.user.descript);
-        var body = urlSearchParams.toString();
-        var header = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]();
-        header.append("Accept", "application/json");
-        header.append("Content-Type", "application/x-www-form-urlencoded");
-        var option = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["d" /* RequestOptions */]({ headers: header });
-        this.http.post(this.global.site + 'api.php?action=updateaccount&image=' + this.image + '&name=' + this.user.name + '&contact=' + this.user.contact + '&id=' + this.user.accountid, body, option)
-            .map(function (response) { return response.json(); })
-            .subscribe(function (res) {
-            _this.navCtrl.pop();
-            _this.loading.dismissAll();
-        }, function (error) {
-            console.log(error);
-            _this.presentAlert("Connection Error!");
-            _this.loading.dismissAll();
-        });
-    };
-    EditProfile.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    EditProfile.prototype.presentAlert = function (val) {
-        var alert = this.alertCtrl.create({
-            title: 'Alert',
-            subTitle: val,
-            buttons: ['Dismiss']
-        });
-        alert.present();
-    };
-    return EditProfile;
-}());
-EditProfile = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-edit-profile',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\edit-profile\edit-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Edit Profile</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="updateProfile()">\n\n        <ion-icon name="checkmark" color="primary"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!-- Profile picture -->\n\n  <div text-center>\n\n    <img [src]="image" class="edit-avatar" alt=""  onerror="this.src=\'assets/img/broken.png\';" >\n\n  </div>\n\n\n\n  <!-- Form -->\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="clipboard" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [(ngModel)]="user.name"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label>\n\n      <ion-icon name="quote" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-textarea placeholder="" [(ngModel)]="user.descript"></ion-textarea>\n\n  </ion-item>\n\n\n\n  <!-- Private information form -->\n\n  <div margin-top padding-top>\n\n    <h4 no-margin no-padding class="info-text">Private Information</h4>\n\n    <hr class="custom-hr" color="gray">\n\n  </div>\n\n  \n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="mail" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user.email" readonly></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="phone-portrait" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [(ngModel)]="user.contact" placeholder="Add your phone"></ion-input>\n\n  </ion-item>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\edit-profile\edit-profile.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]])
-], EditProfile);
-
-//# sourceMappingURL=edit-profile.js.map
-
-/***/ }),
-
-/***/ 118:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageDetail; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
@@ -143,7 +49,7 @@ MessageDetail = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -212,7 +118,7 @@ NewMessage = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -221,7 +127,7 @@ NewMessage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_post_modal_post__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_profile_edit_profile__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_profile_edit_profile__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__options_options__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tagged_profile_tagged_profile__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__saved_profile_saved_profile__ = __webpack_require__(123);
@@ -351,6 +257,100 @@ Profile = __decorate([
 ], Profile);
 
 //# sourceMappingURL=profile.js.map
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProfile; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var EditProfile = (function () {
+    function EditProfile(alertCtrl, storage, navCtrl, navParams, viewCtrl, loadingCtrl, http, global) {
+        var _this = this;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.http = http;
+        this.global = global;
+        this.user = this.navParams.data;
+        this.storage.get('image').then(function (val) {
+            _this.image = val;
+        });
+    }
+    EditProfile.prototype.updateProfile = function () {
+        var _this = this;
+        this.loading = this.loadingCtrl.create({});
+        this.loading.present();
+        var urlSearchParams = new URLSearchParams();
+        urlSearchParams.append("descript", this.user.descript);
+        var body = urlSearchParams.toString();
+        var header = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]();
+        header.append("Accept", "application/json");
+        header.append("Content-Type", "application/x-www-form-urlencoded");
+        var option = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["d" /* RequestOptions */]({ headers: header });
+        this.http.post(this.global.site + 'api.php?action=updateaccount&image=' + this.image + '&name=' + this.user.name + '&contact=' + this.user.contact + '&id=' + this.user.accountid, body, option)
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            _this.navCtrl.pop();
+            _this.loading.dismissAll();
+        }, function (error) {
+            console.log(error);
+            _this.presentAlert("Connection Error!");
+            _this.loading.dismissAll();
+        });
+    };
+    EditProfile.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    EditProfile.prototype.presentAlert = function (val) {
+        var alert = this.alertCtrl.create({
+            title: 'Alert',
+            subTitle: val,
+            buttons: ['Dismiss']
+        });
+        alert.present();
+    };
+    return EditProfile;
+}());
+EditProfile = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        selector: 'page-edit-profile',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\edit-profile\edit-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Edit Profile</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="updateProfile()">\n\n        <ion-icon name="checkmark" color="primary"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!-- Profile picture -->\n\n  <div text-center>\n\n    <img [src]="image" class="edit-avatar" alt=""  onerror="this.src=\'assets/img/broken.png\';" >\n\n  </div>\n\n\n\n  <!-- Form -->\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="clipboard" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [(ngModel)]="user.name"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label>\n\n      <ion-icon name="quote" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-textarea placeholder="" [(ngModel)]="user.descript"></ion-textarea>\n\n  </ion-item>\n\n\n\n  <!-- Private information form -->\n\n  <div margin-top padding-top>\n\n    <h4 no-margin no-padding class="info-text">Private Information</h4>\n\n    <hr class="custom-hr" color="gray">\n\n  </div>\n\n  \n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="mail" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [value]="user.email" readonly></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label> \n\n      <ion-icon name="phone-portrait" color="gray"></ion-icon>\n\n    </ion-label>\n\n    <ion-input type="text" [(ngModel)]="user.contact" placeholder="Add your phone"></ion-input>\n\n  </ion-item>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\edit-profile\edit-profile.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]])
+], EditProfile);
+
+//# sourceMappingURL=edit-profile.js.map
 
 /***/ }),
 
@@ -538,7 +538,7 @@ webpackEmptyAsyncContext.id = 130;
 
 var map = {
 	"../pages/edit-profile/edit-profile.module": [
-		344,
+		346,
 		7
 	],
 	"../pages/login/login.module": [
@@ -546,7 +546,7 @@ var map = {
 		0
 	],
 	"../pages/message-detail/message-detail.module": [
-		346,
+		344,
 		6
 	],
 	"../pages/new-message/new-message.module": [
@@ -554,15 +554,15 @@ var map = {
 		5
 	],
 	"../pages/options/options.module": [
-		348,
+		349,
 		4
 	],
 	"../pages/profile/profile.module": [
-		349,
+		350,
 		3
 	],
 	"../pages/saved-profile/saved-profile.module": [
-		350,
+		348,
 		2
 	],
 	"../pages/tagged-profile/tagged-profile.module": [
@@ -831,16 +831,16 @@ var Home = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */])
 ], Home.prototype, "content", void 0);
 Home = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="white">\n\n    <!--<ion-buttons start left>\n\n      <button color="black" ion-button icon-only>\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n    </ion-buttons>-->\n\n    \n\n    <ion-title style="border: 1px solid #ccc" (click)="scrollToTop()">Pansitan</ion-title>\n\n\n\n    <ion-buttons end right>\n\n      <!--<button color="black" ion-button icon-only (click)="goMessages()">\n\n        <ion-icon name="paper-plane"></ion-icon>\n\n      </button>\n\n      <button color="black" ion-button icon-only (click)="goMessages()">\n\n      <ion-icon name="person"></ion-icon>\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>-->\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <p style="margin-left: 5px;margin-top: 5px;margin-bottom: 1px;">Top 15 Rated Pansitans</p>\n\n  <p style="text-align: center;" *ngIf="loadp===0"><ion-spinner name="dots" ></ion-spinner></p>\n\n  <p style="text-align: center;" *ngIf="loadp===2">Connection Error!</p>\n\n  <ion-scroll class="story" scrollX="true"  *ngIf="loadp===1">\n\n    <div class="story_scroll" *ngFor="let s of top" (click)="openPropertyDetail(s)">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" src="{{ global.site }}/uploads/{{s.pansitanid}}.jpg" onerror="this.src=\'assets/img/broken.png\';" ></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <!-- Story line \n\n  <ion-scroll class="story" scrollX="true">\n\n    <div class="story_scroll" *ngFor="let s of stories">\n\n      <div class="story_img_bg">\n\n      <img no-margin no-padding class="story_img" [src]="s.img"></div>\n\n      <p no-margin no-padding text-center class="story_text">{{ s.user_name }}</p>\n\n    </div>\n\n  </ion-scroll>\n\n  <div (swipe)="swipePage($event)">\n\n-->\n\n  <hr no-margin no-padding>\n\n  <div>\n\n\n\n    <!-- Cards -->\n\n    <div  *ngIf="loadpost===1">\n\n    <ion-card no-padding padding-bottom no-margin class="card"  *ngFor="let post of posts; let x = index"  >\n\n\n\n      <ion-row>\n\n        <ion-col col-10>\n\n          <ion-item style="padding-left:0px;">\n\n        <ion-avatar item-left>\n\n          <img src="{{ image }}">\n\n        </ion-avatar>\n\n        <h2 style="font-weight: bold">{{ post.account.name }}</h2>\n\n        <p *ngIf="post.pansitan.name!=null" (click)="gotopansitan(post.pansitan)">{{ post.pansitan.name }}</p>\n\n        \n\n      </ion-item>\n\n        </ion-col >\n\n        <ion-col col-2>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostPopover()" *ngIf="post.email != email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n          <button no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 15px" (click)="presentPostOwner(post.postid)" *ngIf="post.email == email">\n\n            <ion-icon name="more"></ion-icon>\n\n        </button>\n\n        </ion-col>\n\n      </ion-row>\n\n        <div style="margin: 0 5px 0 5px">\n\n        <p  style="white-space: pre-line;">{{ post.descript }}</p>\n\n        \n\n        <ion-note style="font-size: 12px;">\n\n          {{ process(post.timestamp)  }}\n\n        </ion-note>\n\n        </div>\n\n        <div style="height: 5px"></div>\n\n        <div *ngIf="post.images!=null" >\n\n        <div *ngIf="post.images.length===1" >\n\n        <img src="{{ global.site }}uploads/posts/{{ post.images[0].imageid }}.jpg" (tap)="tapPhotoLike(post,x)" onerror="this.src=\'assets/img/broken.png\';" />\n\n        </div>\n\n        <ion-slides  *ngIf="post.images.length>1">\n\n\n\n        <ion-slide   *ngFor="let p of post.images; let i = index"  no-bounce>\n\n            <img src="{{ global.site }}uploads/posts/{{ p.imageid }}.jpg" (tap)="tapPhotoLike(post,x)"  onerror="this.src=\'assets/img/broken.png\';" />\n\n            <p>{{ i + 1 }}/{{ post.images.length }}</p>\n\n        </ion-slide>\n\n\n\n        </ion-slides>\n\n        </div>\n\n\n\n      <p no-margin no-padding>\n\n        <button clear ion-button icon-only (click)="likeButton(post,x)" class="like-btn" *ngIf="postheart(x,post.like)!=\'heart\' || post.heart!=\'heart\'">\n\n          <ion-icon no-padding name="{{post.heart}}" color="{{post.color}}" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only class="like-btn" *ngIf="postheart(x,post.like)==\'heart\' || post.heart==\'heart\'">\n\n          <ion-icon no-padding name="heart" color="danger" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button clear ion-button style="float: right">\n\n          <p class="like-content" *ngIf = "post.like == null;"><ion-icon name="heart"></ion-icon> 0 likes</p>\n\n          <p class="like-content" *ngIf = "post.like != null && post.like.length==1"><ion-icon name="heart"></ion-icon> 1 like</p>\n\n          <p class="like-content" *ngIf = "post.like != null && post.like.length>1"><ion-icon name="heart"></ion-icon> {{post.like.length}} likes\n\n        </button>\n\n        <!--<button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="ios-text-outline" class="icon-space" style="font-weight: bold"></ion-icon>\n\n        </button>\n\n        <button clear ion-button icon-only>\n\n          <ion-icon no-padding isActive="false" color="black" name="paper-plane" class="icon-space"></ion-icon>\n\n        </button>\n\n        <button no-margin no-padding clear color="black" ion-button icon-only style="float: right">\n\n          <ion-icon name="ios-bookmark-outline"></ion-icon>\n\n        </button>-->\n\n      </p>\n\n      <hr style="margin: 0">\n\n        \n\n\n\n    </ion-card>\n\n    <button ion-button block outline  style="width: 95%;margin: 10px" (click)="seemore()">See More</button>\n\n</div>\n\n\n\n  <p style="text-align: center;"  *ngIf="loadpost===0"> <ion-spinner name="crescent"></ion-spinner></p>\n\n  <p style="text-align: center;" *ngIf="loadpost===2">Connection Error!</p>\n\n  </div>\n\n\n\n\n\n     <ion-fab style="right: 3px !important;bottom: 3px !important">\n\n        <button ion-fab item-right style="right: 0;" (click) = "reset()"><ion-icon name="md-refresh"></ion-icon></button>\n\n     </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* Http */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* PopoverController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _k || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__["a" /* GlobalvarsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* PopoverController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
 ], Home);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -920,10 +920,9 @@ PansitanLocationPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
         selector: 'page-pansitan-location',template:/*ion-inline-start:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\pansitan-location\pansitan-location.html"*/'<!--\n\n  Generated template for the FarmerLocationPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{ property.name }}\'s Location</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div style="width:100%;height:100%;" id="map2"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Nvidia 720\Desktop\proj\pansitan2\src\pages\pansitan-location\pansitan-location.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
 ], PansitanLocationPage);
 
-var _a, _b;
 //# sourceMappingURL=pansitan-location.js.map
 
 /***/ }),
@@ -1687,10 +1686,9 @@ var GlobalvarsProvider = (function () {
 }());
 GlobalvarsProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
 ], GlobalvarsProvider);
 
-var _a;
 //# sourceMappingURL=globalvars.js.map
 
 /***/ }),
@@ -1704,7 +1702,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__notifications_notifications__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__property_list_property_list__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__upload_image_upload_image__ = __webpack_require__(151);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1773,11 +1771,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_search_search__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_modal_post_modal_post__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_messages_messages__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_message_detail_message_detail__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_new_message_new_message__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_message_detail_message_detail__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_new_message_new_message__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_notifications_notifications__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_profile_profile__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_edit_profile_edit_profile__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_profile_profile__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_edit_profile_edit_profile__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tagged_profile_tagged_profile__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_saved_profile_saved_profile__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_options_options__ = __webpack_require__(121);
@@ -1869,13 +1867,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_19__angular_http__["c" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
-                    { loadChildren: '../pages/edit-profile/edit-profile.module#EditProfileModule', name: 'EditProfile', segment: 'edit-profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/message-detail/message-detail.module#MessageDetailModule', name: 'MessageDetail', segment: 'message-detail', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/edit-profile/edit-profile.module#EditProfileModule', name: 'EditProfile', segment: 'edit-profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/new-message/new-message.module#NewMessageModule', name: 'NewMessage', segment: 'new-message', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/saved-profile/saved-profile.module#SavedProfileModule', name: 'SavedProfile', segment: 'saved-profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/options/options.module#OptionsModule', name: 'Options', segment: 'options', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/profile/profile.module#ProfileModule', name: 'Profile', segment: 'profile', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/saved-profile/saved-profile.module#SavedProfileModule', name: 'SavedProfile', segment: 'saved-profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/tagged-profile/tagged-profile.module#TaggedProfileModule', name: 'TaggedProfile', segment: 'tagged-profile', priority: 'low', defaultHistory: [] }
                 ]
             }),
@@ -2405,8 +2403,8 @@ PostOwner = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Messages; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_detail_message_detail__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__new_message_new_message__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_detail_message_detail__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__new_message_new_message__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_property_service_mock_property_service_mock__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_globalvars_globalvars__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(15);
